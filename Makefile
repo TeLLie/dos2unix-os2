@@ -138,6 +138,10 @@ ifeq ($(findstring CYGWIN,$(d2u_os)),CYGWIN)
         D2U_OS = cygwin
 endif
 
+ifeq ($(findstring OS/2,$(d2u_os)),OS/2)
+        D2U_OS = os/2
+endif
+
 ifndef D2U_OS
 ifeq ($(findstring MSYS,$(d2u_os)),MSYS)
         D2U_OS = msys
@@ -266,15 +270,14 @@ endif
 endif
 
 ifeq (os/2,$(D2U_OS))
-        prefix=c:/usr
+        prefix=/@unixroot/usr
         EXE = .exe
         VERSIONSUFFIX = -os2
-        LINK_MAN = cp -f
         UCS =
-        LDFLAGS_EXTRA = -Zargs-wild
+        LDFLAGS_EXTRA = -Zomf -Zargs-wild -Zhigh-mem
         DIST_TARGET = dist-zip
 ifdef ENABLE_NLS
-        LIBS_EXTRA += -lintl -liconv
+        LIBS_EXTRA += -lintl 
 endif
 endif
 
