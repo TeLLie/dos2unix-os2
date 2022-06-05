@@ -1,3 +1,20 @@
+2022-06-05 Erwin Waterlander <waterlan@xs4all.nl>
+	* Version 7.4.3
+
+2022-06-05 Erwin Waterlander <waterlan@xs4all.nl>
+	* test/Makefile: Disabled GB18030 tests for Darwin.
+	  GB18030 is not properly supported on Darwin.
+
+2021-03-17 Felipe Castro <fefcas@gmail.com>
+	* Updated Esperanto translation of messages.
+
+2020-12-29 Philipp Klaus Krause <spth@users.sourceforge.net>
+	* common.c: Assign strerror return value to const char.
+	  See https://sourceforge.net/p/dos2unix/patches/10/
+
+2020-11-09 Мирослав Николић <miroslavnikolic@rocketmail.com>
+	* New Serbian translation of the manual.
+
 2020-10-12 Erwin Waterlander <waterlan@xs4all.nl>
 	* Version 7.4.2
 

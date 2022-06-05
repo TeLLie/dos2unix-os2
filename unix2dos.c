@@ -69,7 +69,7 @@ void PrintLicense(void)
   D2U_ANSI_FPRINTF(stdout,_("\
 Copyright (C) 2009-%d Erwin Waterlander\n\
 Copyright (C) 1994-1995 Benjamin Lin\n\
-All rights reserved.\n\n"),2016);
+All rights reserved.\n\n"),2022);
   PrintBSDLicense();
 }
 
