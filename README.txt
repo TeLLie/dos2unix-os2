@@ -58,7 +58,7 @@ HISTORY
 
 AUTHORS
 
-        Erwin Waterlander       version 3.2 - 7.4.2  2009-2020
+        Erwin Waterlander       version 3.2 - 7.4.3  2009-2022
         Christian Wurll         version 3.1          1998
         Bernd Johannes Wuebben  version 3.0          1998
         Benjamin Lin            version 1.1 - 2.3    1994-1995
@@ -84,6 +84,7 @@ TRANSLATORS
         Dutch                 Benno Schulenberg            Version 6.0.5 - 7.4.2
         Esperanto             Rugxulo                      Version 5.1   - 6.0.4
         Esperanto             Benno Schulenberg            Version 6.0.5 - 7.3
+        Esperanto             Felipe Castro                Version 7.4.3
         French                Frédéric Marchal             Version 6.0.5 - 7.4.0
         Friulian              Fabio Tomat                  Version 7.4.2
         German                Philipp Thomas               Version 5.0   - 6.0.3, 7.0,
@@ -119,6 +120,7 @@ TRANSLATORS
         German                Mario Blättermann            Version 6.0.5 - 7.4.0
         German                Roland Illig                 Version 7.4.2
         Polish                Jakub Bogusz                 Version 6.0.5 - 7.4.0
+        Serbian               Мирослав Николић             Version 7.4.3
         Spanish               Julio A. Freyre-Gonzalez     Version 5.3.1 - 6.0.4
         Spanish               Enrique Lazcorreta Puigmartí Version 6.0.6 - 7.2.1
         Swedish               Sebastian Rasmussen          Version 7.3.2 - 7.4.0
@@ -175,6 +177,8 @@ ACKNOWLEDGEMENTS
         kirowata              Fixed a minor memory leak.
         Than Ngo              Fixed issues reported by Coverity Scan.
         Vladislav Glinsky     Reported typo in Ukrainian translation.        
+        Philipp Klaus Krause  Assign strerror return value to const char.
+        Victor                Reported that GB18030 conversion is not working on Darwin.
 
 
 FINDUTILS

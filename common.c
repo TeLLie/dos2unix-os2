@@ -445,7 +445,7 @@ int regfile(char *path, int allowSymlinks, CFlag *ipFlag, const char *progname)
    }
    else {
      if (ipFlag->verbose) {
-       char *errstr = strerror(errno);
+       const char *errstr = strerror(errno);
        ipFlag->error = errno;
        D2U_UTF8_FPRINTF(stderr, "%s: %s:", progname, path);
        D2U_ANSI_FPRINTF(stderr, " %s\n", errstr);
@@ -485,7 +485,7 @@ int regfile_target(char *path, CFlag *ipFlag, const char *progname)
    }
    else {
      if (ipFlag->verbose) {
-       char *errstr = strerror(errno);
+       const char *errstr = strerror(errno);
        ipFlag->error = errno;
        D2U_UTF8_FPRINTF(stderr, "%s: %s:", progname, path);
        D2U_ANSI_FPRINTF(stderr, " %s\n", errstr);
@@ -514,7 +514,7 @@ int glob_warg(int argc, wchar_t *wargv[], char ***argv, CFlag *ipFlag, const cha
   wchar_t *ptr;
   char  *arg;
   char  **argv_new;
-  char *errstr;
+  const char *errstr;
   size_t len;
   int found, add_path;
   WIN32_FIND_DATA FindFileData;
@@ -1030,7 +1030,7 @@ int ResolveSymbolicLink(char *lFN, char **rFN, CFlag *ipFlag, const char *progna
   int RetVal = 0;
 #ifdef S_ISLNK
   struct stat StatBuf;
-  char *errstr;
+  const char *errstr;
   char *targetFN = NULL;
 
   if (STAT(lFN, &StatBuf)) {
@@ -1431,7 +1431,7 @@ int ConvertNewFile(char *ipInFN, char *ipOutFN, CFlag *ipFlag, const char *progn
   FILE *InF = NULL;
   FILE *TempF = NULL;
   char *TempPath;
-  char *errstr;
+  const char *errstr;
 #ifdef D2U_UNIFILE
    struct _stat StatBuf;
    wchar_t pathw[D2U_MAX_PATH];
@@ -2057,7 +2057,7 @@ void FileInfoW(FILE* ipInF, CFlag *ipFlag, const char *filename, int bomtype, co
   if ((TempChar == WEOF) && ferror(ipInF)) {
     ipFlag->error = errno;
     if (ipFlag->verbose) {
-      char *errstr = strerror(errno);
+      const char *errstr = strerror(errno);
       D2U_UTF8_FPRINTF(stderr, "%s: ", progname);
       D2U_UTF8_FPRINTF(stderr, _("can not read from input file %s:"), filename);
       D2U_ANSI_FPRINTF(stderr, " %s\n", errstr);
@@ -2107,7 +2107,7 @@ void FileInfo(FILE* ipInF, CFlag *ipFlag, const char *filename, int bomtype, con
   if ((TempChar == EOF) && ferror(ipInF)) {
     ipFlag->error = errno;
     if (ipFlag->verbose) {
-      char *errstr = strerror(errno);
+      const char *errstr = strerror(errno);
       D2U_UTF8_FPRINTF(stderr, "%s: ", progname);
       D2U_UTF8_FPRINTF(stderr, _("can not read from input file %s:"), filename);
       D2U_ANSI_FPRINTF(stderr, " %s\n", errstr);
@@ -2144,7 +2144,7 @@ int GetFileInfo(char *ipInFN, CFlag *ipFlag, const char *progname)
   InF=OpenInFile(ipInFN);
   if (InF == NULL) {
     if (ipFlag->verbose) {
-      char *errstr = strerror(errno);
+      const char *errstr = strerror(errno);
       ipFlag->error = errno;
       D2U_UTF8_FPRINTF(stderr, "%s: %s: ", progname, ipInFN);
       D2U_ANSI_FPRINTF(stderr, "%s\n", errstr);
@@ -2590,7 +2590,7 @@ void d2u_getc_error(CFlag *ipFlag, const char *progname)
 {
     ipFlag->error = errno;
     if (ipFlag->verbose) {
-      char *errstr = strerror(errno);
+      const char *errstr = strerror(errno);
       D2U_UTF8_FPRINTF(stderr, "%s: ", progname);
       D2U_ANSI_FPRINTF(stderr, _("can not read from input file: %s\n"), errstr);
     }
@@ -2600,7 +2600,7 @@ void d2u_putc_error(CFlag *ipFlag, const char *progname)
 {
     ipFlag->error = errno;
     if (ipFlag->verbose) {
-      char *errstr = strerror(errno);
+      const char *errstr = strerror(errno);
       D2U_UTF8_FPRINTF(stderr, "%s: ", progname);
       D2U_ANSI_FPRINTF(stderr, _("can not write to output file: %s\n"), errstr);
     }
@@ -2612,7 +2612,7 @@ void d2u_putwc_error(CFlag *ipFlag, const char *progname)
     if (!(ipFlag->status & UNICODE_CONVERSION_ERROR)) {
       ipFlag->error = errno;
       if (ipFlag->verbose) {
-        char *errstr = strerror(errno);
+        const char *errstr = strerror(errno);
         D2U_UTF8_FPRINTF(stderr, "%s: ", progname);
         D2U_ANSI_FPRINTF(stderr, _("can not write to output file: %s\n"), errstr);
       }
@@ -2786,7 +2786,7 @@ wint_t d2u_putwc(wint_t wc, FILE *f, CFlag *ipFlag, const char *progname)
 #if (defined(_WIN32) && !defined(__CYGWIN__))
         d2u_PrintLastError(progname);
 #else
-        char *errstr = strerror(errno);
+        const char *errstr = strerror(errno);
         D2U_UTF8_FPRINTF(stderr, "%s:", progname);
         D2U_ANSI_FPRINTF(stderr, " %s\n", errstr);
 #endif
