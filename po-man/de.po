@@ -1,23 +1,22 @@
 # German translation of the dos2unix man page.
 # Copyright (C) 2014 Erwin Waterlander (msgids)
 # This file is distributed under the same license as the dos2unix package.
-#
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2014-2017.
-# Roland Illig <roland.illig@gmx.de>, 20202.
-#
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2014-2017, 2022.
+# Roland Illig <roland.illig@gmx.de>, 2020.
 msgid ""
 msgstr ""
-"Project-Id-Version: dos2unix-man-7.3.6-beta4\n"
-"POT-Creation-Date: 2017-09-20 22:02+0200\n"
-"PO-Revision-Date: 2020-04-08 17:27+0200\n"
-"Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
+"Project-Id-Version: dos2unix-man-7.4.4-beta4\n"
+"POT-Creation-Date: 2022-12-12 22:16+0100\n"
+"PO-Revision-Date: 2022-12-19 13:08+0100\n"
+"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Lokalize 22.08.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: =head1
 #: dos2unix.pod:52
@@ -138,7 +137,7 @@ msgstr "erlaubt die Änderung des Eigentümers der Datei im Alte-Datei-Modus."
 
 #. type: textblock
 #: dos2unix.pod:112
-msgid "When this option is used, the conversion will not be aborted when the user and/or group ownership of the original file can't be preserved in old file mode. Conversion will continue and the converted file will get the same new ownership as if it was converted in new file mode. See also options C<-o> and C<-n>. This option is only available if dos2unix has support for for preserving the user and group ownership of files."
+msgid "When this option is used, the conversion will not be aborted when the user and/or group ownership of the original file can't be preserved in old file mode. Conversion will continue and the converted file will get the same new ownership as if it was converted in new file mode. See also options C<-o> and C<-n>. This option is only available if dos2unix has support for preserving the user and group ownership of files."
 msgstr "Wenn diese Option verwendet wird, dann bricht die Umwandlung nicht ab, wenn der Eigentümer und die Gruppe der Originaldatei im Alte-Datei-Modus nicht erhalten werden kann. Die Umwandlung wird fortgesetzt und die umgewandelte Datei erhält den gleichen neuen Eigentümer, als wäre sie im Neue-Datei-Modus umgewandelt worden. Siehe auch die Optionen C<-o> und C<-n>. Diese Option ist nur verfügbar, wenn dos2unix über Unterstützung für die Erhaltung des Eigentümers und der Gruppe von Dateien verfügt."
 
 #. type: =item
@@ -717,7 +716,7 @@ msgstr "verhindert die Änderung des Eigentümers der Datei im Alte-Datei-Modus 
 
 #. type: textblock
 #: dos2unix.pod:400
-msgid "Abort conversion when the user and/or group ownership of the original file can't be preserved in old file mode. See also options C<-o> and C<-n>. This option is only available if dos2unix has support for for preserving the user and group ownership of files."
+msgid "Abort conversion when the user and/or group ownership of the original file can't be preserved in old file mode. See also options C<-o> and C<-n>. This option is only available if dos2unix has support for preserving the user and group ownership of files."
 msgstr "bricht die Umwandlung ab, wenn der Eigentümer und/oder die Gruppe der Originaldatei im Alte-Datei-Modus nicht erhalten werden kann. Siehe auch die Optionen C<-o> und C<-n>. Diese Option ist nur verfügbar, wenn dos2unix über Unterstützung für die Erhaltung des Eigentümers und der Gruppe von Dateien verfügt."
 
 #. type: =item

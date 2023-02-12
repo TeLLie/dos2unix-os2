@@ -3,21 +3,21 @@
 # Copyright (C) 2014 Free Software Foundation, Inc.
 # This file is distributed under the same license as the dos2unix package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2014, 2015, 2016, 2017.
+# Yuri Chornoivan <yurchor@ukr.net>, 2014, 2015, 2016, 2017, 2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: dos2unix-man 7.3.6-beta4\n"
-"POT-Creation-Date: 2017-09-20 22:02+0200\n"
-"PO-Revision-Date: 2017-12-31 13:20+0200\n"
+"Project-Id-Version: dos2unix-man 7.4.4-beta4\n"
+"POT-Creation-Date: 2022-12-12 22:16+0100\n"
+"PO-Revision-Date: 2022-12-19 13:48+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 20.12.0\n"
 
 #. type: =head1
 #: dos2unix.pod:52
@@ -138,7 +138,7 @@ msgstr "Дозволити зміну власника файла у старо�
 
 #. type: textblock
 #: dos2unix.pod:112
-msgid "When this option is used, the conversion will not be aborted when the user and/or group ownership of the original file can't be preserved in old file mode. Conversion will continue and the converted file will get the same new ownership as if it was converted in new file mode. See also options C<-o> and C<-n>. This option is only available if dos2unix has support for for preserving the user and group ownership of files."
+msgid "When this option is used, the conversion will not be aborted when the user and/or group ownership of the original file can't be preserved in old file mode. Conversion will continue and the converted file will get the same new ownership as if it was converted in new file mode. See also options C<-o> and C<-n>. This option is only available if dos2unix has support for preserving the user and group ownership of files."
 msgstr "Якщо використано цей параметр, перетворення не перериватиметься, якщо у старому режимі файлів не вдасться зберегти параметри належності файла до певного користувача і/або групи. Перетворення продовжуватиметься, а перетворений файл матиме нові параметри власника, такі, наче його перетворено у новому режимі файлів. Див. також параметри C<-o> і C<-n>. Цим параметром можна скористатися, лише якщо у dos2unix передбачено підтримку збереження параметрів належності файлів певним користувачам і групам."
 
 #. type: =item
@@ -717,7 +717,7 @@ msgstr "Не дозволяти зміну власника файла у ста
 
 #. type: textblock
 #: dos2unix.pod:400
-msgid "Abort conversion when the user and/or group ownership of the original file can't be preserved in old file mode. See also options C<-o> and C<-n>. This option is only available if dos2unix has support for for preserving the user and group ownership of files."
+msgid "Abort conversion when the user and/or group ownership of the original file can't be preserved in old file mode. See also options C<-o> and C<-n>. This option is only available if dos2unix has support for preserving the user and group ownership of files."
 msgstr "Переривати перетворення, якщо у старому режимі файлів не вдасться зберегти параметри належності файла до певного користувача і/або групи. Див. також параметри C<-o> і C<-n>. Цим параметром можна скористатися, лише якщо у dos2unix передбачено підтримку збереження параметрів належності файлів певним користувачам і групам."
 
 #. type: =item

@@ -4,9 +4,9 @@
 # Tianze Wang <zwpwjwtz@126.com>, 2015, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: dos2unix-man-7.3.6-beta4\n"
-"POT-Creation-Date: 2017-10-10 19:40+0200\n"
-"PO-Revision-Date: 2017-09-22 23:08+0200\n"
+"Project-Id-Version: dos2unix-man-7.4.4-beta4\n"
+"POT-Creation-Date: 2022-12-12 22:16+0100\n"
+"PO-Revision-Date: 2023-01-21 13:31+0800\n"
 "Last-Translator: Tianze Wang <zwpwjwtz@126.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #. type: =head1
 #: dos2unix.pod:52

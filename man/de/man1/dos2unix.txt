@@ -60,13 +60,14 @@ OPTIONEN
     --allow-chown
         erlaubt die Änderung des Eigentümers der Datei im Alte-Datei-Modus.
 
-        When this option is used, the conversion will not be aborted when
-        the user and/or group ownership of the original file can't be
-        preserved in old file mode. Conversion will continue and the
-        converted file will get the same new ownership as if it was
-        converted in new file mode. See also options "-o" and "-n". This
-        option is only available if dos2unix has support for preserving the
-        user and group ownership of files.
+        Wenn diese Option verwendet wird, dann bricht die Umwandlung nicht
+        ab, wenn der Eigentümer und die Gruppe der Originaldatei im
+        Alte-Datei-Modus nicht erhalten werden kann. Die Umwandlung wird
+        fortgesetzt und die umgewandelte Datei erhält den gleichen neuen
+        Eigentümer, als wäre sie im Neue-Datei-Modus umgewandelt worden.
+        Siehe auch die Optionen "-o" und "-n". Diese Option ist nur
+        verfügbar, wenn dos2unix über Unterstützung für die Erhaltung des
+        Eigentümers und der Gruppe von Dateien verfügt.
 
     -ascii
         wandelt nur Zeilenumbrüche um. Dies ist der vorgegebene
@@ -323,10 +324,11 @@ OPTIONEN
         verhindert die Änderung des Eigentümers der Datei im
         Alte-Datei-Modus (Voreinstellung).
 
-        Abort conversion when the user and/or group ownership of the
-        original file can't be preserved in old file mode. See also options
-        "-o" and "-n". This option is only available if dos2unix has support
-        for preserving the user and group ownership of files.
+        bricht die Umwandlung ab, wenn der Eigentümer und/oder die Gruppe
+        der Originaldatei im Alte-Datei-Modus nicht erhalten werden kann.
+        Siehe auch die Optionen "-o" und "-n". Diese Option ist nur
+        verfügbar, wenn dos2unix über Unterstützung für die Erhaltung des
+        Eigentümers und der Gruppe von Dateien verfügt.
 
     -o, --oldfile DATEI …
         Alte-Datei-Modus. Die DATEI wird umgewandelt und durch die

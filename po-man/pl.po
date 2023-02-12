@@ -1,12 +1,12 @@
 # Polish translation for dos2unix man.
 # This file is distributed under the same license as the dos2unix package.
-# Jakub Bogusz <qboosh@pld-linux.org>, 2014-2017.
+# Jakub Bogusz <qboosh@pld-linux.org>, 2014-2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dos2unix-man 7.3.6-beta4\n"
-"POT-Creation-Date: 2017-10-10 19:41+0200\n"
-"PO-Revision-Date: 2017-09-22 21:37+0200\n"
+"Project-Id-Version: dos2unix-man 7.4.4-beta4\n"
+"POT-Creation-Date: 2022-12-12 22:16+0100\n"
+"PO-Revision-Date: 2022-12-19 20:24+0100\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "Language: pl\n"

@@ -61,13 +61,14 @@
     --allow-chown
         Дозволити зміну власника файла у старому режимі файлів.
 
-        When this option is used, the conversion will not be aborted when
-        the user and/or group ownership of the original file can't be
-        preserved in old file mode. Conversion will continue and the
-        converted file will get the same new ownership as if it was
-        converted in new file mode. See also options "-o" and "-n". This
-        option is only available if dos2unix has support for preserving the
-        user and group ownership of files.
+        Якщо використано цей параметр, перетворення не перериватиметься,
+        якщо у старому режимі файлів не вдасться зберегти параметри
+        належності файла до певного користувача і/або групи. Перетворення
+        продовжуватиметься, а перетворений файл матиме нові параметри
+        власника, такі, наче його перетворено у новому режимі файлів. Див.
+        також параметри "-o" і "-n". Цим параметром можна скористатися, лише
+        якщо у dos2unix передбачено підтримку збереження параметрів
+        належності файлів певним користувачам і групам.
 
     -ascii
         Виконати лише перетворення символів розриву рядків. Типовий режим
@@ -325,10 +326,11 @@
         Не дозволяти зміну власника файла у старому режимі файлів (типова
         поведінка).
 
-        Abort conversion when the user and/or group ownership of the
-        original file can't be preserved in old file mode. See also options
-        "-o" and "-n". This option is only available if dos2unix has support
-        for preserving the user and group ownership of files.
+        Переривати перетворення, якщо у старому режимі файлів не вдасться
+        зберегти параметри належності файла до певного користувача і/або
+        групи. Див. також параметри "-o" і "-n". Цим параметром можна
+        скористатися, лише якщо у dos2unix передбачено підтримку збереження
+        параметрів належності файлів певним користувачам і групам.
 
     -o, --oldfile ФАЙЛ ...
         Застарілий режим обробки. Виконати перетворення файла ФАЙЛ і
