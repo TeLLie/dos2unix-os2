@@ -1,22 +1,23 @@
 # Brazilian Portuguese translation for dos2unix-man
-# Copyright (c) 2017 Erwin Waterlander (msgids)
-# Copyright (C) 2017 Free Software Foundation, Inc.
+# Copyright (c) 2023 Erwin Waterlander (msgids)
+# Copyright (C) 2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the dos2unix package.
-# Rafael Fontenelle <rafaelff@gnome.org>, 2014-2017.
+# Rafael Fontenelle <rafaelff@gnome.org>, 2014-2023.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: dos2unix-man 7.3.6-beta4\n"
+"Project-Id-Version: dos2unix-man 7.4.4-beta4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-20 22:02+0200\n"
-"PO-Revision-Date: 2017-09-22 23:56-0200\n"
+"POT-Creation-Date: 2022-12-12 22:16+0100\n"
+"PO-Revision-Date: 2023-01-12 09:49-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldpbr-translation@lists.sourceforge.net>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Virtaal 1.0.0-beta1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Gtranslator 42.0\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
 #. type: =head1

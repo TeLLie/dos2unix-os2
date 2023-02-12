@@ -58,13 +58,13 @@
     --allow-chown
         Сва власништва датотеке се мењају у режим старе датотеке.
 
-        When this option is used, the conversion will not be aborted when
-        the user and/or group ownership of the original file can't be
-        preserved in old file mode. Conversion will continue and the
-        converted file will get the same new ownership as if it was
-        converted in new file mode. See also options "-o" and "-n". This
-        option is only available if dos2unix has support for preserving the
-        user and group ownership of files.
+        Када се користи ова опција, претварање се неће прекинути када се
+        власништво корисника и/или групе изворне датотеке не може сачувати у
+        старом режиму датотеке. Претварање ће се наставити и претворена
+        датотека ће добити исто ново власништво као да је претворена у
+        режиму нове датотеке. Такође погледајте опције „"-o"“ и „"-n"“. Ова
+        опција је доступна само ако „dos2unix“ има подршку за очување
+        власништва корисника и групе над датотекама.
 
     -ascii
         Претвара само преламање реда. Ово је основни режим претварања.
@@ -304,10 +304,11 @@
         Не дозвољава да се власништва датотеке промене у режиму старе
         датотеке.
 
-        Abort conversion when the user and/or group ownership of the
-        original file can't be preserved in old file mode. See also options
-        "-o" and "-n". This option is only available if dos2unix has support
-        for preserving the user and group ownership of files.
+        Прекида претварање када власништво корисника и/или групе изворне
+        датотеке не може бити очувано у старом режиму датотеке. Такође
+        видите опције „"-o"“ и „"-n"“. Ова опција је доступна само ако
+        „dos2unix“ има подршку за очување власништва корисника и група над
+        датотекама.
 
     -o, --oldfile ДАТОТЕКА ...
         Режим старе датотеке. Претвара датотеку ДАТОТЕКА и преписује излаз у

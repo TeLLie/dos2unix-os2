@@ -4,7 +4,7 @@
  *    Remove cr ('\x0d') characters from a file.
  *
  *  The dos2unix package is distributed under FreeBSD style license.
- *  See also http://www.freebsd.org/copyright/freebsd-license.html
+ *  See also https://www.freebsd.org/copyright/freebsd-license.html
  *  --------
  *
  *  Copyright (C) 2009-2018 Erwin Waterlander
@@ -81,7 +81,7 @@ Copyright (C) 2009-%d Erwin Waterlander\n\
 Copyright (C) 1998      Christian Wurll (Version 3.1)\n\
 Copyright (C) 1998      Bernd Johannes Wuebben (Version 3.0)\n\
 Copyright (C) 1994-1995 Benjamin Lin\n\
-All rights reserved.\n\n"),2022);
+All rights reserved.\n\n"),2023);
   PrintBSDLicense();
 }
 

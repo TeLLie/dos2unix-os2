@@ -1,13 +1,13 @@
 # Swedish translation for dos2unix-man.
-# Copyright © 2014, 2015, 2016, 2017 Erwin Waterlander (msgids)
+# Copyright © 2014, 2015, 2016, 2017, 2022 Erwin Waterlander (msgids)
 # This file is distributed under the same license as the dos2unix package.
-# Sebastian Rasmussen <sebras@gmail.com>, 2014, 2015, 2016, 2017.
+# Sebastian Rasmussen <sebras@gmail.com>, 2014, 2015, 2016, 2017, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dos2unix-man 7.3.6-beta4\n"
-"POT-Creation-Date: 2017-10-10 19:40+0200\n"
-"PO-Revision-Date: 2017-09-23 01:36+0200\n"
+"Project-Id-Version: dos2unix-man 7.4.4-beta4\n"
+"POT-Creation-Date: 2022-12-12 22:16+0100\n"
+"PO-Revision-Date: 2022-12-20 01:24+0100\n"
 "Last-Translator: Sebastian Rasmussen <sebras@gmail.com>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #. type: =head1
 #: dos2unix.pod:52

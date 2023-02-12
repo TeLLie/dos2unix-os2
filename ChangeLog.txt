@@ -1,3 +1,28 @@
+2023-02-11 Erwin Waterlander <waterlan@xs4all.nl>
+	* Version 7.4.4
+
+2023-01-16 Temuri Doghonadze <temuri.doghonadze@gmail.com>
+	* New Georgian translations of UI messages.
+
+2022-12-20 Erwin Waterlander <waterlan@xs4all.nl>
+	* Updated manual translations.
+
+2022-12-12 Seong-ho Cho <darkcircle.0426@gmail.com>
+	* New Korean translation of the manual.
+
+2022-10-12 Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>
+	* New Romanian translations of UI messages and manual.
+
+2022-09-08 Seong-ho Cho <darkcircle.0426@gmail.com>
+	* New Korean translation of the UI messages.
+
+2022-08-13 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c, README.txt: Added link to homepage at sourceforge.
+	* Updated various web addresses.
+
+2022-08-13 Jordi Mas i Hernàndez <jmas@softcatala.org>
+	* New Catalan translation of the UI messages.
+
 2022-06-05 Erwin Waterlander <waterlan@xs4all.nl>
 	* Version 7.4.3
 

@@ -1,5 +1,5 @@
 /*
- *   Copyright (C) 2009-2018 Erwin Waterlander
+ *   Copyright (C) 2009-2022 Erwin Waterlander
  *   All rights reserved.
  *
  *   Redistribution and use in source and binary forms, with or without
@@ -779,7 +779,8 @@ void PrintVersion(const char *progname, const char *localedir)
 #ifdef ENABLE_NLS
   D2U_ANSI_FPRINTF(stdout,"LOCALEDIR: %s\n", localedir);
 #endif
-  D2U_ANSI_FPRINTF(stdout,"http://waterlan.home.xs4all.nl/dos2unix.html\n");
+  D2U_ANSI_FPRINTF(stdout,"https://waterlan.home.xs4all.nl/dos2unix.html\n");
+  D2U_ANSI_FPRINTF(stdout,"https://dos2unix.sourceforge.io/\n");
 }
 
 /* opens file of name ipFN in read only mode
@@ -2735,8 +2736,8 @@ wint_t d2u_putwc(wint_t wc, FILE *f, CFlag *ipFlag, const char *progname)
        * WideCharToMultiByte() produces, and is readable by Notepad.
        *
        * Surrogate halves in UTF-8 are invalid. See also
-       * http://en.wikipedia.org/wiki/UTF-8#Invalid_code_points
-       * http://tools.ietf.org/html/rfc3629#page-5
+       * https://en.wikipedia.org/wiki/UTF-8#Invalid_code_points
+       * https://tools.ietf.org/html/rfc3629#page-5
        * It is a bug in (some implementations of) wcstombs().
        * On Cygwin 1.7 wcstombs() produces correct UTF-8 from UTF-16 surrogate pairs.
        */
