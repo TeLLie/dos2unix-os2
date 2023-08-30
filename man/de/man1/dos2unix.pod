@@ -151,6 +151,12 @@ Wenn die Methode C<utf8bom> verwendet wird, dann wird dem UTF-8-Text eine BOM (M
 
 Die Standardkodierung kann durch Setzen der Umgebungsvariable DOS2UNIX_DISPLAY_ENC auf C<unicode>, C<unicodebom>, C<utf8> oder C<utf8> geändert werden.
 
+=item B<-e, --add-eol>
+
+Add a line break to the last line if there isn't one. This works for every conversion.
+
+A file converted from DOS to Unix format may lack a line break on the last line. There are text editors that write text files without a line break on the last line. Some Unix programs have problems processing these files, because the POSIX standard defines that every line in a text file must end with a terminating newline character. For instance concatenating files may not give the expected result.
+
 =item B<-f, --force>
 
 erzwingt die Umwandlung von Binärdateien.
@@ -294,7 +300,19 @@ verhindert die Änderung des Eigentümers der Datei im Alte-Datei-Modus (Voreins
 
 bricht die Umwandlung ab, wenn der Eigentümer und/oder die Gruppe der Originaldatei im Alte-Datei-Modus nicht erhalten werden kann. Siehe auch die Optionen C<-o> und C<-n>. Diese Option ist nur verfügbar, wenn dos2unix über Unterstützung für die Erhaltung des Eigentümers und der Gruppe von Dateien verfügt.
 
-=item B<-o, --oldfile DATEI …>
+=item B<--no-add-eol>
+
+Do not add a line break to the last line if there isn't one.
+
+=item B<-O, --to-stdout>
+
+Write to standard output, like a Unix filter. Use option C<-o> to go back to old file (in-place) mode.
+
+Combined with option C<-e> files can be properly concatenated. No merged last and first lines, and no Unicode byte order marks in the middle of the concatenated file. Example:
+
+    dos2unix -e -O file1.txt file2.txt > output.txt
+
+=item B<-o, --oldfile FILE ...>
 
 Alte-Datei-Modus. Die DATEI wird umgewandelt und durch die Ausgabedatei überschrieben. Per Vorgabe werden Umwandlungen in diesem Modus ausgeführt. Platzhalter sind verwendbar.
 
