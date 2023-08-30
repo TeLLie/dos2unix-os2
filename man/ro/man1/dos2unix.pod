@@ -151,6 +151,12 @@ Când se folosește metoda C<utf8bom>, textul UTF-8 va fi precedat de un BOM (�
 
 Codificarea implicită poate fi schimbată cu variabila de mediu DOS2UNIX_DISPLAY_ENC definindu-i valoarea: C<unicode>, C<unicodebom>, C<utf8> sau C<utf8bom>.
 
+=item B<-e, --add-eol>
+
+Adaugă o întrerupere de linie la ultima linie, dacă nu există una. Acest lucru funcționează pentru fiecare conversie.
+
+Un fișier convertit din formatul DOS în formatul Unix poate să nu aibă o întrerupere de linie pe ultima linie. Există editoare de text care scriu fișiere de text fără o întrerupere de linie pe ultima linie. Unele programe Unix au probleme în procesarea acestor fișiere, deoarece standardul POSIX definește că fiecare linie dintr-un fișier text trebuie să se încheie cu un caracter de sfârșit de linie nouă. De exemplu, concatenarea fișierelor poate să nu dea rezultatul așteptat.
+
 =item B<-f, --force>
 
 Forțează conversia fișierelor binare.
@@ -293,6 +299,18 @@ Persoana care începe conversia în modul-fișier_nou (pereche) va fi proprietar
 Nu permite schimbarea proprietarului fișierului în modul-fișier_vechi (implicit).
 
 Anulează conversia atunci când utilizatorul și/sau grupul proprietar al fișierului original nu poate fi păstrat în modul-fișier_vechi. A se vedea, de asemenea, opțiunile C<-o> și C<-n>. Această opțiune este disponibilă doar dacă «dos2unix» are suport pentru păstrarea dreptului de proprietate asupra fișierelor de către utilizator și grup.
+
+=item B<--no-add-eol>
+
+Nu adaugă o întrerupere de linie la ultima linie, dacă nu există una.
+
+=item B<-O, --to-stdout>
+
+Scrie la ieșirea standard, ca un filtru Unix. Folosiți opțiunea C<-o> pentru a reveni la modul-fișier_vechi (în același loc / în același fișier).
+
+În combinație cu opțiunea C<-e>, fișierele pot fi concatenate în mod corespunzător. Nu se fuzionează ultima și prima linie și nici marcajele de ordine a octeților (BOM) Unicode în mijlocul fișierului concatenat. Exemplu:
+
+    dos2unix -e -O fișier1.txt fișier2.txt > fișier_ieșire.txt
 
 =item B<-o, --oldfile FIȘIER ...>
 

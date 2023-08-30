@@ -1,3 +1,16 @@
+2023-08-29: Version 7.5.1
+
+  * Fixed problem of converting a symbolic link target
+    that is on another file system.
+  * Updated Chinese and Serbian translations.
+
+2023-05-17: Version 7.5.0
+
+  * New option -e, --add-eol to add a line break to the last
+    line if there isn't one. Option --no-add-eol disables the
+    feature.
+  * New option -O, --to-stdout to write to standard output.
+
 2023-02-11: Version 7.4.4
 
   * New Catalan, Georgian, Romanian, and Korean translations of the

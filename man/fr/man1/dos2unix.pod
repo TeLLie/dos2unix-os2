@@ -151,6 +151,12 @@ Quand la méthode C<utf8bom> est utilisée, le texte UTF-8 est précédé d'une 
 
 L'encodage par défaut peut être changé en assignant la valeur C<unicode>, C<unicodebom>, C<utf8> ou C<utf8bom> à la variable d'environnement DOS2UNIX_DISPLAY_ENC.
 
+=item B<-e, --add-eol>
+
+Ajoute un saut de ligne à la dernière ligne si elle n'en a pas déjà un. Cela fonctionne avec toutes les conversions.
+
+Un fichier converti de DOS vers le format Unix peut ne pas avoir de saut de ligne à la dernière ligne. Il existe des éditeurs de texte qui écrivent le fichier texte sans saut de ligne à la dernière ligne. Certains programmes Unix ont des difficultés à traiter ces fichiers car le standard POSIX défini que chaque ligne d'un fichier texte doit être terminé par le caractère de nouvelle ligne. Par exemple, concaténer des fichiers peut ne pas donner le résultat attendu.
+
 =item B<-f, --force>
 
 Force la conversion de fichiers binaires.
@@ -293,6 +299,18 @@ La personne qui démarre la conversion dans le nouveau mode (pairé) des fichier
 Ne pas autoriser le changement du propriétaire du fichier dans l'ancien mode de fichier (par défaut).
 
 Interrompt la conversion si l'utilisateur ou le groupe propriétaire du fichier original ne peuvent pas être préservés dans l'ancien mode de fichier. Voyez aussi les options C<-o> et C<-n>. Cette option est uniquement présente si dos2unix dispose des fonctionnalités pour préserver l'utilisateur ou le groupe propriétaire des fichiers.
+
+=item B<--no-add-eol>
+
+N'ajoute pas de saut de ligne à la dernière ligne s'il n'y en a pas.
+
+=item B<-O, --to-stdout>
+
+Écrit vers la sortie standard, comme un filtre Unix. Utilisez l'option C<-o> pour revenir au mode de l'ancien fichier (en place).
+
+Combiné avec l'option C<-e>, les fichiers peuvent être concaténés correctement. Les première et dernière lignes ne sont pas fusionnées et il n'y a pas de marque d'ordre des octets au milieu du fichier concaténé. S<Exemple :>
+
+    dos2unix -e -O fichier1.txt fichier2.txt > sortie.txt
 
 =item B<-o, --oldfile FICHIER …>
 

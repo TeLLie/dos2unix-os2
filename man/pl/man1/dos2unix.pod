@@ -53,7 +53,7 @@ Potraktowanie wszystkich kolejnych opcji jako nazw plików. Tej opcji należy u�
 
 Lub w trybie nowego pliku:
 
-    dos2unix -n -- -foo out.txt
+    dos2unix -n -- -foo wynik.txt
 
 =item B<--allow-chown>
 
@@ -150,6 +150,12 @@ W przypadku użycia metody C<utf8bom>, tekst w UTF-8 jest poprzedzony znakiem BO
 =back
 
 Domyślne kodowanie można zmienić przy użyciu zmiennej środowiskowej DOS2UNIX_DISPLAY_ENC, ustawiając ją na C<unicode>, C<unicodebom>, C<utf8> lub C<utf8bom>.
+
+=item B<-e, --add-eol>
+
+Dodawanie znaku końca linii do ostatniej linii, jeśli ta go nie zawiera. Działa przy każdej konwersji.
+
+Pliki przekształcone z formatu DOS do Uniksa mogą nie mieć w ostatnim wierszu znaku końca linii. Istnieją edytory tekstu zapisujące pliki tekstowe bez znaku końca wiersza w ostatniej linii. Niektóre programy uniksowe mają problemy przy przetwarzaniu takich plików, ponieważ standard POSIX określa, że każdy wiersz pliku tekstowego musi kończyć się znakiem końca linii. Na przykład łączenie plików może nie dać oczekiwanego wyniku.
 
 =item B<-f, --force>
 
@@ -294,6 +300,18 @@ Bez zezwolenia na zmianę właściciela pliku w trybie starego pliku (domyślne)
 
 Przerwanie konwersji, jeżeli użytkownik lub grupa oryginalnego pliku nie może być zachowana w trybie starego pliku. P. także opcje C<-o> oraz C<-n>. Ta opcja jest dostępna tylko jeśli dos2unix ma obsługę zachowywania użytkownika i grupy plików.
 
+=item B<--no-add-eol>
+
+Bez dodawania znaku końca linii do ostatniego wiersza, jeśli ten go nie zawiera.
+
+=item B<-O, --to-stdout>
+
+Zapis na standardowe wyjście, jak filtr uniksowy. Opcja C<-o> przywróci tryb starego pliku (zamianę z miejscu).
+
+W połączeniu z opcją C<-e> pliki mogą być właściwie łączone - bez połączonych ostatnich i pierwszych linii oraz znaków unikodowych BOM w środku połączonego pliku. Przykład:
+
+    dos2unix -e -O plik1.txt plik2.txt > wynik.txt
+
 =item B<-o, --oldfile PLIK ...>
 
 Tryb starego pliku. Konwersja PLIKU i nadpisanie go wyjściem. Program działa domyślnie w tym trybie. Można używać masek.
@@ -402,35 +420,35 @@ Kilka przykładów:
 
 Konwersja z domyślnej strony kodowej DOS do uniksowego Latin-1:
 
-    dos2unix -iso -n in.txt out.txt
+    dos2unix -iso -n wejście.txt wynik.txt
 
 Konwersja ze strony kodowej DOS CP850 do uniksowego Latin-1:
 
-    dos2unix -850 -n in.txt out.txt
+    dos2unix -850 -n wejście.txt wynik.txt
 
 Konwersja ze strony kodowej Windows CP1252 do uniksowego Latin-1:
 
-    dos2unix -1252 -n in.txt out.txt
+    dos2unix -1252 -n wejście.txt wynik.txt
 
 Konwersja ze strony kodowej Windows CP1252 do uniksowego UTF-8 (Unicode):
 
-    iconv -f CP1252 -t UTF-8 in.txt | dos2unix > out.txt
+    iconv -f CP1252 -t UTF-8 wejście.txt | dos2unix > wynik.txt
 
 Konwersa z uniksowego Latin-1 do domyślnej strony kodowej DOS:
 
-    unix2dos -iso -n in.txt out.txt
+    unix2dos -iso -n wejście.txt wynik.txt
 
 Konwersja z uniksowego Latin-1 do strony kodowej DOS CP850:
 
-    unix2dos -850 -n in.txt out.txt
+    unix2dos -850 -n wejście.txt wynik.txt
 
 Konwersja z uniksowego Latin-1 do strony kodowej Windows CP1252:
 
-    unix2dos -1252 -n in.txt out.txt
+    unix2dos -1252 -n wejście.txt wynik.txt
 
 Konwersja z uniksowego UTF-8 (Unicode) do strony kodowej Windows CP1252:
 
-    unix2dos < in.txt | iconv -f UTF-8 -t CP1252 > out.txt
+    unix2dos < wejście.txt | iconv -f UTF-8 -t CP1252 > wynik.txt
 
 Więcej pod adresem L<http://czyborra.com/charsets/codepages.html> oraz L<http://czyborra.com/charsets/iso8859.html>.
 
@@ -488,19 +506,19 @@ Przy wyświetlaniu nazw plików Unicode w konsoli Windows występuje kilka probl
 
 Konwersja pliku UTF-16 (z BOM) z formatu Windows do uniksowego UTF-8:
 
-    dos2unix -n in.txt out.txt
+    dos2unix -n wejście.txt wynik.txt
 
 Konwersja pliku UTF-16LE (bez BOM) z formatu Windows do uniksowego UTF-8:
 
-    dos2unix -ul -n in.txt out.txt
+    dos2unix -ul -n wejście.txt wynik.txt
 
 Konwersja z uniksowego UTF-8 do UTF-8 z BOM dla Windows:
 
-    unix2dos -m -n in.txt out.txt
+    unix2dos -m -n wejście.txt wynik.txt
 
 Konwersja z uniksowego UTF-8 do UTF-16 dla Windows:
 
-    unix2dos < in.txt | iconv -f UTF-8 -t UTF-16 > out.txt
+    unix2dos < wejście.txt | iconv -f UTF-8 -t UTF-16 > wynik.txt
 
 =head1 GB18030
 

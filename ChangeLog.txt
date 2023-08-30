@@ -1,3 +1,23 @@
+2023-08-29 Erwin Waterlander <waterlan@xs4all.nl>
+	* Version 7.5.1
+
+2023-06-01 Erwin Waterlander <waterlan@xs4all.nl>
+	* Fixed problem of converting a symbolic link target that
+	  is on another file system. Thanks to report of fdamien12.
+
+2023-05-17 Erwin Waterlander <waterlan@xs4all.nl>
+	* Version 7.5.0
+
+2023-04-16 Erwin Waterlander <waterlan@xs4all.nl>
+	* New option -O, --to-stdout to write to standard output.
+	  Thanks to Victor.
+
+2023-04-06 Erwin Waterlander <waterlan@xs4all.nl>
+	* New option -e, --add-eol to add a line break to the last
+	  line if there isn't one. Option --no-add-eol disables the
+	  feature. Thanks to Anonymous.
+	  See https://sourceforge.net/p/dos2unix/feature-requests/6/
+
 2023-02-11 Erwin Waterlander <waterlan@xs4all.nl>
 	* Version 7.4.4
 
@@ -1154,7 +1174,7 @@
 	  chowning *to* the group is not - and this will make unix2dos fail when it
 	  tries to restore the permissions.
 	  Thanks to Wolf Geldmacher.
-	  See bug report 3444337, https://sourceforge.net/tracker/?func=detail&atid=1234808&aid=3444337&group_id=292083
+	  See bug report 3444337, https://sourceforge.net/p/dos2unix/bugs/8/
 
 2011-11-16 Erwin Waterlander <waterlan@xs4all.nl>
 	* README.txt, man/man1/dos2unix.pod: Freshmeat changed name to Freecode.
@@ -1185,7 +1205,7 @@
 	  on the input file, dos2unix changes owner, group and umask in old
 	  file mode to the other user's owner, group and umask who runs
 	  dos2unix. Fixed only for Unix. Thanks to Christopher Williams.
-	  See http://sourceforge.net/tracker/?func=detail&aid=3327171&group_id=292083&atid=1234808
+	  See https://sourceforge.net/p/dos2unix/bugs/7/
 	* Keep permissions also on Windows. Use chmod() i.s.o. fchmod().
 
 2011-06-16 Erwin Waterlander <waterlan@xs4all.nl>
