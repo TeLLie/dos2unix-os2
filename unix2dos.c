@@ -100,7 +100,7 @@ wint_t AddExtraDOSNewLineW(FILE* ipOutF, CFlag *ipFlag, wint_t CurChar, wint_t P
 }
 #endif
 
-int PutDOSNewLine(FILE *ipOutF, CFlag *ipFlag, const char *progname) 
+int PutDOSNewLine(FILE *ipOutF, CFlag *ipFlag, const char *progname)
 {
   if (fputc('\x0d', ipOutF) == EOF)  {
     d2u_putc_error(ipFlag, progname);

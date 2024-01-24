@@ -277,7 +277,7 @@ ifeq (os/2,$(D2U_OS))
         LDFLAGS_EXTRA = -Zomf -Zargs-wild -Zhigh-mem
         DIST_TARGET = dist-zip
 ifdef ENABLE_NLS
-        LIBS_EXTRA += -lintl 
+        LIBS_EXTRA += -lintl
 endif
 endif
 
