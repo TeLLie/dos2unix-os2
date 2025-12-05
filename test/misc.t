@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 # Requires perl-Test-Simple installation.
-use Test::Simple tests => 13;
+use Test::Simple tests => 17;
 
 $suffix = "";
 if (-e "../dos2unix.exe") {
@@ -40,6 +40,22 @@ if (-e "out_bin.txt") {
   $exists = "0";
 }
 ok( $exists == 0, 'unix2dos skip binary file.' );
+
+system("$DOS2UNIX -v -n utf16len.txt out.txt");
+$result = ($? >> 8);
+ok( $result == 1, 'Dos2unix returns error on binary input.' );
+
+system("$UNIX2DOS -v -n utf16len.txt out.txt");
+$result = ($? >> 8);
+ok( $result == 1, 'Unix2dos returns error on binary input.' );
+
+system("$DOS2UNIX -v -f -n utf16len.txt out.txt");
+$result = ($? >> 8);
+ok( $result == 0, 'Dos2unix returns zero on forced binary file conversion.' );
+
+system("$UNIX2DOS -v -f -n utf16len.txt out.txt");
+$result = ($? >> 8);
+ok( $result == 0, 'Unix2dos returns zero on forced binary file conversion.' );
 
 system("$DOS2UNIX -v < utf16len.txt > out.txt");
 $result = ($? >> 8);

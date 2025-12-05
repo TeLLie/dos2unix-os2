@@ -7,7 +7,7 @@ SINOPSE
         unix2dos [opções] [ARQUIVO ...] [-n ARQENT ARQSAÍDA ...]
 
 DESCRIÇÃO
-    O pacote Dos2unix inclui utilitários de "dos2unix" e "unix2dos" para
+    O pacote dos2unix inclui utilitários de "dos2unix" e "unix2dos" para
     converter arquivos texto nos formatos DOS ou Mac para formato Unix e
     vice-versa.
 
@@ -19,7 +19,7 @@ DESCRIÇÃO
     Carriage Return (CR). Hoje em dia, Mac OS usa quebras de linha no estilo
     do Unix (LF).
 
-    Além das quebras de linhas, Dos2unix também pode converter as
+    Além das quebras de linhas, dos2unix também pode converter as
     codificações de arquivos. Algumas poucas páginas podem ser convertidos
     para Latin-1 para Unix. E arquivos Unicode do Windows (UTF-16) podem ser
     convertidos para arquivos Unicode do Unix (UTF-8).
@@ -35,7 +35,7 @@ DESCRIÇÃO
     pode ser escrita para o alvo das ligações simbólicas. Não há suporte às
     ligações simbólicas do Windows.
 
-    Dos2unix foi modelado seguindo dos2unix do SunOS/Solaris. Há uma
+    O dos2unix foi modelado seguindo dos2unix do SunOS/Solaris. Há uma
     diferença importante em relação à versão original do SunOS/Solaris. Essa
     versão faz conversão no-lugar (modo de arquivo antigo) por padrão,
     enquanto a versão original do SunOS/Solaris fornecia suporte apenas a
@@ -68,8 +68,7 @@ OPÇÕES
         preservação da propriedade do usuário e do grupo de arquivos.
 
     -ascii
-        Converte apenas as quebras de linhas. Esse é o modo de conversão
-        padrão.
+        Modo de conversão padrão. Veja também a seção MODOS DE CONVERSÃO.
 
     -iso
         Conversão entre conjunto de caractere do DOS e ISO-8859-1. Veja
@@ -181,16 +180,16 @@ OPÇÕES
         "utf8" ou "utf8bom".
 
     -e, --add-eol
-        Add a line break to the last line if there isn't one. This works for
-        every conversion.
+        Adiciona uma quebra de linha à última linha se não houver uma. Isso
+        funciona para todas as conversões.
 
-        A file converted from DOS to Unix format may lack a line break on
-        the last line. There are text editors that write text files without
-        a line break on the last line. Some Unix programs have problems
-        processing these files, because the POSIX standard defines that
-        every line in a text file must end with a terminating newline
-        character. For instance concatenating files may not give the
-        expected result.
+        Um arquivo convertido do formato DOS para Unix pode não ter uma
+        quebra de linha na última linha. Existem editores de texto que
+        escrevem arquivos de texto sem uma quebra de linha na última linha.
+        Alguns programas Unix têm problemas para processar esses arquivos,
+        porque o padrão POSIX define que cada linha em um arquivo de texto
+        deve terminar com um caractere de nova linha de terminação. Por
+        exemplo, concatenar arquivos pode não dar o resultado esperado.
 
     -f, --force
         Força a conversão de arquivos binários.
@@ -226,6 +225,17 @@ OPÇÕES
         Note que em algumas vezes um arquivo binário pode ser confundido com
         um arquivo texto. Veja também a opção "-s".
 
+        Se, além disso, a opção "-e" ou "--add-eol" for usada, o tipo de
+        quebra de linha da última linha também será impresso, ou "noeol" se
+        não houver nenhuma.
+
+        Exemplo de saída:
+
+             6       0       0  no_bom    text   dos     dos.txt
+             0       6       0  no_bom    text   unix    unix.txt
+             0       0       6  no_bom    text   mac     mac.txt
+             1       0       0  no_bom    text   noeol   noeol_dos.txt
+
         Opcionalmente, opções extra podem ser definidas para alterar a
         saída. Uma ou mais opções podem ser adicionadas.
 
@@ -245,11 +255,18 @@ OPÇÕES
 
         t   Exibe se arquivo é texto ou binário.
 
+        e   Imprime o tipo de quebra de linha da última linha, ou "noeol" se
+            não houver nenhuma.
+
         c   Exibe apenas os arquivos que seriam convertidos.
 
             Com a opção "c", dos2unix vai exibir apenas os arquivos que
             contêm quebras de linha do DOS, unix2dos vai exibir apenas os
             nomes de arquivos que contêm quebras de linha do Unix.
+
+            Se, além disso, a opção "-e" ou "--add-eol" for usada, os
+            arquivos que não tiverem uma quebra de linha na última linha
+            também serão impressos.
 
         h   Exibe um cabeçalho.
 
@@ -276,6 +293,11 @@ OPÇÕES
         Lista os arquivos que possuem quebras de linha do Unix:
 
             unix2dos -ic *.txt
+
+        Lista os arquivos que têm quebras de linha DOS ou não têm quebra de
+        linha na última linha:
+
+            dos2unix -e -ic *.txt
 
         Converte apenas arquivos que possuem quebras de linha do DOS e não
         altera outros arquivos:
@@ -336,19 +358,20 @@ OPÇÕES
         e do grupo de arquivos.
 
     --no-add-eol
-        Do not add a line break to the last line if there isn't one.
+        Não adiciona uma quebra de linha à última linha se não houver uma.
 
     -O, --to-stdout
-        Write to standard output, like a Unix filter. Use option "-o" to go
-        back to old file (in-place) mode.
+        Escreve na saída padrão, como um filtro Unix. Use a opção "-o" para
+        voltar ao modo de arquivo antigo (in-place).
 
-        Combined with option "-e" files can be properly concatenated. No
-        merged last and first lines, and no Unicode byte order marks in the
-        middle of the concatenated file. Example:
+        Combinado com a opção "-e", os arquivos podem ser concatenados
+        corretamente. Nenhuma última e primeira linhas mescladas e nenhuma
+        marca de ordem de bytes Unicode no meio do arquivo concatenado.
+        Exemplo:
 
-            dos2unix -e -O file1.txt file2.txt > output.txt
+            dos2unix -e -O arquivo1.txt arquivo2.txt > saída.txt
 
-    -o, --oldfile FILE ...
+    -o, --oldfile ARQUIVO ...
         Modo de arquivo antigo. Converte o arquivo ARQUIVO e o sobrescreve
         com a saída. O programa, por padrão, executa neste modo. Nomes
         coringas podem ser usados.
@@ -454,8 +477,8 @@ OPÇÕES
         Exibe informação da versão e sai.
 
 MODO MAC
-    No modo normal, as quebras de linhas são convertidas de DOS para Unix e
-    vice-versa. Quebras de linha do Mac não são convertidas.
+    Por padrão, as quebras de linha são convertidas de DOS para Unix e
+    vice-versa. As quebras de linha do Mac não são convertidas.
 
     No modo Mac, quebras de linha são convertidas de Mac para Unix e
     vice-versa. Quebras de linha do DOS não são alteradas.
@@ -465,12 +488,17 @@ MODO MAC
 
 MODOS DE CONVERSÃO
     ascii
-        No modo "ascii", apenas as quebras de linha são convertidas. Esse é
-        o modo de conversão padrão.
+        Este é o modo de conversão padrão. Este modo é para converter
+        arquivos codificados ASCII e compatíveis com ASCII, como UTF-8.
+        Habilitar o modo ascii desabilita o modo 7bit e iso.
 
-        Apesar do nome deste modo ser ASCII, o qual é um padrão de 7 bits, o
-        modo é em verdade 8 bits. Sempre use este modo quando quiser
-        converter arquivos Unicode UTF-8.
+        Se dos2unix tiver suporte a UTF-16, os arquivos codificados em
+        UTF-16 serão convertidos para a codificação de caracteres de
+        localidade atual em sistemas POSIX e para UTF-8 no Windows.
+        Habilitar o modo ascii desabilita a opção de manter a codificação
+        UTF-16 ("-u") e as opções para assumir a entrada UTF-16 ("-ul" e
+        "-ub"). Para ver se dos2unix tem suporte a UTF-16, digite "dos2unix
+        -V". Veja também a seção UNICODE.
 
     7bit
         Neste modo todos os caracteres não-ASCII de 8 bits (com valores
@@ -542,13 +570,13 @@ UNICODE
 
   Conversão
     Arquivos texto em Unicode pode ter quebras de linha DOS, Unix ou Mac,
-    como arquivos texto comuns.
+    como arquivos texto em ASCII.
 
     Todas as versões do dos2unix e unix2dos podem converter arquivos
     codificados em UTF-8 porque UTF-8 foi projetado para ter compatibilidade
     reversa com ASCII.
 
-    Dos2unix e unix2dos com suporte a Unicode UTF-16 podem ler arquivos
+    dos2unix e unix2dos com suporte a Unicode UTF-16 podem ler arquivos
     texto codificados em little e big endian UTF-16. Para ver se dos2unix
     foi compilado com suporte a UTF-16, digite "dos2unix -V".
 
@@ -570,37 +598,37 @@ UNICODE
     codificação UTF-16 que o arquivo de saída. A opção "-u" evita conversão
     para UTF-8.
 
-    Dos2unix e unix2dos não possuem opção para converter arquivos UTF-8 para
+    dos2unix e unix2dos não possuem opção para converter arquivos UTF-8 para
     UTF-16.
 
     Modo de conversão ISO e 7 bits não funcionam em arquivos UTF-16.
 
   Marca de ordem de byte
-    No Windows, arquivos Unicode normalmente têm uma Marca de Ordem de Byte
-    (BOM), porque muitos programas (incluindo o Bloco de Notas) adiciona
-    BOMs por padrão. Veja também
-    <http://en.wikipedia.org/wiki/Byte_order_mark>.
+    No Windows, arquivos texto em Unicode normalmente têm uma Marca de Ordem
+    de Byte (BOM), porque muitos programas Windows (incluindo o Bloco de
+    Notas) adiciona BOMs por padrão. Veja também
+    <https://pt.wikipedia.org/wiki/Marca_de_ordem_de_byte>.
 
     No Unix, arquivos Unicode normalmente não têm BOM. Presume-se que
     arquivos texto são codificados na codificação de caracteres da
     localização.
 
-    Dos2unix pode detectar apenas se um arquivo está no formato UTF-16 se o
+    dos2unix pode detectar apenas se um arquivo está no formato UTF-16 se o
     arquivo tiver BOM. Quando um arquivo UTF-16 não tiver BOM, dos2unix vai
     ver se o arquivo é um arquivo binário.
 
     Use a opção "-ul" ou "-ub" para converter um arquivo UTF-16 sem BOM.
 
-    Dos2unix escreve por padrão nenhum BOM no arquivo de saída. Com a opção
-    "-b", o Dos2unix escreve um BOM quando o arquivo de entrada possuir BOM.
+    dos2unix escreve por padrão nenhum BOM no arquivo de saída. Com a opção
+    "-b", o dos2unix escreve um BOM quando o arquivo de entrada possuir BOM.
 
-    Unix2dos escreve por padrão um BOM no arquivo de saída quando o arquivo
+    unix2dos escreve por padrão um BOM no arquivo de saída quando o arquivo
     de entrada tem BOM. Use a opção "-m" para remover BOM.
 
-    Dos2unix e unix2dos sempre escrevem BOM quando a opção "-m" é usada.
+    dos2unix e unix2dos sempre escrevem BOM quando a opção "-m" é usada.
 
   Nomes de arquivos Unicode no Windows
-    Dos2unix possui um suporte opcional para leitura e escrita de nomes de
+    dos2unix possui um suporte opcional para leitura e escrita de nomes de
     arquivos Unicode no Prompt de Comando Windows. Isso significa que
     dos2unix pode abrir arquivos que possuam caracteres no nome que não são
     parte da página de código ANSI padrão do sistema. Para ver se dos2unix
@@ -630,7 +658,7 @@ UNICODE
         unix2dos < entrada.txt | iconv -f UTF-8 -t UTF-16 > saída.txt
 
 GB18030
-    GB18030 é um padrão governamental chinês. Um subconjunto obrigatório do
+    GB18030 é um padrão do governo chinês. Um subconjunto obrigatório do
     padrão GB18030 é exigido oficialmente para todos os produtos de software
     vendidos na China. Veja também <http://en.wikipedia.org/wiki/GB_18030>.
 
@@ -751,22 +779,22 @@ LOCALIZAÇÃO
 
         Para a lista completa de códigos de idioma e país, veja o manual do
         gettext:
-        <http://www.gnu.org/software/gettext/manual/html_node/Usual-Language
-        -Codes.html>
+        <https://www.gnu.org/software/gettext/manual/html_node/Usual-Languag
+        e-Codes.html>
 
         Nos sistemas Unix, você pode usar o comando locale(1) para obter
         informação específica da localização.
 
     LANGUAGE
         Com a variável de ambiente LANGUAGE, você pode especificar uma lista
-        de prioridades de idiomas, separada por vírgulas. Dos2unix fornece
+        de prioridades de idiomas, separada por vírgulas. O dos2unix fornece
         preferência à LANGUAGE sobre LANG. Por exemplo, primeiro holandês e,
         então, alemão: "LANGUAGE=nl:de". Você primeiro tem que habilitar
-        localização, definindo LANG (ou LC_ALL) para um valor diferente de
-        "C", antes que você possa usar uma lista de prioridade de idioma por
+        localização, definindo LANG (ou LC_ALL) para valor diferente de "C",
+        antes que você possa usar uma lista de prioridade de idiomas por
         meio da variável LANGUAGE. Veja também o manual do gettext:
-        <http://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-v
-        ariable.html>
+        <https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-
+        variable.html>
 
         Se você selecionou um idioma que não está disponível, você vai terá
         as mensagens em inglês (padrão).
@@ -790,13 +818,13 @@ VALOR RETORNADO
     linha de comando erradas são usadas.
 
 PADRÕES
-    <http://en.wikipedia.org/wiki/Text_file>
+    <https://pt.wikipedia.org/wiki/Arquivo_de_texto>
 
-    <http://en.wikipedia.org/wiki/Carriage_return>
+    <https://pt.wikipedia.org/wiki/Retorno_de_carro>
 
-    <http://en.wikipedia.org/wiki/Newline>
+    <https://pt.wikipedia.org/wiki/Nova_linha>
 
-    <http://en.wikipedia.org/wiki/Unicode>
+    <https://pt.wikipedia.org/wiki/Unicode>
 
 AUTORES
     Benjamin Lin - <blin@socs.uts.edu.au> Bernd Johannes Wuebben (modo
@@ -804,9 +832,9 @@ AUTORES
     extra) - <wurll@ira.uka.de>, Erwin Waterlander - <waterlan@xs4all.nl>
     (mantenedor)
 
-    Página do projeto: <http://waterlan.home.xs4all.nl/dos2unix.html>
+    Página do projeto: <https://waterlan.home.xs4all.nl/dos2unix.html>
 
-    Página do SourceForge: <http://sourceforge.net/projects/dos2unix/>
+    Página do SourceForge: <https://sourceforge.net/projects/dos2unix/>
 
 VEJA TAMBÉM
     file(1) find(1) iconv(1) locale(1) xargs(1)

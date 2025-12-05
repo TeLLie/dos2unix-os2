@@ -1,5 +1,5 @@
 /*
- *   Copyright (C) 2009-2023 Erwin Waterlander
+ *   Copyright (C) 2009-2025 Erwin Waterlander
  *   All rights reserved.
  *
  *   Redistribution and use in source and binary forms, with or without
@@ -162,11 +162,11 @@ int d2u_MultiByteToWideChar(UINT CodePage, DWORD dwFlags, LPCSTR lpMultiByteStr,
  * have names that can't be encoded in the default system Windows ANSI code
  * page.
  *
- * Dos2unix for Windows with Unicode file name support translates all directory
+ * dos2unix for Windows with Unicode file name support translates all directory
  * names to UTF-8, to be able to  work with char type strings.  This is also
  * done to keep the code portable.
  *
- * Dos2unix's messages are encoded in the default Windows ANSI code page, which
+ * dos2unix's messages are encoded in the default Windows ANSI code page, which
  * can be translated with gettext. Gettext/libintl recodes messages (format) to
  * the system default ANSI code page.
  *
@@ -649,7 +649,7 @@ void PrintUsage(const char *progname)
 #ifndef NO_CHOWN
   D2U_ANSI_FPRINTF(stdout,_(" --allow-chown         allow file ownership change\n"));
 #endif
-  D2U_ANSI_FPRINTF(stdout,_(" -ascii                convert only line breaks (default)\n"));
+  D2U_ANSI_FPRINTF(stdout,_(" -ascii                default conversion mode\n"));
   D2U_ANSI_FPRINTF(stdout,_(" -iso                  conversion between DOS and ISO-8859-1 character set\n"));
   D2U_ANSI_FPRINTF(stdout,_("   -1252               use Windows code page 1252 (Western European)\n"));
   D2U_ANSI_FPRINTF(stdout,_("   -437                use DOS code page 437 (US) (default)\n"));
@@ -724,11 +724,11 @@ void PrintVersion(const char *progname, const char *localedir)
   D2U_ANSI_FPRINTF(stdout,"VER_AUTHOR: %s\n", VER_AUTHOR);
 #endif
 #if defined(__WATCOMC__) && defined(__I86__)
-  D2U_ANSI_FPRINTF(stdout,"%s", _("DOS 16 bit version (WATCOMC).\n"));
+  D2U_ANSI_FPRINTF(stdout,"%s", _("DOS 16 bit version (Watcom C).\n"));
 #elif defined(__TURBOC__) && defined(__MSDOS__)
-  D2U_ANSI_FPRINTF(stdout,"%s", _("DOS 16 bit version (TURBOC).\n"));
+  D2U_ANSI_FPRINTF(stdout,"%s", _("DOS 16 bit version (Turbo C).\n"));
 #elif defined(__WATCOMC__) && defined(__DOS__)
-  D2U_ANSI_FPRINTF(stdout,"%s", _("DOS 32 bit version (WATCOMC).\n"));
+  D2U_ANSI_FPRINTF(stdout,"%s", _("DOS 32 bit version (Watcom C).\n"));
 #elif defined(__DJGPP__)
   D2U_ANSI_FPRINTF(stdout,"%s", _("DOS 32 bit version (DJGPP).\n"));
 #elif defined(__MSYS__)
@@ -738,7 +738,7 @@ void PrintVersion(const char *progname, const char *localedir)
 #elif defined(__WIN64__) && defined(__MINGW64__)
   D2U_ANSI_FPRINTF(stdout,"%s", _("Windows 64 bit version (MinGW-w64).\n"));
 #elif defined(__WATCOMC__) && defined(__NT__)
-  D2U_ANSI_FPRINTF(stdout,"%s", _("Windows 32 bit version (WATCOMC).\n"));
+  D2U_ANSI_FPRINTF(stdout,"%s", _("Windows 32 bit version (Watcom C).\n"));
 #elif defined(_WIN32) && defined(__MINGW32__) && (D2U_COMPILER == MINGW32_W64)
   D2U_ANSI_FPRINTF(stdout,"%s", _("Windows 32 bit version (MinGW-w64).\n"));
 #elif defined(_WIN32) && defined(__MINGW32__)
@@ -748,7 +748,7 @@ void PrintVersion(const char *progname, const char *localedir)
 #elif defined(_WIN32) && defined(_MSC_VER)
   D2U_ANSI_FPRINTF(stdout,_("Windows 32 bit version (MSVC %d).\n"),_MSC_VER);
 #elif defined (__OS2__) && defined(__WATCOMC__) /* OS/2 Warp */
-  D2U_ANSI_FPRINTF(stdout,"%s", _("OS/2 version (WATCOMC).\n"));
+  D2U_ANSI_FPRINTF(stdout,"%s", _("OS/2 version (Watcom C).\n"));
 #elif defined (__OS2__) && defined(__EMX__) /* OS/2 Warp */
   D2U_ANSI_FPRINTF(stdout,"%s", _("OS/2 version (EMX).\n"));
 #elif defined(__OS)
@@ -1519,7 +1519,6 @@ int ConvertNewFile(char *ipInFN, char *ipOutFN, CFlag *ipFlag, const char *progn
         if (ipFlag->verbose) {
           D2U_UTF8_FPRINTF(stderr, "%s: ", progname);
           D2U_UTF8_FPRINTF(stderr, _("problems resolving symbolic link '%s'\n"), ipOutFN);
-          D2U_UTF8_FPRINTF(stderr, _("          output file remains in '%s'\n"), TempPath);
         }
         RetVal = -1;
       }
@@ -1563,7 +1562,9 @@ int ConvertNewFile(char *ipInFN, char *ipOutFN, CFlag *ipFlag, const char *progn
     if ((!RetVal) && (ConvertW(InF, TempF, ipFlag, progname)))
       RetVal = -1;
     if (ipFlag->status & UNICODE_CONVERSION_ERROR) {
-      if (!ipFlag->error) ipFlag->error = 1;
+      if (ipFlag->verbose) {
+        if (!ipFlag->error) ipFlag->error = 1;
+      }
       RetVal = -1;
     }
   } else {
@@ -2046,16 +2047,19 @@ void print_messages_info(const CFlag *pFlag, const char *infile, const char *pro
   }
 }
 
-void printInfo(CFlag *ipFlag, const char *filename, int bomtype, unsigned int lb_dos, unsigned int lb_unix, unsigned int lb_mac)
+void printInfo(CFlag *ipFlag, const char *filename, int bomtype, unsigned int lb_dos, unsigned int lb_unix, unsigned int lb_mac, int last_eol)
 {
   static int header_done = 0;
+  char eol[6];
 
   if (ipFlag->file_info & INFO_CONVERT) {
-    if ((ipFlag->FromToMode == FROMTO_DOS2UNIX) && (lb_dos == 0))
+    if ((ipFlag->FromToMode == FROMTO_DOS2UNIX) && (lb_dos == 0) && (! ipFlag->add_eol || last_eol == INFO_UNIX ))
       return;
-    if (((ipFlag->FromToMode == FROMTO_UNIX2DOS)||(ipFlag->FromToMode == FROMTO_UNIX2MAC)) && (lb_unix == 0))
+    if ((ipFlag->FromToMode == FROMTO_UNIX2DOS) && (lb_unix == 0) && (! ipFlag->add_eol || last_eol == INFO_DOS ))
       return;
-    if ((ipFlag->FromToMode == FROMTO_MAC2UNIX) && (lb_mac == 0))
+    if ((ipFlag->FromToMode == FROMTO_UNIX2MAC) && (lb_unix == 0) && (! ipFlag->add_eol || last_eol == INFO_MAC ))
+      return;
+    if ((ipFlag->FromToMode == FROMTO_MAC2UNIX) && (lb_mac == 0) && (! ipFlag->add_eol || last_eol == INFO_UNIX ))
       return;
     if ((ipFlag->Force == 0) && (ipFlag->status & BINARY_FILE))
       return;
@@ -2072,8 +2076,10 @@ void printInfo(CFlag *ipFlag, const char *filename, int bomtype, unsigned int lb
       D2U_UTF8_FPRINTF(stdout, "  BOM     ");
     if (ipFlag->file_info & INFO_TEXT)
       D2U_UTF8_FPRINTF(stdout, "  TXTBIN");
+    if ((ipFlag->add_eol && !(ipFlag->file_info & INFO_CONVERT)) || ipFlag->file_info & INFO_EOL)
+      D2U_UTF8_FPRINTF(stdout, " LASTLN");
     if (*filename != '\0') {
-      if (ipFlag->file_info & INFO_DEFAULT)
+      if ((ipFlag->file_info & INFO_DEFAULT) || (ipFlag->file_info & INFO_EOL))
         D2U_UTF8_FPRINTF(stdout, "  ");
       D2U_UTF8_FPRINTF(stdout, "FILE");
     }
@@ -2082,6 +2088,20 @@ void printInfo(CFlag *ipFlag, const char *filename, int bomtype, unsigned int lb
     else
       D2U_UTF8_FPRINTF(stdout, "\n");
     header_done = 1;
+  }
+
+  switch (last_eol) {
+    case INFO_DOS:
+      strncpy(eol,"dos  ",sizeof(eol));
+      break;
+    case INFO_UNIX:
+      strncpy(eol,"unix ",sizeof(eol));
+      break;
+    case INFO_MAC:
+      strncpy(eol,"mac  ",sizeof(eol));
+      break;
+    default:
+      strncpy(eol,"noeol",sizeof(eol));
   }
 
   if (ipFlag->file_info & INFO_DOS)
@@ -2098,13 +2118,15 @@ void printInfo(CFlag *ipFlag, const char *filename, int bomtype, unsigned int lb
     else
       D2U_UTF8_FPRINTF(stdout, "  text  ");
   }
+  if ((ipFlag->add_eol && !(ipFlag->file_info & INFO_CONVERT)) || ipFlag->file_info & INFO_EOL)
+    D2U_UTF8_FPRINTF(stdout, " %s ", eol);
   if (*filename != '\0') {
     const char *ptr;
     if ((ipFlag->file_info & INFO_NOPATH) && (((ptr=strrchr(filename,'/')) != NULL) || ((ptr=strrchr(filename,'\\')) != NULL)) )
       ptr++;
     else
       ptr = filename;
-    if (ipFlag->file_info & INFO_DEFAULT)
+    if ((ipFlag->file_info & INFO_DEFAULT) || (ipFlag->file_info & INFO_EOL))
       D2U_UTF8_FPRINTF(stdout, "  ");
     D2U_UTF8_FPRINTF(stdout, "%s",ptr);
   }
@@ -2122,6 +2144,7 @@ void FileInfoW(FILE* ipInF, CFlag *ipFlag, const char *filename, int bomtype, co
   unsigned int lb_dos = 0;
   unsigned int lb_unix = 0;
   unsigned int lb_mac = 0;
+  int last_eol = 0;
 
   ipFlag->status = 0;
 
@@ -2135,18 +2158,24 @@ void FileInfoW(FILE* ipInF, CFlag *ipFlag, const char *filename, int bomtype, co
     }
     if (TempChar != 0x0a) { /* Not an LF */
       PreviousChar = TempChar;
-      if (TempChar == 0x0d) /* CR */
+      if (TempChar == 0x0d) { /* CR */
         lb_mac++;
+        last_eol = INFO_MAC;
+      } else {
+        last_eol = 0;
+      }
     } else{
       /* TempChar is an LF */
       if ( PreviousChar == 0x0d ) { /* CR,LF pair. */
         lb_dos++;
         lb_mac--;
+        last_eol = INFO_DOS;
         PreviousChar = TempChar;
         continue;
       }
       PreviousChar = TempChar;
       lb_unix++; /* Unix line end (LF). */
+      last_eol = INFO_UNIX;
     }
   }
   if ((TempChar == WEOF) && ferror(ipInF)) {
@@ -2160,7 +2189,7 @@ void FileInfoW(FILE* ipInF, CFlag *ipFlag, const char *filename, int bomtype, co
     return;
   }
 
-  printInfo(ipFlag, filename, bomtype, lb_dos, lb_unix, lb_mac);
+  printInfo(ipFlag, filename, bomtype, lb_dos, lb_unix, lb_mac, last_eol);
 
 }
 #endif
@@ -2172,6 +2201,7 @@ void FileInfo(FILE* ipInF, CFlag *ipFlag, const char *filename, int bomtype, con
   unsigned int lb_dos = 0;
   unsigned int lb_unix = 0;
   unsigned int lb_mac = 0;
+  int last_eol = 0;
 
   ipFlag->status = 0;
 
@@ -2185,18 +2215,24 @@ void FileInfo(FILE* ipInF, CFlag *ipFlag, const char *filename, int bomtype, con
       }
     if (TempChar != '\x0a') { /* Not an LF */
       PreviousChar = TempChar;
-      if (TempChar == '\x0d') /* CR */
+      if (TempChar == '\x0d') { /* CR */
         lb_mac++;
+        last_eol = INFO_MAC;
+      } else {
+        last_eol = 0;
+      }
     } else {
       /* TempChar is an LF */
       if ( PreviousChar == '\x0d' ) { /* CR,LF pair. */
         lb_dos++;
         lb_mac--;
+        last_eol = INFO_DOS;
         PreviousChar = TempChar;
         continue;
       }
       PreviousChar = TempChar;
       lb_unix++; /* Unix line end (LF). */
+      last_eol = INFO_UNIX;
     }
   }
   if ((TempChar == EOF) && ferror(ipInF)) {
@@ -2210,7 +2246,7 @@ void FileInfo(FILE* ipInF, CFlag *ipFlag, const char *filename, int bomtype, con
     return;
   }
 
-  printInfo(ipFlag, filename, bomtype, lb_dos, lb_unix, lb_mac);
+  printInfo(ipFlag, filename, bomtype, lb_dos, lb_unix, lb_mac, last_eol);
 }
 
 int GetFileInfo(char *ipInFN, CFlag *ipFlag, const char *progname)
@@ -2344,6 +2380,10 @@ void get_info_options(char *option, CFlag *pFlag, const char *progname)
         break;
       case 't':   /* Text or binary. */
         pFlag->file_info |= INFO_TEXT;
+        default_info = 0;
+        break;
+      case 'e':   /* Print EOL of last line. */
+        pFlag->file_info |= INFO_EOL;
         default_info = 0;
         break;
       case 'c':   /* Print only files that would be converted. */
@@ -2806,8 +2846,10 @@ wint_t d2u_putwc(wint_t wc, FILE *f, CFlag *ipFlag, const char *progname)
 
    /* check for lead without a trail */
    if ((lead >= 0xd800) && (lead < 0xdc00) && ((wc < 0xdc00) || (wc >= 0xe000))) {
-      D2U_UTF8_FPRINTF(stderr, "%s: ", progname);
-      D2U_UTF8_FPRINTF(stderr, _("error: Invalid surrogate pair. Missing low surrogate.\n"));
+      if (ipFlag->verbose) {
+         D2U_UTF8_FPRINTF(stderr, "%s: ", progname);
+         D2U_UTF8_FPRINTF(stderr, _("error: Invalid surrogate pair. Missing low surrogate.\n"));
+      }
       ipFlag->status |= UNICODE_CONVERSION_ERROR ;
       return(WEOF);
    }
@@ -2822,8 +2864,10 @@ wint_t d2u_putwc(wint_t wc, FILE *f, CFlag *ipFlag, const char *progname)
 
       /* check for trail without a lead */
       if ((lead < 0xd800) || (lead >= 0xdc00)) {
-         D2U_UTF8_FPRINTF(stderr, "%s: ", progname);
-         D2U_UTF8_FPRINTF(stderr, _("error: Invalid surrogate pair. Missing high surrogate.\n"));
+         if (ipFlag->verbose) {
+            D2U_UTF8_FPRINTF(stderr, "%s: ", progname);
+            D2U_UTF8_FPRINTF(stderr, _("error: Invalid surrogate pair. Missing high surrogate.\n"));
+         }
          ipFlag->status |= UNICODE_CONVERSION_ERROR ;
          return(WEOF);
       }

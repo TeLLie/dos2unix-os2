@@ -1,4 +1,3 @@
-po4a-translate is deprecated. The unified po4a(1) program is more convenient and less error prone.
 
         *****************************************************
         *           GENERATED FILE, DO NOT EDIT             *
@@ -11,10 +10,9 @@ but store the PO file used as source file by po4a-translate.
 In fact, consider this as a binary, and the PO file as a regular .c file:
 If the PO get lost, keeping this translation up-to-date will be harder.
 
+=encoding UTF-8
 
 =pod
-
-=encoding UTF-8
 
 =head1 NAAM
 
@@ -27,11 +25,11 @@ dos2unix - omzetter van tekstbestandsindelingen, van DOS/Mac naar Unix en vice v
 
 =head1 BESCHRIJVING
 
-Het Dos2unix pakket bevat de toepassingen C<dos2unix> en C<unix2dos> om platte tekstbestanden in DOS- of Mac-indeling naar Unix-indeling om te zetten, en vice versa.
+Het dos2unix-pakket bevat de toepassingen C<dos2unix> en C<unix2dos> om platte tekstbestanden in DOS- of Mac-indeling naar Unix-indeling om te zetten, en vice versa.
 
 In DOS/Windows-tekstbestanden bestaat een regeleinde uit een combinatie van twee tekens: een 'Carriage Return' (CR) gevolgd door een 'Line Feed' (LF). In Unix-tekstbestanden bestaat een regeleinde uit één enkel 'Newline'-teken, dat gelijk is aan een DOS 'Line Feed'-teken (LF).   In Mac-tekstbestanden, van vóór Mac OS X, bestaan regeleindes uit één enkel 'Carriage Return'-teken.  Mac OS X is op Unix gebaseerd en heeft dezelfde regeleindes als Unix.
 
-Naast regeleindes kan Dos2unix ook de codering van bestanden converteren. Enkele DOS-codetabellen kunnen omgezet worden naar Unix Latin-1.  En Windows Unicode-bestanden (UTF-16) kunnen geconverteerd worden naar Unix Unicode-bestanden (UTF-8).
+Naast regeleindes kan dos2unix ook de codering van bestanden converteren. Enkele DOS-codetabellen kunnen omgezet worden naar Unix Latin-1.  En Windows Unicode-bestanden (UTF-16) kunnen omgezet worden naar Unix Unicode-bestanden (UTF-8).
 
 Binaire bestanden worden automatisch overgeslagen, behalve als de omzetting geforceerd wordt.
 
@@ -39,7 +37,7 @@ Niet-reguliere bestanden, zoals mappen en FIFO's, worden automatisch overgeslage
 
 Symbolische koppelingen en hun doelen blijven standaard onaangeroerd. Optioneel kunnen symbolische koppelingen worden vervangen, of de uitvoer kan naar het doel van de symbolische koppeling worden geschreven.  Op Windows wordt het schrijven naar het doel van een symbolische koppeling niet ondersteund.
 
-Dos2unix is gemodelleerd naar dos2unix op SunOS/Solaris, maar er is een belangrijk verschil: deze versie van dos2unix voert standaard een vervangende conversie uit (oud-bestand-modus) terwijl de oorspronkelijke SunOS/Solaris-versie alleen de gepaarde conversie (nieuw-bestand-modus) kent.  Zie ook de opties C<-o> en C<-n>.  Een ander verschil is dat de SunOS/Solaris-versie standaard een conversie in I<iso>-modus doet terwijl deze versie standaard I<ascii>-modus gebruikt.
+dos2unix is gemodelleerd naar dos2unix op SunOS/Solaris, maar er is een belangrijk verschil: deze versie van dos2unix voert standaard een vervangende conversie uit (oud-bestand-modus) terwijl de oorspronkelijke SunOS/Solaris-versie alleen de gepaarde conversie (nieuw-bestand-modus) kent.  Zie ook de opties C<-o> en C<-n>.  Een ander verschil is dat de SunOS/Solaris-versie standaard een conversie in I<iso>-modus doet terwijl deze versie standaard I<ascii>-modus gebruikt.
 
 =head1 OPTIES
 
@@ -59,11 +57,11 @@ Of in nieuw-bestand-modus:
 
 Wijziging van bestandseigenaar toestaan in oud-bestand-modus.
 
-When this option is used, the conversion will not be aborted when the user and/or group ownership of the original file can't be preserved in old file mode. Conversion will continue and the converted file will get the same new ownership as if it was converted in new file mode. See also options C<-o> and C<-n>. This option is only available if dos2unix has support for preserving the user and group ownership of files.
+Wanneer deze optie gebruikt wordt, zal de omzetting niet afgebroken worden wanneer het gebruikers- en/of groepseigendomsrecht van het originele bestand niet behouden kan worden in oud-bestand-modus. Omzetting zal doorgaan en het omgezette bestand krijgt dezelfde eigendomsrechten alsof het was omgezet in nieuw-bestand-modus. Zie ook opties C<-o> en C<-n>. Deze optie is alleen beschikbaar als dos2unix ondersteuning heeft voor het behouden van gebruikers- en groepseigendomsrechten van bestanden.
 
 =item B<-ascii>
 
-Alleen regeleindes converteren.  Dit is de standaardconversiemodus.
+Standaard conversiemodus. Zie ook de sectie B<CONVERSIEMODI>.
 
 =item B<-iso>
 
@@ -95,7 +93,7 @@ DOS-codetabel 865 (Scandinavisch) gebruiken.
 
 =item B<-7>
 
-Lettertekens met het achtste bit gezet converteren naar spaties.
+Lettertekens met het achtste bit gezet omzetten naar spaties.
 
 =item B<-b>, B<--keep-bom>
 
@@ -111,7 +109,7 @@ De te gebruiken tekencodering voor weergegeven tekst.  CODERING kan zijn: I<ansi
 
 Deze optie is alleen beschikbaar in dos2unix voor Windows met Unicode-bestandsnaam-ondersteuning.  Deze optie heeft geen effect op de gelezen en geschreven bestandsnamen, maar alleen op hoe deze weergegeven worden.
 
-There are several methods for displaying text in a Windows console based on the encoding of the text. They all have their own advantages and disadvantages.
+Er zijn verscheidene methoden om tekst weer te geven in een Windows-console gebaseerd op de codering van de tekst. Ze hebben allemaal hun eigen voor- en nadelen.
 
 
 
@@ -119,43 +117,43 @@ There are several methods for displaying text in a Windows console based on the 
 
 =item B<ansi>
 
-Dos2unix's default method is to use ANSI encoded text. The advantage is that it is backwards compatible. It works with raster and TrueType fonts. In some regions you may need to change the active DOS OEM code page to the Windows system ANSI code page using the C<chcp> command, because dos2unix uses the Windows system code page.
+dos2unix gebruikt standaard ANSI-gecodeerde tekst. Het voordeel hiervan is dat het achterwaarts compatibel is. Het werkt met raster- en TrueType-lettertypen. In sommige regio's moet je de actieve DOS OEM-codepagina veranderen in de Windows systeem ANSI-codepagina met het C<chcp> commando, omdat dos2unix de Windows systeem-codepagina gebruikt.
 
-The disadvantage of ansi is that international file names with characters not inside the system default code page are not displayed properly. You will see a question mark, or a wrong symbol instead. When you don't work with foreign file names this method is OK.
+Het nadeel van ANSI is dat internationale bestandsnamen met letters buiten de standaard systeem-codepagina niet goed worden weergegeven. U ziet in plaats daarvan een vraagteken of een verkeerd symbool. Wanneer u niet werkt met buitenlands bestandsnamen is de methode oké.
 
 =item B<unicode>, B<unicodebom>
 
-The advantage of unicode (the Windows name for UTF-16) encoding is that text is usually properly displayed. There is no need to change the active code page.  You may need to set the console's font to a TrueType font to have international characters displayed properly. When a character is not included in the TrueType font you usually see a small square, sometimes with a question mark in it.
+Het voordeel van unicode (de Windows-naam voor UTF-16) codering is dat tekst meestal goed wordt weergegeven. Het is niet nodig om de actieve codepagina te wijzigen.  Het kan nodig zijn om het lettertype van de console in te stellen op een TrueType-lettertype om internationale tekens goed weer te geven. Als een teken niet in het TrueType-lettertype is opgenomen, zie je meestal een klein vierkantje, soms met een vraagteken erin.
 
-When you use the ConEmu console all text is displayed properly, because ConEmu automatically selects a good font.
+Wanneer je de ConEmu-console gebruikt wordt alle tekst goed weergegeven, omdat ConEmu automatisch een goed lettertype selecteert.
 
-The disadvantage of unicode is that it is not compatible with ASCII. The output is not easy to handle when you redirect it to another program.
+Het nadeel van unicode is dat het niet compatibel is met ASCII. De uitvoer is niet eenvoudig te verwerken als je deze doorstuurt naar een ander programma.
 
-When method C<unicodebom> is used the Unicode text will be preceded with a BOM (Byte Order Mark). A BOM is required for correct redirection or piping in PowerShell.
+Wanneer methode C<unicodebom> wordt gebruikt, wordt de Unicode-tekst voorafgegaan door een BOM (Byte Order Mark). Een BOM is vereist voor correcte omleiding of piping in PowerShell.
 
 
 
 =item B<utf8>, B<utf8bom>
 
-The advantage of utf8 is that it is compatible with ASCII. You need to set the console's font to a TrueType font. With a TrueType font the text is displayed similar as with the C<unicode> encoding.
+Het voordeel van utf8 is dat het compatibel is met ASCII. Je moet het lettertype van de console instellen op een TrueType-lettertype. Met een TrueType-lettertype wordt de tekst hetzelfde weergegeven als met de C<unicode>-codering.
 
-The disadvantage is that when you use the default raster font all non-ASCII characters are displayed wrong. Not only unicode file names, but also translated messages become unreadable. On Windows configured for an East-Asian region you may see a lot of flickering of the console when the messages are displayed.
+Het nadeel is dat wanneer je het standaard raster-lettertype gebruikt alle niet-ASCII letters verkeerd worden weergegeven. Niet alleen unicode bestandsnamen, maar ook vertaalde berichten worden onleesbaar. Op Windows, ingesteld voor een Oost-Aziatische regio, is het mogelijk dat je veel flikkering in de console ziet wanneer de berichten weergegeven worden.
 
-In a ConEmu console the utf8 encoding method works well.
+In een ConEmu-console werkt de utf8-codering goed.
 
-When method C<utf8bom> is used the UTF-8 text will be preceded with a BOM (Byte Order Mark). A BOM is required for correct redirection or piping in PowerShell.
+Wanneer methode C<utf8bom> wordt gebruikt, wordt de UTF-8-tekst voorafgegaan door een BOM (Byte Order Mark). Een BOM is vereist voor correcte omleiding of piping in PowerShell.
 
 
 
 =back
 
-The default encoding can be changed with environment variable DOS2UNIX_DISPLAY_ENC by setting it to C<unicode>, C<unicodebom>, C<utf8>, or C<utf8bom>.
+De standaard codering can gewijzigd worden met omgevingsvariabele DOS2UNIX_DISPLAY_ENC, door deze in te stellen op C<unicode>, C<unicodebom>, C<utf8>, of C<utf8bom>.
 
-=item B<-e, --add-eol>
+=item B<-e>, B<--add-eol>
 
-Add a line break to the last line if there isn't one. This works for every conversion.
+Een regeleinde toevoegen aan de laatste regel als er nog geen is. Dit werkt voor alle conversies.
 
-A file converted from DOS to Unix format may lack a line break on the last line. There are text editors that write text files without a line break on the last line. Some Unix programs have problems processing these files, because the POSIX standard defines that every line in a text file must end with a terminating newline character. For instance concatenating files may not give the expected result.
+Een bestand dat is geconverteerd van DOS- naar Unix-indeling kan een regeleinde op de laatste regel missen. Er zijn tekstbewerkers die tekstbestanden schrijven zonder een regeleinde op de laatste regel. Sommige Unix-programma's hebben problemen met het verwerken van deze bestanden, omdat de POSIX-standaard definieert dat elke regel in een tekstbestand moet eindigen met een afsluitend regeleindeteken. Het samenvoegen van bestanden kan bijvoorbeeld niet het verwachte resultaat opleveren.
 
 =item B<-f>, B<--force>
 
@@ -169,7 +167,7 @@ Op Windows worden UTF-16-bestanden standaard naar UTF-8 geconverteerd, ongeacht 
 
 Een hulptekst tonen.
 
-=item B<-i>[B<VLAGGEN>], B<--info>[B<=VLAGGEN>] B<BESTAND>...
+=item B<-i[VLAGGEN], --info[=VLAGGEN] BESTAND ...>
 
 Bestandsinformatie tonen.  Er wordt niets geconverteerd.
 
@@ -188,13 +186,22 @@ Voorbeelduitvoer:
 
 Merk op dat een binair bestand soms voor een tekstbestand aangezien kan worden.  Zie ook optie C<-s>.
 
+Als daarnaast optie C<-e> of C<--add-eol> wordt gebruikt, wordt ook het type regeleinde van de laatste regel afgedrukt, of C<noeol> als er geen is.
+
+Voorbeelduitvoer:
+
+     6       0       0  no_bom    text   dos     dos.txt
+     0       6       0  no_bom    text   unix    unix.txt
+     0       0       6  no_bom    text   mac     mac.txt
+     1       0       0  no_bom    text   noeol   noeol_dos.txt
+
 Bij de optie kunnen één of meer vlaggen meegegeven worden om de uitvoer te beperken.
 
 =over 4
 
 =item B<0>
 
-Print the file information lines followed by a null character instead of a newline character. This enables correct interpretation of file names with spaces or quotes when flag c is used. Use this flag in combination with xargs(1) option C<-0> or C<--null>.
+De bestandsinformatieregels afdrukken gevolgd door een null-byte in plaats van een regeleindeteken. Dit maakt correcte interpretatie van bestandsnamen met spaties of aanhalingstekens mogelijk wanneer vlag c wordt gebruikt. Gebruik deze vlag in combinatie met xargs(1) optie C<-0> of C<--null>.
 
 =item B<d>
 
@@ -216,11 +223,17 @@ De Byte-Order-Mark tonen.
 
 Tonen of het bestand tekst is of binair.
 
+=item B<e>
+
+Het type van het regeleinde van de laatste regel afdrukken, of C<noeol> als er geen regeleinde is.
+
 =item B<c>
 
 Alleen de namen tonen van de bestanden die geconverteerd zouden worden.
 
 Met de vlag C<c> toont dos2unix alleen de bestanden die DOS-regeleindes bevatten, en unix2dos alleen de bestanden die Unix-regeleindes bevatten.
+
+Als daarnaast optie C<-e> of C<--add-eol> wordt gebruikt, worden ook de bestanden afgedrukt waarbij de laatste regel geen regeleinde heeft.
 
 =item B<h>
 
@@ -253,6 +266,10 @@ De bestanden opsommen die DOS-regeleindes bevatten:
 De bestanden opsommen die Unix-regeleindes bevatten:
 
     unix2dos -ic *.txt
+
+De bestanden opsommen met DOS-regeleindes of met een ontbrekend regeleinde op de laatste regel:
+
+    dos2unix -e -ic *.txt
 
 Alleen bestanden die DOS-regeleindes bevatten converteren en andere bestanden ongemoeid laten:
 
@@ -288,7 +305,7 @@ Gebruik deze optie nooit als de codering van het uitvoerbestand niet UTF-8, UTF-
 
 
 
-=item B<-n>, B<--newfile INVOERBESTAND UITVOERBESTAND> ...
+=item B<-n, --newfile INVOERBESTAND UITVOERBESTAND ...>
 
 Nieuw-bestand-modus.  Het bestand INVOERBESTAND converteren en naar bestand UITVOERBESTAND schrijven. Bestandsnamen moeten opgegeven worden in paren. Jokertekens moeten I<niet>gebruikt worden, anders I<verlies> je de bestanden.
 
@@ -298,21 +315,21 @@ De gebruiker die de conversie start in nieuw-bestand (gepaarde) modus wordt de e
 
 Wijziging van bestandseigenaar niet toestaan in oud-bestand-modus (standaard).
 
-Abort conversion when the user and/or group ownership of the original file can't be preserved in old file mode. See also options C<-o> and C<-n>. This option is only available if dos2unix has support for preserving the user and group ownership of files.
+Conversie afbreken wanneer het gebruikers- en/of groepseigendomsrecht van het originele bestand niet behouden kan worden in de oud-bestand-modus. Zie ook opties C<-o> en C<-n>. Deze optie is alleen beschikbaar als dos2unix ondersteuning heeft voor het behouden van het gebruikers- en groepseigendomsrechten van bestanden.
 
 =item B<--no-add-eol>
 
-Do not add a line break to the last line if there isn't one.
+Geen regeleinde toevoegen aan de laatste regel als er geen is.
 
 =item B<-O, --to-stdout>
 
-Write to standard output, like a Unix filter. Use option C<-o> to go back to old file (in-place) mode.
+Naar standaarduitvoer schrijven, zoals een Unix-filter. Gebruik optie C<-o> om terug te gaan naar de oud-bestand-modus (vervangend).
 
-Combined with option C<-e> files can be properly concatenated. No merged last and first lines, and no Unicode byte order marks in the middle of the concatenated file. Example:
+Gecombineerd met optie C<-e> kunnen bestanden correct worden samengevoegd. Geen samengevoegde laatste en eerste regels, en geen Unicode Byte-Order-Marks in het midden van het samengevoegde bestand. Voorbeeld:
 
-    dos2unix -e -O file1.txt file2.txt > output.txt
+    dos2unix -e -O bestand1.txt bestand2.txt > uit.txt
 
-=item B<-o, --oldfile FILE ...>
+=item B<-o>, B<--oldfile BESTAND ...>
 
 Oud-bestand-modus.  Het bestand BESTAND converteren en overschrijven.  Dit is de standaard modus.  Jokertekens kunnen gebruikt worden.
 
@@ -320,7 +337,7 @@ In oud-bestand (vervangende) modus krijgt het geconverteerde bestand dezelfde ei
 
 Om te controleren of dos2unix ondersteuning heeft voor het behouden van de gebruiker en de groep van bestanden, typt u C<dos2unix -V>.
 
-Conversion is always done via a temporary file. When an error occurs halfway the conversion, the temporary file is deleted and the original file stays intact. When the conversion is successful, the original file is replaced with the temporary file. You may have write permission on the original file, but no permission to put the same user and/or group ownership properties on the temporary file as the original file has. This means you are not able to preserve the user and/or group ownership of the original file. In this case you can use option C<--allow-chown> to continue with the conversion:
+Conversie wordt altijd uitgevoerd via een tijdelijk bestand. Wanneer er halverwege de conversie een fout optreedt, wordt het tijdelijke bestand verwijderd en blijft het originele bestand intact. Wanneer de conversie succesvol is, wordt het originele bestand vervangen door het tijdelijke bestand. U hebt mogelijk schrijfrechten op het originele bestand, maar geen rechten om dezelfde gebruikers- en/of groepseigendomseigenschappen op het tijdelijke bestand te plaatsen als het originele bestand. Dit betekent dat u de gebruikers- en/of groepseigendom van het originele bestand niet kunt behouden. In dit geval kunt u optie C<--allow-chown> gebruiken om door te gaan met de conversie:
 
     dos2unix --allow-chown foo.txt
 
@@ -388,7 +405,7 @@ Versie-informatie tonen.
 
 =head1 MAC-MODUS
 
-In normale modus worden DOS-regeleindes naar Unix omgezet en vice versa. Mac-regeleindes worden niet omgezet.
+Standaard worden regeleindes geconverteerd van DOS naar Unix en vice versa. Mac-regeleindes worden niet omgezet.
 
 In Mac-modus worden Mac-regeleindes naar Unix omgezet en vice versa. DOS-regeleindes blijven ongewijzigd.
 
@@ -400,9 +417,9 @@ Om in Mac-modus te draaien kunt u de opdrachtregeloptie C<-c mac> gebruiken, of 
 
 =item B<ascii>
 
-In modus C<ascii> worden alleen regeleindes omgezet.  Dit is de standaardmodus.
+Dit is de standaard conversiemodus. Deze modus is voor het converteren van ASCII en ASCII-compatibele gecodeerde bestanden, zoals UTF-8. Het inschakelen van de B<ascii>-modus schakelt de B<7bit>- en B<iso>-modus uit.
 
-Hoewel de naam van deze modus ASCII is, wat een 7-bits standaard is, is de werkelijke modus 8-bits.  Gebruik altijd deze modus wanneer u Unicode UTF-8-bestanden omzet.
+Als dos2unix UTF-16-ondersteuning heeft, worden UTF-16-gecodeerde bestanden geconverteerd naar de tekencodering van de ingestelde taalregio op POSIX-systemen en naar UTF-8 op Windows. Als u de B<ascii>-modus inschakelt, worden de optie om UTF-16-codering te behouden (C<-u>) en de opties om UTF-16-invoer aan te nemen (C<-ul> en C<-ub>) uitgeschakeld. Om te zien of dos2unix UTF-16-ondersteuning heeft, typt u C<dos2unix -V>. Zie ook de sectie UNICODE.
 
 =item B<7bit>
 
@@ -462,11 +479,11 @@ Er bestaan verschillende Unicode-coderingen.  Op Unix en Linux zijn Unicode-best
 
 =head2 Conversie
 
-Unicode-tekstbestanden kunnen DOS-, Unix- of Mac-regeleindes hebben, net als reguliere tekstbestanden.
+Unicode-tekstbestanden kunnen DOS-, Unix- of Mac-regeleindes hebben, net als ASCII-tekstbestanden.
 
 Alle versies van dos2unix en unix2dos kunnen UTF-8-gecodeerde bestanden omzetten, want UTF-8 is ontworpen op compatibiliteit met ASCII.
 
-Dos2unix en unix2dos met Unicode UTF-16-ondersteuning kunnen little en big endian UTF-16-gecodeerde tekstbestanden lezen.  Om er achter te komen of dos2unix gebouwd is met UTF-16- ondersteuning, typt u C<dos2unix -V>.
+dos2unix en unix2dos met Unicode UTF-16-ondersteuning kunnen little en big endian UTF-16-gecodeerde tekstbestanden lezen.  Om er achter te komen of dos2unix gebouwd is met UTF-16- ondersteuning, typt u C<dos2unix -V>.
 
 Op Unix/Linux worden UTF-16-bestanden geconverteerd naar de codering van de ingestelde taalregio.  Gebruik de opdracht B<locale>(1) om te zien wat de ingestelde codering is.  Wanneer conversie niet mogelijk is, treedt er een fout op en wordt het bestand overgeslagen.
 
@@ -476,29 +493,29 @@ De UTF-16- en UTF-8-coderingen zijn volledig compatibel, er gaat bij het convert
 
 Wanneer C<-u> gebruikt wordt, wordt het uitvoerbestand in dezelfde UTF-16-codering geschreven als het invoerbestand. Optie C<-u> voorkomt conversie naar UTF-8.
 
-Dos2unix en unix2dos hebben geen optie om van UTF-8 naar UTF-16 te converteren.
+dos2unix en unix2dos hebben geen optie om van UTF-8 naar UTF-16 te converteren.
 
 ISO- en 7-bits-conversie werken niet op UTF-16-bestanden.
 
 =head2 Byte-Order-Mark
 
-Op Windows bevatten Unicode-tekstbestanden gewoonlijk een Byte-Order-Mark (BOM), omdat veel Windows-programma's (inclusief Kladblok) standaard een BOM toevoegen.  Zie ook L<http://en.wikipedia.org/wiki/Byte_order_mark>.
+Op Windows bevatten Unicode-tekstbestanden gewoonlijk een Byte-Order-Mark (BOM), omdat veel Windows-programma's (inclusief Kladblok) standaard een BOM toevoegen. Zie ook L<https://en.wikipedia.org/wiki/Byte_order_mark>.
 
 Op Unix hebben Unicode-tekstbestanden meestal geen BOM.  Er wordt aangenomen dat de codering van tekstbestanden gelijk is aan de tekencodering van de ingestelde taalregio.
 
-Dos2unix kan alleen detecteren of een bestand in UTF-16-codering is als het bestand een BOM bevat.  Wanneer een UTF-16-bestand geen BOM heeft, ziet dos2unix het bestand als een binair bestand.
+dos2unix kan alleen detecteren of een bestand in UTF-16-codering is als het bestand een BOM bevat.  Wanneer een UTF-16-bestand geen BOM heeft, ziet dos2unix het bestand als een binair bestand.
 
 Gebruik optie C<-ul> of C<-ub> om een UTF-16-bestand zonder BOM om te zetten.
 
-Dos2unix schrijft standaard geen BOM in het uitvoerbestand.  Met optie C<-b> schrijft dos2unix een BOM wanneer het invoerbestand een BOM bevat.
+dos2unix schrijft standaard geen BOM in het uitvoerbestand.  Met optie C<-b> schrijft dos2unix een BOM wanneer het invoerbestand een BOM bevat.
 
-Unix2dos schrijft standaard een BOM in het uitvoerbestand wanneer het invoerbestand een BOM bevat.  Gebruik optie C<-r> om de BOM te verwijderen.
+unix2dos schrijft standaard een BOM in het uitvoerbestand wanneer het invoerbestand een BOM bevat.  Gebruik optie C<-r> om de BOM te verwijderen.
 
-Dos2unix en unix2dos schrijven altijd een BOM wanneer optie C<-m> gebruikt wordt.
+dos2unix en unix2dos schrijven altijd een BOM wanneer optie C<-m> gebruikt wordt.
 
 =head2 Unicode-bestandsnamen op Windows
 
-Dos2unix heeft optionele ondersteuning voor het lezen en schrijven van Unicode-bestandsnamen in de Windows Opdrachtprompt.  Dit betekent dat dos2unix bestanden kan openen waarvan de naam tekens bevat die niet voorkomen in de standaard ANSI-codetabel.  Om te zien of dos2unix voor Windows gecompileerd werd met ondersteuning voor Unicode-bestandsnamen, typt u C<dos2unix -V>.
+dos2unix heeft optionele ondersteuning voor het lezen en schrijven van Unicode-bestandsnamen in de Windows Opdrachtprompt.  Dit betekent dat dos2unix bestanden kan openen waarvan de naam tekens bevat die niet voorkomen in de standaard ANSI-codetabel.  Om te zien of dos2unix voor Windows gecompileerd werd met ondersteuning voor Unicode-bestandsnamen, typt u C<dos2unix -V>.
 
 Er zijn enige problemen met het weergeven van Unicode-bestandsnamen in een Windows-console; zie bij optie C<-D>, C<--display-enc>.  De bestandsnamen kunnen verkeerd weergegeven worden, maar de bestanden zullen geschreven worden met de correcte naam.
 
@@ -522,7 +539,7 @@ Omzetten van Unix UTF-8 naar Windows UTF-16:
 
 =head1 GB18030
 
-GB18030 is een standaard van de Chinese overheid.  Een subset van de GB18030-standaard is officieel verplicht voor alle softwareproducten die in China verkocht worden.  Zie ook L<http://en.wikipedia.org/wiki/GB_18030>.
+GB18030 is een standaard van de Chinese overheid.  Een subset van de GB18030-standaard is officieel verplicht voor alle softwareproducten die in China verkocht worden. Zie ook L<https://en.wikipedia.org/wiki/GB_18030>.
 
 GB18030 is volledig compatibel met Unicode, en kan als een Unicodetransformatie beschouwd worden.  Net als UTF-8 is GB18030 compatibel met ASCII.  GB18030 is ook compatibel met Windows-codetabel 936 (ook wel GBK genoemd).
 
@@ -582,17 +599,17 @@ Omzetten en vervangen van a.txt; omzetten van b.txt en naar e.txt schrijven:
     dos2unix a.txt -n b.txt e.txt
     dos2unix -o a.txt -n b.txt e.txt
 
-Omzetten van c.txt en naar e.txt schrijven; omzetten en vervangen van a.txt; omzetten en vervangen van b.txt; omzetten van d.txt en naar f.txt schrijven.
+Omzetten van c.txt en naar e.txt schrijven; omzetten en vervangen van a.txt; omzetten en vervangen van b.txt; omzetten van d.txt en naar f.txt schrijven:
 
     dos2unix -n c.txt e.txt -o a.txt b.txt -n d.txt f.txt
 
 =head1 RECURSIEVE CONVERSIE
 
-In a Unix shell the find(1) and xargs(1) commands can be used to run dos2unix recursively over all text files in a directory tree. For instance to convert all .txt files in the directory tree under the current directory type:
+In een Unix-shell kunnen de find(1) en xargs(1) commando's gebruikt worden om dos2unix recursief uit te voeren over alle tekstbestanden in een mappenboomstructuur. Bijvoorbeeld om alle .txt-bestanden in de mappenboomstructuur onder het huidige maptype te converteren:
 
     find . -name '*.txt' -print0 | xargs -0 dos2unix
 
-The find(1) option C<-print0> and corresponding xargs(1) option C<-0> are needed when there are files with spaces or quotes in the name. Otherwise these options can be omitted. Another option is to use find(1) with the C<-exec> option:
+De find(1) optie C<-print0> en de corresponderende xargs(1) optie C<-0> zijn nodig als er bestanden zijn met spaties of aanhalingstekens in de naam. Anders kunnen deze opties worden weggelaten. Een andere optie is om find(1) te gebruiken met de C<-exec> optie:
 
     find . -name '*.txt' -exec dos2unix {} \;
 
@@ -600,7 +617,7 @@ In een Windows Opdrachtprompt kan de volgende opdracht gebruikt worden:
 
     for /R %G in (*.txt) do dos2unix "%G"
 
-PowerShell users can use the following command in Windows PowerShell:
+PowerShell-gebruikers kunnen de volgende opdracht in Windows PowerShell gebruiken:
 
     get-childitem -path . -filter '*.txt' -recurse | foreach-object {dos2unix $_.Fullname}
 
@@ -622,13 +639,13 @@ De primaire taal wordt geselecteerd via de omgevingsvariabele LANG.  De variabel
     export LANG=en_US.iso88591   Engels, VS, Latin-1-codering
     export LANG=en_GB.UTF-8      Engels, GB, UTF-8-codering
 
-Voor een complete lijst van taal- en landcodes zie de gettext-handleiding: L<http://www.gnu.org/software/gettext/manual/html_node/Usual-Language-Codes.html>
+Voor een complete lijst van taal- en landcodes zie de gettext-handleiding: L<https://www.gnu.org/software/gettext/manual/html_node/Usual-Language-Codes.html>
 
 Op Unix-systemen kunt u de opdracht B<locale>(1) gebruiken om specifieke taalregio-informatie te verkrijgen.
 
 =item B<LANGUAGE>
 
-Met de omgevingsvariabele LANGUAGE kunt u een prioriteitenlijst specificeren van talen, gescheiden door dubbele punten.  Dos2unix geeft voorrang aan LANGUAGE boven LANG.  Bijvoorbeeld, eerst Nederlands en dan Duits: C<LANGUAGE=nl:de>.  U moet eerst lokalisatie in werking stellen, door het instellen van LANG (of LC_ALL) op een waarde ongelijk aan "C", voordat u een talen-prioriteitenlijst kunt gebruiken via de variabele LANGUAGE.  Zie ook de gettext-handleiding: L<http://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>
+Met de omgevingsvariabele LANGUAGE kunt u een prioriteitenlijst specificeren van talen, gescheiden door dubbele punten.  dos2unix geeft voorrang aan LANGUAGE boven LANG.  Bijvoorbeeld, eerst Nederlands en dan Duits: C<LANGUAGE=nl:de>.  U moet eerst lokalisatie in werking stellen, door het instellen van LANG (of LC_ALL) op een waarde ongelijk aan "C", voordat u een talen-prioriteitenlijst kunt gebruiken via de variabele LANGUAGE.  Zie ook de gettext-handleiding: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>
 
 Als u een taal kiest die niet beschikbaar is, worden de standaard Engelse berichten gebruikt.
 
@@ -654,21 +671,21 @@ De afsluitwaarde is altijd nul in de stillewerkingsmodus, behalve wanneer verkee
 
 =head1 STANDAARDEN
 
-L<http://nl.wikipedia.org/wiki/Tekstbestand>
+L<https://nl.wikipedia.org/wiki/Tekstbestand>
 
-L<http://nl.wikipedia.org/wiki/Carriage_Return>
+L<https://nl.wikipedia.org/wiki/Carriage_Return>
 
-L<http://nl.wikipedia.org/wiki/Linefeed>
+L<https://nl.wikipedia.org/wiki/Linefeed>
 
-<http://nl.wikipedia.org/wiki/Unicode>
+<https://nl.wikipedia.org/wiki/Unicode>
 
 =head1 AUTEURS
 
 Benjamin Lin - <blin@socs.uts.edu.au>, Bernd Johannes Wuebben (mac2unix-modus) - <wuebben@kde.org>, Christian Wurll (toevoegen van extra regeleindes) - <wurll@ira.uka.de>, Erwin Waterlander - <waterlan@xs4all.nl> (beheerder)
 
-Projectpagina: L<http://waterlan.home.xs4all.nl/dos2unix.html>
+Projectpagina: L<https://waterlan.home.xs4all.nl/dos2unix.html>
 
-SourceForge-pagina: L<http://sourceforge.net/projects/dos2unix/>
+SourceForge-pagina: L<https://sourceforge.net/projects/dos2unix/>
 
 =head1 ZIE OOK
 
