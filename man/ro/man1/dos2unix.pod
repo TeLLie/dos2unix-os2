@@ -1,4 +1,3 @@
-po4a-translate is deprecated. The unified po4a(1) program is more convenient and less error prone.
 
         *****************************************************
         *           GENERATED FILE, DO NOT EDIT             *
@@ -11,10 +10,9 @@ but store the PO file used as source file by po4a-translate.
 In fact, consider this as a binary, and the PO file as a regular .c file:
 If the PO get lost, keeping this translation up-to-date will be harder.
 
+=encoding UTF-8
 
 =pod
-
-=encoding UTF-8
 
 =head1 NUME
 
@@ -37,7 +35,7 @@ Fișierele binare sunt omise automat, cu excepția cazului în care conversia es
 
 Fișierele care nu sunt obișnuite, cum ar fi directoarele și liniile de conectare cu nume (FIFOs), sunt omise automat.
 
-Legăturile simbolice și țintele lor sunt în mod implicit păstrate neatinse. Legăturile simbolice pot fi înlocuite opțional sau rezultatul poate fi scris în ținta legăturii simbolice,  Scrierea la o țintă de legătură simbolică nu este acceptată în Windows.
+Legăturile simbolice și țintele lor sunt în mod implicit păstrate neatinse. Legăturile simbolice pot fi înlocuite opțional sau rezultatul poate fi scris în ținta legăturii simbolice, Scrierea la o țintă de legătură simbolică nu este acceptată în Windows.
 
 «dos2unix» a fost modelat după «dos2unix» din SunOS/Solaris. Există o diferență importantă față de versiunea originală a SunOS/Solaris. Această versiune efectuează în mod implicit conversia „în același loc”, în cazul de față, în același fișier (mod-fișier_vechi), în timp ce versiunea originală SunOS/Solaris acceptă doar conversia împerecheată (mod-fișier_nou). A se vedea, de asemenea, opțiunile C<-o> și C<-n>. O altă diferență este că versiunea SunOS/Solaris utilizează implicit conversia în modul I<iso>, în timp ce această versiune utilizează implicit conversia în modul I<ascii>.
 
@@ -125,7 +123,7 @@ Dezavantajul lui „ansi” este că numele fișierelor internaționale cu carac
 
 =item B<unicode, unicodebom>
 
-Avantajul codificării Unicode (numele Windows pentru UTF-16) este că textul este de obicei afișat corect. Nu este nevoie să schimbați pagina de cod activă.  Poate fi necesar să definiți fontul consolei la un font TrueType pentru ca toate caracterele internaționale să fie afișate corect. Când un caracter nu este inclus în fontul TrueType, de obicei vedeți un pătrat mic, uneori cu un semn de întrebare în el.
+Avantajul codificării Unicode (numele Windows pentru UTF-16) este că textul este de obicei afișat corect. Nu este nevoie să schimbați pagina de cod activă. Poate fi necesar să definiți fontul consolei la un font TrueType pentru ca toate caracterele internaționale să fie afișate corect. Când un caracter nu este inclus în fontul TrueType, de obicei vedeți un pătrat mic, uneori cu un semn de întrebare în el.
 
 Când utilizați consola ConEmu, tot textul este afișat corect, deoarece ConEmu selectează automat un font bun.
 
@@ -335,7 +333,7 @@ Scrie la ieșirea standard, ca un filtru Unix. Folosiți opțiunea C<-o> pentru 
 
 Modul fișier vechi. Convertește fișierul FIȘIER și suprascrie rezultatul în el. Programul rulează implicit în acest mod. Pot fi folosite nume cu metacaractere.
 
-În modul-fișier_vechi (în același loc / în același fișier), fișierul convertit primește același proprietar, grup și permisiuni de citire/scriere ca fișierul original. De asemenea, atunci când fișierul este convertit de un alt utilizator care are permisiuni de scriere în fișier (de exemplu, utilizatorul root).  Conversia va fi anulată atunci când nu este posibil să se păstreze valorile originale. Schimbarea proprietarului ar putea însemna că proprietarul inițial nu mai poate citi fișierul. Schimbarea grupului ar putea reprezenta un risc de securitate, fișierul ar putea fi făcut vizibil pentru persoanele cărora nu este destinat. Păstrarea permisiunilor de proprietar, de grup și de citire/scriere este acceptată numai în Unix.
+În modul-fișier_vechi (în același loc / în același fișier), fișierul convertit primește același proprietar, grup și permisiuni de citire/scriere ca fișierul original. De asemenea, atunci când fișierul este convertit de un alt utilizator care are permisiuni de scriere în fișier (de exemplu, utilizatorul root). Conversia va fi anulată atunci când nu este posibil să se păstreze valorile originale. Schimbarea proprietarului ar putea însemna că proprietarul inițial nu mai poate citi fișierul. Schimbarea grupului ar putea reprezenta un risc de securitate, fișierul ar putea fi făcut vizibil pentru persoanele cărora nu este destinat. Păstrarea permisiunilor de proprietar, de grup și de citire/scriere este acceptată numai în Unix.
 
 Pentru a verifica dacă «dos2unix» are suport pentru păstrarea proprietății utilizatorului și grupului de fișiere, tastați C<dos2unix -V>.
 
@@ -373,7 +371,7 @@ Presupune că formatul fișierului de intrare este UTF-16LE.
 
 Când există un marcaj de ordine a octeților în fișierul de intrare, marcajul de ordine a octeților are prioritate față de această opțiune.
 
-Când ați făcut o presupunere greșită (fișierul de intrare nu era în format UTF-16LE) și conversia a reușit, veți obține un fișier de ieșire UTF-8 cu text greșit.  Puteți anula conversia greșită cu iconv(1) prin conversia fișierului de ieșire UTF-8 înapoi în UTF-16LE. Acest lucru va reface fișierul original.
+Când ați făcut o presupunere greșită (fișierul de intrare nu era în format UTF-16LE) și conversia a reușit, veți obține un fișier de ieșire UTF-8 cu text greșit. Puteți anula conversia greșită cu iconv(1) prin conversia fișierului de ieșire UTF-8 înapoi în UTF-16LE. Acest lucru va reface fișierul original.
 
 Presupunerea UTF-16LE funcționează ca un I<mod de conversie>. Prin trecerea la modul I<ascii> implicit, presupunerea UTF-16LE este dezactivată.
 
@@ -421,7 +419,7 @@ Pentru a rula în modul Mac, utilizați opțiunea din linie de comandă C<-c mac
 
 Acesta este modul de conversie implicit. Acest mod este destinat conversiei fișierelor codificate ASCII și compatibile cu ASCII, cum ar fi UTF-8. Activarea modului B<ascii> dezactivează modurile B<7bit> și B<iso>.
 
-Dacă «dos2unix» are suport UTF-16, fișierele codificate UTF-16 sunt convertite la codificarea caracterelor locale curente pe sistemele POSIX și la UTF-8 pe Windows. Activarea modului B<ascii> dezactivează opțiunea de păstrare a codificării UTF-16 (C<-u>) și opțiunile de asumare a intrării UTF-16 (C<-ul> și C<-ub>).  Pentru a vedea dacă «dos2unix» are suport UTF-16, tastați C<dos2unix -V>. A se vedea și secțiunea UNICODE.
+Dacă «dos2unix» are suport UTF-16, fișierele codificate UTF-16 sunt convertite la codificarea caracterelor locale curente pe sistemele POSIX și la UTF-8 pe Windows. Activarea modului B<ascii> dezactivează opțiunea de păstrare a codificării UTF-16 (C<-u>) și opțiunile de asumare a intrării UTF-16 (C<-ul> și C<-ub>). Pentru a vedea dacă «dos2unix» are suport UTF-16, tastați C<dos2unix -V>. A se vedea și secțiunea UNICODE.
 
 =item B<7bit>
 
@@ -431,7 +429,7 @@ Dacă «dos2unix» are suport UTF-16, fișierele codificate UTF-16 sunt converti
 
 Caracterele sunt convertite între un set de caractere DOS (pagina de cod) și un set de caractere ISO ISO-8859-1 (Latin-1) în Unix. Caracterele DOS fără echivalent ISO-8859-1, pentru care conversia nu este posibilă, sunt convertite într-un punct. Același lucru este valabil și pentru caracterele ISO-8859-1 fără omolog în DOS.
 
-Când este folosită numai opțiunea C<-iso>, «dos2unix» va încerca să determine pagina de cod activă. Când acest lucru nu este posibil, «dos2unix» va folosi pagina de cod implicită CP437, care este folosită în principal în SUA. Pentru a forța o anumită pagină de coduri, utilizați opțiunile C<-437> (SUA), C<-850> (Europa de Vest), C<-860> (Portugheză), C<-863> (Franceză Canadiană) sau C<- 865> (Scandinavă).  Pagina de coduri CP1252 (Europa de Vest) Windows este, de asemenea, acceptată cu opțiunea C<-1252>. Pentru alte pagini de cod, utilizați «dos2unix» în combinație cu iconv(1). «iconv» poate converti o listă lungă de codificări de caractere. Puteți vizualiza această listă rulând comanda: «iconv -l».
+Când este folosită numai opțiunea C<-iso>, «dos2unix» va încerca să determine pagina de cod activă. Când acest lucru nu este posibil, «dos2unix» va folosi pagina de cod implicită CP437, care este folosită în principal în SUA. Pentru a forța o anumită pagină de coduri, utilizați opțiunile C<-437> (SUA), C<-850> (Europa de Vest), C<-860> (Portugheză), C<-863> (Franceză Canadiană) sau C<- 865> (Scandinavă). Pagina de coduri CP1252 (Europa de Vest) Windows este, de asemenea, acceptată cu opțiunea C<-1252>. Pentru alte pagini de cod, utilizați «dos2unix» în combinație cu iconv(1). «iconv» poate converti o listă lungă de codificări de caractere. Puteți vizualiza această listă rulând comanda: «iconv -l».
 
 Nu utilizați niciodată conversia ISO pe fișiere text Unicode. Acesta va deteriora fișierele codificate UTF-8.
 

@@ -1,4 +1,3 @@
-po4a-translate is deprecated. The unified po4a(1) program is more convenient and less error prone.
 
         *****************************************************
         *           GENERATED FILE, DO NOT EDIT             *
@@ -11,10 +10,9 @@ but store the PO file used as source file by po4a-translate.
 In fact, consider this as a binary, and the PO file as a regular .c file:
 If the PO get lost, keeping this translation up-to-date will be harder.
 
+=encoding UTF-8
 
 =pod
-
-=encoding UTF-8
 
 =head1 名称
 
@@ -27,11 +25,11 @@ dos2unix - DOS/Mac - Unix文件格式转换器
 
 =head1 说明
 
-Dos2unix软件包包括工具C<dos2unix> 和 C<unix2dos>，用于将纯文本文件在DOS或Mac格式与Unix格式之间相互转换。
+本dos2unix软件包包括C<dos2unix>和C<unix2dos>工具，可用于将纯文本文件在DOS或Mac格式与Unix格式之间相互转换。
 
 DOS/Windows的文本文件中，断行符是由两个字符共同表示的：回车符（CR）和换行符（LF）。Unix的文本文件中，换行符则由单个换行符（LF）表示。而Mac的文本文件则由单个回车符（CR，用于Mac OS X之前的系统）或单个换行符（LF，用于当下的新Mac OS）表示。
 
-除了断行符，Dos2unix还可以转换文件编码。一些DOS编码页可以被转换为Unix Latin-1，Windows Unicode（UTF-16）文件也可以被转换为Unix Unicode（UTF-8）文件。
+除了断行符，dos2unix还可以转换文件编码。一些DOS编码页可以被转换为Unix Latin-1，Windows Unicode（UTF-16）文件也可以被转换为Unix Unicode（UTF-8）文件。
 
 二进制文件则会被自动跳过，除非指定了强制转换选项。
 
@@ -39,7 +37,7 @@ DOS/Windows的文本文件中，断行符是由两个字符共同表示的：回
 
 符号链接和其所指向的目标默认不会被转换。可以用选项来指定替换符号链接，或者将输出写入到链接目标。Windows下不支持写入到符号链接的目标。
 
-Dos2unix由SunOS/Solaris下的版本改写而成。这两个版本间有一个重大差异：本版本默认进行原位转换（旧文件模式），而原来SunOS/Solaris下的版本只支持配对转换（新文件模式），参见选项 C<-o> 和 C<-n>。还有一个区别是SunOS/Solaris下的版本默认使用 I<iso> 模式，而本版本默认使用 I<ascii> 模式。
+dos2unix参照SunOS/Solaris下的版本改写而成。这两个版本间有一个重大差异：本版本默认进行原位转换（旧文件模式），而原来SunOS/Solaris下的版本只支持配对转换（新文件模式），参见选项 C<-o> 和 C<-n>。还有一个区别是SunOS/Solaris下的版本默认使用 I<iso> 模式，而本版本默认使用 I<ascii> 模式。
 
 =head1 选项
 
@@ -91,7 +89,7 @@ Dos2unix由SunOS/Solaris下的版本改写而成。这两个版本间有一个�
 
 =item B<-865>
 
- 使用DOS 865 编码页（北欧）。
+使用DOS 865 编码页（北欧）。
 
 =item B<-7>
 
@@ -129,7 +127,7 @@ Unicode编码（Windows中对UTF-16的称呼）的优点是文本可以被正确
 
 当你使用ConEmu终端时，所以的文本将会被正确显示，因为ConEmu会自动选择合适的字体。
 
-Unicode的缺点在于它与ASCII不兼容。当你将输出重定向到其他程序或文件时，它可能不那么容易控制
+Unicode的缺点在于它与ASCII不兼容。当你将输出重定向到其他程序或文件时，它可能不那么容易处理。
 
 当使用 C<unicodebom> 方法时，将会在Unicode文本前添加一个BOM（字节序标记）。在PowerShell中，需要根据BOM来进行正确的重定向或管道输出。
 
@@ -648,7 +646,7 @@ LANG环境变量指定了程序所使用的首选语言。它包括几个部分�
 
 =item B<LANGUAGE>
 
-可以使用LANGUAGE变量指定一系列语言的优先级，各项之间由冒号分割。dos2unix首先使用LANGUAGE变量，其次才是LANG。例如，首选中文、其次英文：C<LANGUAGE=<zh:en>。在使用语言优先级之前，必须先启用区域化功能，即将LANG（或LC_ALL）变量设置为除了“C”以外的其他值。参见gettext手册：L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>
+可以使用LANGUAGE变量指定一系列语言的优先级，各项之间由冒号分割。dos2unix首先使用LANGUAGE变量，其次才是LANG。例如，首选中文、其次英文：C<LANGUAGE=zh:en>。在使用语言优先级之前，必须先启用区域化功能，即将LANG（或LC_ALL）变量设置为除了“C”以外的其他值。参见gettext手册：L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>
 
 如果你选择了一个不可用的语言，程序将会输出标准的英语信息。
 

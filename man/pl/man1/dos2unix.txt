@@ -7,7 +7,7 @@ SKŁADNIA
         unix2dos [opcje] [PLIK ...] [-n PLIK_WEJ PLIK_WYJ ...]
 
 OPIS
-    Pakiet Dos2unix zawiera narzędzia "dos2unix" oraz "unix2dos" do
+    Pakiet dos2unix zawiera narzędzia "dos2unix" oraz "unix2dos" do
     konwersji zwykłych plików tekstowych między formatami używanymi w
     systemach DOS lub Mac a formatem uniksowym.
 
@@ -18,7 +18,7 @@ OPIS
     pojedynczym znakiem CR. Obecnie Mac OS wykorzystuje uniksowe końce linii
     (LF).
 
-    Oprócz oznaczeń końców linii Dos2unix potrafi konwertować także
+    Oprócz oznaczeń końców linii dos2unix potrafi konwertować także
     kodowanie plików. Kilko stron kodowych DOS-a może być przekonwertowanych
     do uniksowego Latin-1, a windowsowy Unicode (UTF-16) do
     powszechniejszego pod Uniksem kodowania Unicode UTF-8.
@@ -33,7 +33,7 @@ OPIS
     może być zapisywane do celu dowiązania. Zapis do celu dowiązania
     symbolicznego nie jest obsługiwane pod Windows.
 
-    Dos2unix powstał na podstawie narzędzia dos2unix z systemu
+    dos2unix powstał na podstawie narzędzia dos2unix z systemu
     SunOS/Solaris. Jest jedna istotna różnica w stosunku do oryginalnej
     wersji z SunOS-a/Solarisa: ta wersja domyślnie wykonuje konwersję w
     miejscu (tryb starego pliku), podczas gdy oryginalna obsługiwała tylko
@@ -561,7 +561,7 @@ UNICODE
     Wszystkie wersje dos2unix i unix2dos potrafią konwertować pliki kodowane
     UTF-8, ponieważ UTF-8 jest wstecznie zgodne z ASCII.
 
-    Dos2unix i unix2dos z obsługą Unicode UTF-16 potrafią odczytywać pliki
+    dos2unix i unix2dos z obsługą Unicode UTF-16 potrafią odczytywać pliki
     tekstowe kodowane UTF-16 little- oraz big-endian. Aby sprawdzić, czy
     dos2unix został zbudowany z obsługą UTF-16, należy napisać "dos2unix
     -V".
@@ -584,7 +584,7 @@ UNICODE
     samym kodowaniu UTF-16, co plik wejściowy. Opcja "-u" zapobiega
     konwersji do UTF-8.
 
-    Dos2unix oraz unix2dos nie mają opcji pozwalającej na konwersję plików
+    dos2unix oraz unix2dos nie mają opcji pozwalającej na konwersję plików
     UTF-8 do UTF-16.
 
     Tryby konwersji ISO i 7-bit nie działają na plikach UTF-16.
@@ -599,24 +599,24 @@ UNICODE
     są traktowane jako kodowane zgodnie z kodowaniem znaków ustawionej
     lokalizacji.
 
-    Dos2unix potrafi wykryć tylko, czy plik jest w formacie UTF-16, jeśli
+    dos2unix potrafi wykryć tylko, czy plik jest w formacie UTF-16, jeśli
     zawiera znacznik BOM. Jeśli plik UTF-16 nie ma tego znacznika, dos2unix
     potraktuje plik jako binarny.
 
     Do konwersji pliku UTF-16 bez znacznika BOM można użyć opcji "-ul" lub
     "-ub".
 
-    Dos2unix nie zapisuje domyślnie znaku BOM w pliku wyjściowym. Z opcją
-    "-b" Dos2unix zapisuje BOM, jeśli plik wejściowy zawiera BOM.
+    dos2unix nie zapisuje domyślnie znaku BOM w pliku wyjściowym. Z opcją
+    "-b" dos2unix zapisuje BOM, jeśli plik wejściowy zawiera BOM.
 
-    Unix2dos domyślnie zapisuje znaczniki BOM w pliku wyjściowym, jeśli plik
+    unix2dos domyślnie zapisuje znaczniki BOM w pliku wyjściowym, jeśli plik
     wejściowy ma BOM. Aby usunąć BOM, można użyć opcji "-r".
 
-    Dos2unix oraz unix2dos zawsze zapisują znaczniki BOM, jeśli użyta
+    dos2unix oraz unix2dos zawsze zapisują znaczniki BOM, jeśli użyta
     zostanie opcja "-m".
 
   Unikodowe nazwy plików w Windows
-    Dos2unix ma opcjonalną obsługę odczytu i zapisu nazw plików Unicode w
+    dos2unix ma opcjonalną obsługę odczytu i zapisu nazw plików Unicode w
     linii poleceń Windows. Oznacza to, że dos2unix potrafi otwierać pliki
     zawierające w nazwie znaki spoza domyślnej systemowej strony kodowej
     ANSI. Aby sprawdzić, czy dos2unix dla Windows został zbudowany z obsługą
@@ -774,7 +774,7 @@ LOKALIZACJA
 
     LANGUAGE
         Przy użyciu zmiennej środowiskowej LANGUAGE można określić listę
-        języków wg priorytetu, oddzielonych dwukropkami. Dos2unix przyjmuje
+        języków wg priorytetu, oddzielonych dwukropkami. dos2unix przyjmuje
         pierwszeństwo zmiennej LANGUAGE nad LANG. Na przykład, najpierw
         holenderski, następnie niemiecki: "LANGUAGE=nl:de". Aby skorzystać z
         listy wg priorytetów ze zmiennej LANGUAGE, trzeba najpierw włączyć

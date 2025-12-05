@@ -1,4 +1,3 @@
-po4a-translate is deprecated. The unified po4a(1) program is more convenient and less error prone.
 
         *****************************************************
         *           GENERATED FILE, DO NOT EDIT             *
@@ -11,10 +10,9 @@ but store the PO file used as source file by po4a-translate.
 In fact, consider this as a binary, and the PO file as a regular .c file:
 If the PO get lost, keeping this translation up-to-date will be harder.
 
+=encoding UTF-8
 
 =pod
-
-=encoding UTF-8
 
 =head1 НАЗИВ
 
@@ -31,7 +29,7 @@ dos2unix – претварач формата текстуалних датот
 
 У ДОС/Виндоуз текстуалним датотекама преламање реда, такође познато и као нови ред, је комбинација два знака: „Carriage Return“ (CR) за којим следи „Line Feed“ (LF). У Јуникс текстуалним датотекама преламање реда је један знак: „Line Feed“ (LF). У Мек текстуалним датотекама, пре Мек ОС Икс-а, преламање реда беше један знак „Carriage Return“ (CR). Данас Мек ОС користи преламање реда у Јуникс стилу (LF).
 
-Поред преламања реда „dos2unix“ такође може претворити кодирање датотека. Неколико ДОС кодних страница се може претворити у Јуникс Latin-1. А Виндоуз Јуникод (УТФ-16) датотеке се могу претворити у Јуникс Јуникод (УТФ-8) датотеке.
+Поред преламања реда „dos2unix“ такође може претворити кодирање датотека. Неколико ДОС кодних страница се може претворити у Јуникс Latin-1. А Виндоуз Јуникод (UTF-16) датотеке се могу претворити у Јуникс Јуникод (UTF-8) датотеке.
 
 Бинарне датотеке се аутоматски прескачу, осим ако претварање није приморано.
 
@@ -63,7 +61,7 @@ dos2unix – претварач формата текстуалних датот
 
 =item B<-ascii>
 
-Default conversion mode. See also section CONVERSION MODES.
+Основни режим претварања. Видите такође одељак РЕЖИМИ ПРЕТВАРАЊА.
 
 =item B<-iso>
 
@@ -188,14 +186,14 @@ Default conversion mode. See also section CONVERSION MODES.
 
 Знајте да понекад бинарна датотека може грешком бити узета за текстуалну датотеку. Видите такође опцију „C<-s>“.
 
-If in addition option C<-e> or C<--add-eol> is used also the type of the line break of the last line is printed, or C<noeol> if there is none.
+Ако се у додатној опцији користи C<-e> или C<--add-eol> такође се исписује и врста прекида реда последњег реда, или C<noeol> ако нема ничега.
 
 Пример излаза:
 
-     6       0       0  no_bom    text   dos     dos.txt
-     0       6       0  no_bom    text   unix    unix.txt
-     0       0       6  no_bom    text   mac     mac.txt
-     1       0       0  no_bom    text   noeol   noeol_dos.txt
+     6       0       0  no_bom    текст   dos     dos.txt
+     0       6       0  no_bom    текст   unix    unix.txt
+     0       0       6  no_bom    текст   mac     mac.txt
+     1       0       0  no_bom    текст   noeol   noeol_dos.txt
 
 Изборне додатне заставице се могу поставити да измене излаз. Могу се додати једна или више заставица.
 
@@ -227,7 +225,7 @@ If in addition option C<-e> or C<--add-eol> is used also the type of the line br
 
 =item B<e>
 
-Print the type of the line break of the last line, or C<noeol> if there is none.
+Исписује врсту прекида реда последњег реда, или C<noeol> ако га нема.
 
 =item B<c>
 
@@ -235,7 +233,7 @@ Print the type of the line break of the last line, or C<noeol> if there is none.
 
 Са заставицом „C<c>“ „dos2unix“ ће исписати само датотеке које садрже ДОС преламања реда, „unix2dos“ ће исписат само називе датотека које имају Јуникс преламања реда.
 
-If in addition option C<-e> or C<--add-eol> is used also the files that lack a line break on the last line will be printed.
+Ако се у додатној опцији користи C<-e> или C<--add-eol> такође се исписују и датотеке којима недостаје прекид реда у последњем реду.
 
 =item B<h>
 
@@ -269,7 +267,7 @@ If in addition option C<-e> or C<--add-eol> is used also the files that lack a l
 
     unix2dos -ic *.txt
 
-List the files that have DOS line breaks or lack a line break on the last line:
+Исписује датотеке које имају ДОС преламања реда или им недостаје прекид реда у последњем реду:
 
     dos2unix -e -ic *.txt
 
@@ -407,7 +405,7 @@ B<unix2dos>: Само Јуникс преламања реда се мењају
 
 =head1 МЕК РЕЖИМ
 
-By default line breaks are converted from DOS to Unix and vice versa.  Mac line breaks are not converted.
+По основи преламања реда се претварају из DOS-а у Unix и обратно.  Mac-ова преламања реда се не претварају.
 
 У Мек режиму преламања реда се претварју из Мек-а у Јуникс и обратно.  ДОС преламања реда се не мењају.
 
@@ -419,9 +417,9 @@ By default line breaks are converted from DOS to Unix and vice versa.  Mac line 
 
 =item B<ascii>
 
-This is the default conversion mode. This mode is for converting ASCII and ASCII-compatible encoded files, like UTF-8. Enabling B<ascii> mode disables B<7bit> and B<iso> mode.
+Ово је основни режим претварања. Овај режим је за претварање ASCII и ASCII-сагласних кодираних датотека, као UTF-8. Укључивање B<ascii> режима искључује B<7bit> и B<iso>.
 
-If dos2unix has UTF-16 support, UTF-16 encoded files are converted to the current locale character encoding on POSIX systems and to UTF-8 on Windows. Enabling B<ascii> mode disables the option to keep UTF-16 encoding (C<-u>) and the options to assume UTF-16 input (C<-ul> and C<-ub>).  To see if dos2unix has UTF-16 support type C<dos2unix -V>. See also section UNICODE.
+Ако dos2unix има UTF-16 подршку, UTF-16 кодиране датотеке се претварају у кодирање знакова текућег језика на  POSIX системима и у UTF-8 на Виндоузу. Укључивањем B<ascii> режима искључује се опција за задржавање UTF-16 кодирања (C<-u>) и опције за прихват UTF-16 улаза (C<-ul> и C<-ub>).  Да видите да ли dos2unix има UTF-16 подршку укуцајте C<dos2unix -V>. Видите такође одељак UNICODE.
 
 =item B<7bit>
 
@@ -481,7 +479,7 @@ If dos2unix has UTF-16 support, UTF-16 encoded files are converted to the curren
 
 =head2 Претварање
 
-Unicode text files can have DOS, Unix or Mac line breaks, like ASCII text files.
+Јуникод текстуалне датотеке могу имати DOS, Unix или Mac преломе реда, као ASCII текстуалне датотеке.
 
 Сва издања „dos2unix“-а и „unix2do“-а могу претворити УТФ-8 кодиране датотеке, јер је УТФ-8 дизајниран за повратну сагласност са АСКРИ-ијем.
 
@@ -501,7 +499,7 @@ Unicode text files can have DOS, Unix or Mac line breaks, like ASCII text files.
 
 =head2 Ознака редоследа бајтова
 
-On Windows Unicode text files typically have a Byte Order Mark (BOM), because many Windows programs (including Notepad) add BOMs by default. See also L<https://en.wikipedia.org/wiki/Byte_order_mark>.
+На Виндоузу Јуникод текстуалне датотеке обично имају Ознаку редоследа бајтова (BOM), јер многи Виндоуз програми (укључујући Бележницу) подразумевано додају ОРБ. Видите такође L<https://en.wikipedia.org/wiki/Byte_order_mark>.
 
 На Јуниксу Јуникод датотеке обично немају ОРБ. Претпоставља се да су текстуалне датотеке кодиране у језичком кодирању знака.
 
@@ -541,7 +539,7 @@ On Windows Unicode text files typically have a Byte Order Mark (BOM), because ma
 
 =head1 GB18030
 
-GB18030 is a Chinese government standard. A mandatory subset of the GB18030 standard is officially required for all software products sold in China. See also L<https://en.wikipedia.org/wiki/GB_18030>.
+GB18030 је стандард кинеске владе. Обавезни подскуп GB18030 стандарда се званично захтева за све софтверске производе продате у Кини. Видите такође L<http://en.wikipedia.org/wiki/GB_18030>.
 
 „GB18030“ је у потпуности сагласан са Јуникод-ом, и може се сматрати Јуникод форматом преображаја. Као УТФ-8, „GB18030“ је сагласан са АСКРИ. „GB18030“ је такође сагласан са Виндоуз кодном страницом 936, познатом и као ГБК.
 
@@ -641,13 +639,13 @@ GB18030 is a Chinese government standard. A mandatory subset of the GB18030 stan
     export LANG=en_US.iso88591   Енглески, САД, Latin-1 кодирање
     export LANG=en_GB.UTF-8      Енглески, УК, УТФ-8 кодирање
 
-For a complete list of language and country codes see the gettext manual: L<https://www.gnu.org/software/gettext/manual/html_node/Usual-Language-Codes.html>
+За потпун списак језика и шифара држава видите приручник геттекста: L<https://www.gnu.org/software/gettext/manual/html_node/Usual-Language-Codes.html>
 
 На Јуникс системима можете користити наредбу „locale(1)“ да видите особене податке језика.
 
 =item B<ЈЕЗИК>
 
-With the LANGUAGE environment variable you can specify a priority list of languages, separated by colons. Dos2unix gives preference to LANGUAGE over LANG.  For instance, first Dutch and then German: C<LANGUAGE=nl:de>. You have to first enable localization, by setting LANG (or LC_ALL) to a value other than "C", before you can use a language priority list through the LANGUAGE variable. See also the gettext manual: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>
+Са променљивом окружења ЈЕЗИК можете навести списак хитности језика, раздвојених двотачком. „dos2unix“ даје предност за ЈЕЗИК над ЈЕЗ.  На пример, прво холандски а затим немачки: C<LANGUAGE=nl:de>. Прво треба да омогућите преводе, постављајући „LANG“ (или LC_ALL) на вредност другачију од „C“, пре него ли будете могли да користите списак хитности језика променљивом „LANGUAGE“. Видите такође приручник геттекста: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>
 
 Ако изаберете језик који није доступан добићете стандардне поруке на енглеском.
 
@@ -685,9 +683,9 @@ L<https://en.wikipedia.org/wiki/Unicode>
 
 Бенџамин Лин – <blin@socs.uts.edu.au>, Бернд Јоханес Вебен (mac2unix) – <wuebben@kde.org>, Кристијан Вирл (додаје додатни нови ред) – <wurll@ira.uka.de>, Ервин Вотерландер – <waterlan@xs4all.nl> (одржавалац)
 
-Project page: L<https://waterlan.home.xs4all.nl/dos2unix.html>
+Страница пројекта: L<https://waterlan.home.xs4all.nl/dos2unix.html>
 
-SourceForge page: L<https://sourceforge.net/projects/dos2unix/>
+Страница Ковнице извора: L<https://sourceforge.net/projects/dos2unix/>
 
 =head1 ВИДИТЕ ТАКОЂЕ
 

@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dos2unix-man 7.5.2-beta3\n"
-"POT-Creation-Date: 2023-11-27 22:01+0100\n"
-"PO-Revision-Date: 2023-12-01 01:54+0900\n"
+"Project-Id-Version: dos2unix-man 7.5.3-beta8\n"
+"POT-Creation-Date: 2025-05-16 23:04+0200\n"
+"PO-Revision-Date: 2025-05-18 14:34+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <translation-team-ko@googlegroups.com>\n"
 "Language: ko\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.6\n"
 
 #. type: =head1
 #: dos2unix.pod:52
@@ -52,7 +52,7 @@ msgstr "설명"
 
 #. type: textblock
 #: dos2unix.pod:63
-msgid "The Dos2unix package includes utilities C<dos2unix> and C<unix2dos> to convert plain text files in DOS or Mac format to Unix format and vice versa."
+msgid "The dos2unix package includes utilities C<dos2unix> and C<unix2dos> to convert plain text files in DOS or Mac format to Unix format and vice versa."
 msgstr "dos2unix 패키지에는 DOS 또는 맥 형식을 유닉스 형식으로, 내지는 그 반대로 원시 텍스트 파일을 변환하는 C<dos2unix> 유틸리티와 C<unix2dos> 유틸리티가 들어있습니다."
 
 #. type: textblock
@@ -62,8 +62,8 @@ msgstr "DOS/윈도우 텍스트 개행 문자는 캐리지 리턴(CR)과 뒤따�
 
 #. type: textblock
 #: dos2unix.pod:72
-msgid "Besides line breaks Dos2unix can also convert the encoding of files. A few DOS code pages can be converted to Unix Latin-1. And Windows Unicode (UTF-16)  files can be converted to Unix Unicode (UTF-8) files."
-msgstr "개행 문자 관련하여 dos2unix에서는 파일 인코딩도 변환할 수 있습니다. 일부 DOS 코드 페이지는 유닉스 Latin-1 인코딩으로 변환할 수 있습니다. 그리고 윈도우 유니코드(UTF-16)  파일은 유닉스 유니코드 (UTF-8) 파일로 변환할 수 있습니다."
+msgid "Besides line breaks dos2unix can also convert the encoding of files. A few DOS code pages can be converted to Unix Latin-1. And Windows Unicode (UTF-16)  files can be converted to Unix Unicode (UTF-8) files."
+msgstr "개행 문자 관련하여 dos2unix에서는 파일 인코딩도 변환할 수 있습니다. 일부 DOS 코드 페이지는 유닉스 Latin-1 인코딩으로 변환할 수 있습니다. 그리고 윈도우 유니코드 (UTF-16)  파일은 유닉스 유니코드 (UTF-8) 파일로 변환할 수 있습니다."
 
 #. type: textblock
 #: dos2unix.pod:76
@@ -82,7 +82,7 @@ msgstr "심볼릭 링크와 대상은 보통 (완전히) 연결한 상태가 아
 
 #. type: textblock
 #: dos2unix.pod:84
-msgid "Dos2unix was modelled after dos2unix under SunOS/Solaris.  There is one important difference with the original SunOS/Solaris version. This version does by default in-place conversion (old file mode), while the original SunOS/Solaris version only supports paired conversion (new file mode). See also options C<-o> and C<-n>. Another difference is that the SunOS/Solaris version uses by default I<iso> mode conversion while this version uses by default I<ascii> mode conversion."
+msgid "dos2unix was modelled after dos2unix under SunOS/Solaris.  There is one important difference with the original SunOS/Solaris version. This version does by default in-place conversion (old file mode), while the original SunOS/Solaris version only supports paired conversion (new file mode). See also options C<-o> and C<-n>. Another difference is that the SunOS/Solaris version uses by default I<iso> mode conversion while this version uses by default I<ascii> mode conversion."
 msgstr "dos2unix는 SunOS/솔라리스의 dos2unix가 나온 후 구성한 모델입니다.  SunOS/솔라리스 버전과 한가지 중요한 차이가 있습니다. SunOS/솔라리스 버전은 페어링 변환(새 파일 모드)만 지원하지만, 이 버전은 자체 변환(이전 파일 모드)도 지원합니다. C<-o>, C<-n> 옵션도 참고하십시오. 다른 차이점이 있다면 SunOS/솔라리스 버전은 I<iso> 모드 변환이 기본이지만 이 버전은 I<ascii> 모드 변환이 기본입니다."
 
 #. type: =head1
@@ -277,7 +277,7 @@ msgstr "B<ansi>"
 
 #. type: textblock
 #: dos2unix.pod:186
-msgid "Dos2unix's default method is to use ANSI encoded text. The advantage is that it is backwards compatible. It works with raster and TrueType fonts. In some regions you may need to change the active DOS OEM code page to the Windows system ANSI code page using the C<chcp> command, because dos2unix uses the Windows system code page."
+msgid "dos2unix's default method is to use ANSI encoded text. The advantage is that it is backwards compatible. It works with raster and TrueType fonts. In some regions you may need to change the active DOS OEM code page to the Windows system ANSI code page using the C<chcp> command, because dos2unix uses the Windows system code page."
 msgstr "dos2unix의 기본 방식은 ANSI 인코딩 텍스트를 활용하는 방법입니다. 하위 호환성이 장점입니다. 래스터 및 트루타입 글꼴에 동작합니다. 일부 국가에서는 dos2unix에서 윈도우 시스템 코드 페이지를 사용하기 때문에 C<chcp> 명령으로 윈도우 시스템 ANSI 코드 페이지로 DOS OEM 활성 코드 페이지를 바꾸어야 합니다."
 
 #. type: textblock
@@ -1242,8 +1242,8 @@ msgstr "dos2unix와 unix2dos의 모든 버전에서는 UTF-8이 아스키와의 
 
 #. type: textblock
 #: dos2unix.pod:667
-msgid "Dos2unix and unix2dos with Unicode UTF-16 support, can read little and big endian UTF-16 encoded text files. To see if dos2unix was built with UTF-16 support type C<dos2unix -V>."
-msgstr "UTF-16을 지원하는 dos2unix와 unix2dos는 UTF-16 리틀엔디언 및 빅엔디언 인코딩 텍스트 파일을 모두 읽을 수 있습니다. dos2unix에 UTF-16 지원 기능이 들어갔는지 확인하려면 C<dos2unix -V> 명령을 입력하십시오."
+msgid "dos2unix and unix2dos with Unicode UTF-16 support, can read little and big endian UTF-16 encoded text files. To see if dos2unix was built with UTF-16 support type C<dos2unix -V>."
+msgstr "유니코드 UTF-16을 지원하는 dos2unix와 unix2dos는 UTF-16 리틀엔디언 및 빅엔디언 인코딩 텍스트 파일을 모두 읽을 수 있습니다. dos2unix에 UTF-16 지원 기능이 들어갔는지 확인하려면 C<dos2unix -V> 명령을 입력하십시오."
 
 #. type: textblock
 #: dos2unix.pod:671
@@ -1267,7 +1267,7 @@ msgstr "C<-u> 옵션을 사용하면 입력 파일의 UTF-16 인코딩을 출력
 
 #. type: textblock
 #: dos2unix.pod:686
-msgid "Dos2unix and unix2dos have no option to convert UTF-8 files to UTF-16."
+msgid "dos2unix and unix2dos have no option to convert UTF-8 files to UTF-16."
 msgstr "dos2unix와 unix2dos에는 UTF-8 파일을 UTF-16으로 변환하는 옵션이 없습니다."
 
 #. type: textblock
@@ -1292,7 +1292,7 @@ msgstr "유닉스에서는 유니코드 파일에 BOM이 들어가지 않습니�
 
 #. type: textblock
 #: dos2unix.pod:699
-msgid "Dos2unix can only detect if a file is in UTF-16 format if the file has a BOM.  When an UTF-16 file doesn't have a BOM, dos2unix will see the file as a binary file."
+msgid "dos2unix can only detect if a file is in UTF-16 format if the file has a BOM.  When an UTF-16 file doesn't have a BOM, dos2unix will see the file as a binary file."
 msgstr "dos2unix는 UTF-16 형식인지, BOM이 들어갔는지만 알 수 있습니다.  UTF-16 파일에 BOM이 없다면 dos2unix는 이진 파일로 인식합니다."
 
 #. type: textblock
@@ -1302,18 +1302,18 @@ msgstr "UTF-16 파일을 BOM을 빼고 변환하려면 C<-ul> 옵션 또는 C<-u
 
 #. type: textblock
 #: dos2unix.pod:705
-msgid "Dos2unix writes by default no BOM in the output file. With option C<-b> Dos2unix writes a BOM when the input file has a BOM."
+msgid "dos2unix writes by default no BOM in the output file. With option C<-b> dos2unix writes a BOM when the input file has a BOM."
 msgstr "dos2unix에서는 기본적으로 출력 파일에 BOM을 기록하지 않습니다. 입력 파일에 BOM이 있다면 dos2unix에 C<-b> 옵션을 지정했을 때 출력 파일에 BOM을 기록합니다."
 
 #. type: textblock
 #: dos2unix.pod:708
-msgid "Unix2dos writes by default a BOM in the output file when the input file has a BOM. Use option C<-r> to remove the BOM."
+msgid "unix2dos writes by default a BOM in the output file when the input file has a BOM. Use option C<-r> to remove the BOM."
 msgstr "unix2dos에서는 기본적으로 입력 파일에 BOM이 있다면 출력 파일에 BOM을 기록합니다. BOM을 제거하려면 C<-r> 옵션을 사용하십시오."
 
 #. type: textblock
 #: dos2unix.pod:711
-msgid "Dos2unix and unix2dos write always a BOM when option C<-m> is used."
-msgstr "dos2unix와 unix2dos는 C<-m> 옵션을 사용하면 항상 BOM을 기록합니다."
+msgid "dos2unix and unix2dos write always a BOM when option C<-m> is used."
+msgstr "dos2unix와 unix2dos에서 C<-m> 옵션을 사용하면 항상 BOM을 기록합니다."
 
 #. type: =head2
 #: dos2unix.pod:713
@@ -1322,7 +1322,7 @@ msgstr "윈도우의 유니코드 파일 이름"
 
 #. type: textblock
 #: dos2unix.pod:715
-msgid "Dos2unix has optional support for reading and writing Unicode file names in the Windows Command Prompt. That means that dos2unix can open files that have characters in the name that are not part of the default system ANSI code page.  To see if dos2unix for Windows was built with Unicode file name support type C<dos2unix -V>."
+msgid "dos2unix has optional support for reading and writing Unicode file names in the Windows Command Prompt. That means that dos2unix can open files that have characters in the name that are not part of the default system ANSI code page.  To see if dos2unix for Windows was built with Unicode file name support type C<dos2unix -V>."
 msgstr "dos2unix에서는 윈도우 명령 프롬프트의 유니코드 파일 이름을 읽고 쓰는 추가 기능을 지원합니다. dos2unix에서 기본 시스템 ANSI 코드 페이지의 일부가 아닌 문자가 들어간 이름일지라도 파일을 열 수 있다는 뜻입니다.  윈도우용 dos2unix에 유니코드 파일 이름 지원 기능이 들어있는지 확인하려면 C<dos2unix -V> 명령을 입력하십시오."
 
 #. type: textblock
@@ -1732,8 +1732,8 @@ msgstr "B<LANGUAGE>"
 
 #. type: textblock
 #: dos2unix.pod:869
-msgid "With the LANGUAGE environment variable you can specify a priority list of languages, separated by colons. Dos2unix gives preference to LANGUAGE over LANG.  For instance, first Dutch and then German: C<LANGUAGE=nl:de>. You have to first enable localization, by setting LANG (or LC_ALL) to a value other than \"C\", before you can use a language priority list through the LANGUAGE variable. See also the gettext manual: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>"
-msgstr "LANGUAGE 환경 변수에는 언어를 우선 순위별로 콜론으로 구분하여 지정할 수 있습니다. dos2unix에서는 LANGUAGE를 LANG보다 우선하여 취급합니다.  예를 들면 네덜란드어를 먼저 그 다음에 독일어를 설정할 경우 C<LANGUAGE=nl:de>(으)로 설정합니다. LANGUAGE 환경 변수에 언어별 우선 순위를 두어 사용할 수 있기 전에 LANG 환경 변수에 \"C\" 대신 다른 값을 넣어 지역화를 우선 설정해야합니다. L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html> gettext 설명서를 참고하십시오"
+msgid "With the LANGUAGE environment variable you can specify a priority list of languages, separated by colons. dos2unix gives preference to LANGUAGE over LANG.  For instance, first Dutch and then German: C<LANGUAGE=nl:de>. You have to first enable localization, by setting LANG (or LC_ALL) to a value other than \"C\", before you can use a language priority list through the LANGUAGE variable. See also the gettext manual: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>"
+msgstr "LANGUAGE 환경 변수에는 언어를 우선 순위별로 콜론으로 구분하여 지정할 수 있습니다. dos2unix에서는 LANGUAGE를 LANG보다 우선 취급합니다.  예를 들면 네덜란드어를 먼저 그 다음에 독일어를 설정할 경우 C<LANGUAGE=nl:de>(으)로 설정합니다. LANGUAGE 환경 변수에 언어별 우선 순위를 두어 사용할 수 있기 전에 LANG 환경 변수 (또는 LC_ALL)에 \"C\" 대신 다른 값을 넣어 지역화를 우선 설정해야합니다. L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html> gettext 설명서도 참고하십시오"
 
 #. type: textblock
 #: dos2unix.pod:877

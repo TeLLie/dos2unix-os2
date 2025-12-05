@@ -7,7 +7,7 @@ SYNOPSIS
         unix2dos [options] [FICHIER …] [-n FICHIER_ENTRÉE FICHIER_SORTIE …]
 
 DESCRIPTION
-    Le package Dos2unix inclut les utilitaires "dos2unix" et "unix2dos" pour
+    Le package dos2unix inclut les utilitaires "dos2unix" et "unix2dos" pour
     convertir des fichiers textes au format DOS ou Mac vers le format Unix
     et inversement.
 
@@ -18,7 +18,7 @@ DESCRIPTION
     Mac OS X, utilisaient le retour chariot (CR) comme seul caractère. De
     nos jours, Mac OS utilise le même style de saut de ligne que Unix (LF).
 
-    Outre les sauts de lignes, Dos2unix convertit aussi le codage des
+    Outre les sauts de lignes, dos2unix convertit aussi le codage des
     fichiers. Quelques codes page DOS peuvent être convertis en Latin-1 sous
     Unix. L'Unicode des fichiers Windows (UTF-16) peut être converti en
     Unicode Unix (UTF-8).
@@ -34,7 +34,7 @@ DESCRIPTION
     sortie peut être écrite dans la cible du lien symbolique. Écrire dans la
     cible d'un lien symbolique n'est pas supporté sous Windows.
 
-    Dos2unix a été conçu comme dos2unix sous SunOS/Solaris. Il y a une
+    dos2unix a été conçu comme dos2unix sous SunOS/Solaris. Il y a une
     différence importante avec la version originale de SunOS/Solaris. Cette
     version effectue les conversions en place (ancien mode de fichier)
     tandis que la version originale de SunOS/Solaris ne supporte que la
@@ -595,7 +595,7 @@ UNICODE
     fichiers codés en UTF-8 car UTF-8 a été conçu pour être rétro-compatible
     avec l'ASCII.
 
-    Dos2unix et unix2dos, avec le support pour l'Unicode UTF-16, peuvent
+    dos2unix et unix2dos, avec le support pour l'Unicode UTF-16, peuvent
     lire les fichiers textes codés sous forme petit boutien ou gros boutien.
     Pour savoir si dos2unix a été compilé avec le support UTF-16 tapez
     "dos2unix -V".
@@ -619,7 +619,7 @@ UNICODE
     même encodage UTF-16 que le fichier d'entrée. L'option "-u" empêche la
     conversion en UTF-8.
 
-    Dos2unix et unix2dos n'ont pas d'option pour convertir des fichiers
+    dos2unix et unix2dos n'ont pas d'option pour convertir des fichiers
     UTF-8 en UTF-16.
 
     Les modes de conversion ISO et 7 bits ne fonctionnent pas sur des
@@ -635,26 +635,26 @@ UNICODE
     supposé que les fichiers textes sont codés selon le codage de
     l'environnement linguistique.
 
-    Dos2unix ne peut détecter que le fichier est au format UTF-16 si le
+    dos2unix ne peut détecter que le fichier est au format UTF-16 si le
     fichier n'a pas de BOM. Quand le fichier UTF-16 n'a pas cet indicateur,
     dos2unix voit le fichier comme un fichier binaire.
 
     Utilisez l'option "-ul" ou "-ub" pour convertir un fichier UTF-16 sans
     BOM.
 
-    Dos2unix, par défaut, n'écrit pas de BOM dans le fichier de sortie. Avec
-    l'option "-b", Dos2unix écrit une BOM quand le fichier d'entrée a une
+    dos2unix, par défaut, n'écrit pas de BOM dans le fichier de sortie. Avec
+    l'option "-b", dos2unix écrit une BOM quand le fichier d'entrée a une
     BOM.
 
-    Unix2dos écrit par défaut une BOM dans le fichier de sortie quand le
+    unix2dos écrit par défaut une BOM dans le fichier de sortie quand le
     fichier d'entrée a une BOM. Utilisez l'option "-r" pour supprimer la
     BOM.
 
-    Dos2unix et unix2dos écrivent toujours une BOM quand l'option "-m" est
+    dos2unix et unix2dos écrivent toujours une BOM quand l'option "-m" est
     utilisée.
 
   Noms de fichiers unicode sous Windows
-    Dos2unix supporte, en option, la lecture et l'écriture de noms de
+    dos2unix supporte, en option, la lecture et l'écriture de noms de
     fichiers Unicode dans la ligne de commande de Windows. Cela signifie que
     dos2unix peut ouvrir des fichiers qui ont, dans leur nom, des caractères
     n'appartenant pas au code page système ANSI par défaut. Pour voir si
@@ -706,7 +706,7 @@ GB18030
     octets, comme les fichiers Unicode.
 
 EXEMPLES
-    Lire l'entrée depuis « stdin » et écrire la sortie vers « stdout » :
+    Lire l'entrée depuis « stdin » et écrire la sortie vers « stdout » :
 
         dos2unix < a.txt
         cat a.txt | dos2unix
@@ -816,7 +816,7 @@ PARAMÈTRES LINGUISTIQUES
 
     LANGUE
         Avec la variable d'environnement LANGUAGE, vous pouvez spécifier une
-        liste de langues prioritaires séparées par des deux-points. Dos2unix
+        liste de langues prioritaires séparées par des deux-points. dos2unix
         fait passer LANGUAGE avant LANG. Par exemple, pour utiliser le
         français avant l'anglais: "LANGUAGE=fr:en". Vous devez d'abord
         activer l'environnement linguistique en assignant une valeur autre

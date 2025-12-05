@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>dos2unix 7.5.2 - DOS/MAC to UNIX and vice versa text file format converter</title>
+<title>dos2unix 7.5.3 - DOS/MAC to UNIX and vice versa text file format converter</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rev="made" href="mailto:ASSI@walter.nonet" />
 </head>
@@ -48,11 +48,11 @@ unix2dos [options] [FILE ...] [-n INFILE OUTFILE ...]</code></pre>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>The Dos2unix package includes utilities <code>dos2unix</code> and <code>unix2dos</code> to convert plain text files in DOS or Mac format to Unix format and vice versa.</p>
+<p>The dos2unix package includes utilities <code>dos2unix</code> and <code>unix2dos</code> to convert plain text files in DOS or Mac format to Unix format and vice versa.</p>
 
 <p>In DOS/Windows text files a line break, also known as newline, is a combination of two characters: a Carriage Return (CR) followed by a Line Feed (LF). In Unix text files a line break is a single character: the Line Feed (LF). In Mac text files, prior to Mac OS X, a line break was single Carriage Return (CR) character. Nowadays Mac OS uses Unix style (LF) line breaks.</p>
 
-<p>Besides line breaks Dos2unix can also convert the encoding of files. A few DOS code pages can be converted to Unix Latin-1. And Windows Unicode (UTF-16) files can be converted to Unix Unicode (UTF-8) files.</p>
+<p>Besides line breaks dos2unix can also convert the encoding of files. A few DOS code pages can be converted to Unix Latin-1. And Windows Unicode (UTF-16) files can be converted to Unix Unicode (UTF-8) files.</p>
 
 <p>Binary files are automatically skipped, unless conversion is forced.</p>
 
@@ -60,7 +60,7 @@ unix2dos [options] [FILE ...] [-n INFILE OUTFILE ...]</code></pre>
 
 <p>Symbolic links and their targets are by default kept untouched. Symbolic links can optionally be replaced, or the output can be written to the symbolic link target. Writing to a symbolic link target is not supported on Windows.</p>
 
-<p>Dos2unix was modelled after dos2unix under SunOS/Solaris. There is one important difference with the original SunOS/Solaris version. This version does by default in-place conversion (old file mode), while the original SunOS/Solaris version only supports paired conversion (new file mode). See also options <code>-o</code> and <code>-n</code>. Another difference is that the SunOS/Solaris version uses by default <i>iso</i> mode conversion while this version uses by default <i>ascii</i> mode conversion.</p>
+<p>dos2unix was modelled after dos2unix under SunOS/Solaris. There is one important difference with the original SunOS/Solaris version. This version does by default in-place conversion (old file mode), while the original SunOS/Solaris version only supports paired conversion (new file mode). See also options <code>-o</code> and <code>-n</code>. Another difference is that the SunOS/Solaris version uses by default <i>iso</i> mode conversion while this version uses by default <i>ascii</i> mode conversion.</p>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -166,7 +166,7 @@ unix2dos [options] [FILE ...] [-n INFILE OUTFILE ...]</code></pre>
 <dt id="ansi"><b>ansi</b></dt>
 <dd>
 
-<p>Dos2unix&#39;s default method is to use ANSI encoded text. The advantage is that it is backwards compatible. It works with raster and TrueType fonts. In some regions you may need to change the active DOS OEM code page to the Windows system ANSI code page using the <code>chcp</code> command, because dos2unix uses the Windows system code page.</p>
+<p>dos2unix&#39;s default method is to use ANSI encoded text. The advantage is that it is backwards compatible. It works with raster and TrueType fonts. In some regions you may need to change the active DOS OEM code page to the Windows system ANSI code page using the <code>chcp</code> command, because dos2unix uses the Windows system code page.</p>
 
 <p>The disadvantage of ansi is that international file names with characters not inside the system default code page are not displayed properly. You will see a question mark, or a wrong symbol instead. When you don&#39;t work with foreign file names this method is OK.</p>
 
@@ -608,7 +608,7 @@ unix2dos [options] [FILE ...] [-n INFILE OUTFILE ...]</code></pre>
 
 <p>All versions of dos2unix and unix2dos can convert UTF-8 encoded files, because UTF-8 was designed for backward compatibility with ASCII.</p>
 
-<p>Dos2unix and unix2dos with Unicode UTF-16 support, can read little and big endian UTF-16 encoded text files. To see if dos2unix was built with UTF-16 support type <code>dos2unix -V</code>.</p>
+<p>dos2unix and unix2dos with Unicode UTF-16 support, can read little and big endian UTF-16 encoded text files. To see if dos2unix was built with UTF-16 support type <code>dos2unix -V</code>.</p>
 
 <p>On Unix/Linux UTF-16 encoded files are converted to the locale character encoding. Use the locale(1) command to find out what the locale character encoding is. When conversion is not possible a conversion error will occur and the file will be skipped.</p>
 
@@ -618,7 +618,7 @@ unix2dos [options] [FILE ...] [-n INFILE OUTFILE ...]</code></pre>
 
 <p>When option <code>-u</code> is used, the output file will be written in the same UTF-16 encoding as the input file. Option <code>-u</code> prevents conversion to UTF-8.</p>
 
-<p>Dos2unix and unix2dos have no option to convert UTF-8 files to UTF-16.</p>
+<p>dos2unix and unix2dos have no option to convert UTF-8 files to UTF-16.</p>
 
 <p>ISO and 7-bit mode conversion do not work on UTF-16 files.</p>
 
@@ -628,19 +628,19 @@ unix2dos [options] [FILE ...] [-n INFILE OUTFILE ...]</code></pre>
 
 <p>On Unix Unicode files typically don&#39;t have a BOM. It is assumed that text files are encoded in the locale character encoding.</p>
 
-<p>Dos2unix can only detect if a file is in UTF-16 format if the file has a BOM. When an UTF-16 file doesn&#39;t have a BOM, dos2unix will see the file as a binary file.</p>
+<p>dos2unix can only detect if a file is in UTF-16 format if the file has a BOM. When an UTF-16 file doesn&#39;t have a BOM, dos2unix will see the file as a binary file.</p>
 
 <p>Use option <code>-ul</code> or <code>-ub</code> to convert an UTF-16 file without BOM.</p>
 
-<p>Dos2unix writes by default no BOM in the output file. With option <code>-b</code> Dos2unix writes a BOM when the input file has a BOM.</p>
+<p>dos2unix writes by default no BOM in the output file. With option <code>-b</code> dos2unix writes a BOM when the input file has a BOM.</p>
 
-<p>Unix2dos writes by default a BOM in the output file when the input file has a BOM. Use option <code>-r</code> to remove the BOM.</p>
+<p>unix2dos writes by default a BOM in the output file when the input file has a BOM. Use option <code>-r</code> to remove the BOM.</p>
 
-<p>Dos2unix and unix2dos write always a BOM when option <code>-m</code> is used.</p>
+<p>dos2unix and unix2dos write always a BOM when option <code>-m</code> is used.</p>
 
 <h2 id="Unicode-file-names-on-Windows">Unicode file names on Windows</h2>
 
-<p>Dos2unix has optional support for reading and writing Unicode file names in the Windows Command Prompt. That means that dos2unix can open files that have characters in the name that are not part of the default system ANSI code page. To see if dos2unix for Windows was built with Unicode file name support type <code>dos2unix -V</code>.</p>
+<p>dos2unix has optional support for reading and writing Unicode file names in the Windows Command Prompt. That means that dos2unix can open files that have characters in the name that are not part of the default system ANSI code page. To see if dos2unix for Windows was built with Unicode file name support type <code>dos2unix -V</code>.</p>
 
 <p>There are some issues with displaying Unicode file names in a Windows console. See option <code>-D</code>, <code>--display-enc</code>. The file names may be displayed wrongly in the console, but the files will be written with the correct name.</p>
 
@@ -771,7 +771,7 @@ export LANG=en_GB.UTF-8      English, UK, UTF-8 encoding</code></pre>
 <dt id="LANGUAGE"><b>LANGUAGE</b></dt>
 <dd>
 
-<p>With the LANGUAGE environment variable you can specify a priority list of languages, separated by colons. Dos2unix gives preference to LANGUAGE over LANG. For instance, first Dutch and then German: <code>LANGUAGE=nl:de</code>. You have to first enable localization, by setting LANG (or LC_ALL) to a value other than &quot;C&quot;, before you can use a language priority list through the LANGUAGE variable. See also the gettext manual: <a href="https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html">https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html</a></p>
+<p>With the LANGUAGE environment variable you can specify a priority list of languages, separated by colons. dos2unix gives preference to LANGUAGE over LANG. For instance, first Dutch and then German: <code>LANGUAGE=nl:de</code>. You have to first enable localization, by setting LANG (or LC_ALL) to a value other than &quot;C&quot;, before you can use a language priority list through the LANGUAGE variable. See also the gettext manual: <a href="https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html">https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html</a></p>
 
 <p>If you select a language which is not available you will get the standard English messages.</p>
 

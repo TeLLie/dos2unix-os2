@@ -1,3 +1,50 @@
+2025-10-14 Erwin Waterlander <waterlan@xs4all.nl>
+	* Version 7.5.3
+
+2025-10-14 Temuri Doghonadze <temuri.doghonadze@gmail.com>
+	* Updated Georgian translation of UI messages.
+
+2025-10-11 Erwin Waterlander <waterlan@xs4all.nl>
+	* Makefile, man/man1/Makefile: Update make dependencies
+	  for man pages generation.
+	* Makefile: Update location of CRT_glob.o for mingw.
+	* common.c: Fix: Exit with zero code when an unicode
+	  conversion error occurs in quiet mode.
+
+2025-10-10 Erwin Waterlander <waterlan@xs4all.nl>
+	* Fix: Exit with non-zero code if the conversion is aborted
+	  due to a binary file.
+	  Fixes https://sourceforge.net/p/dos2unix/bugs/21/
+
+2025-05-16 Erwin Waterlander <waterlan@xs4all.nl>
+	* common.c: Updated a few messages.
+	* man/man1/dos2unix.pod: dos2unix all lowercase.
+
+2025-03-29 Benno Schulenberg <vertaling@coevern.nl>
+	* po-man/nl.po: Updated Dutch translation of the manual.
+
+2025-03-18 Erwin Waterlander <waterlan@xs4all.nl>
+	* po-man/nl.po: Updated Dutch translation of the manual.
+
+2024-12-16 Мирослав Николић <miroslavnikolic@rocketmail.com>
+	* po-man/sr.po: Updated Serbian translation of the manual.
+
+2024-12-01 Yi-Jyun Pan <pan93412@gmail.com>
+	* po/zh_TW.po: Updated traditional Chinese translation.
+
+2024-10-09 Fabio Tomat <f.t.public@gmail.com>
+	* po/fur.po: Updated Friulian translation.
+
+2024-09-23 Rafael Fontenelle <rafaelff@gnome.org>
+	* po*/pt_BR.po: Updated Brazilian Portuguese translations.
+
+2024-08-24 Jordi Mas i Hernàndez <jmas@softcatala.org>
+	* Updated Catalan translation of the UI messages.
+
+2024-03-26 Erwin Waterlander <waterlan@xs4all.nl>
+	* man/man1/Makefile: Stopped using po4a-translate and po4a-updatepo.
+	  They are deprecated since po4a 0.68.
+
 2024-01-22 Erwin Waterlander <waterlan@xs4all.nl>
 	* Version 7.5.2
 
@@ -347,7 +394,7 @@
 
 2015-10-09 Rafael Fontenelle <rffontenelle@gmail.com>
 	* po/pt_BR.po: Updated Brazilian Portuguese translation.
-	* man/pt_BR.po/man1/dos2unix.po: Updated Brazilian Portuguese translation.
+	* man/pt_BR/man1/dos2unix.po: Updated Brazilian Portuguese translation.
 
 2015-10-01 Erwin Waterlander <waterlan@xs4all.nl>
 	* common.c: Fix compilation for MSYS 1.

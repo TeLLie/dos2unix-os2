@@ -1,4 +1,3 @@
-po4a-translate is deprecated. The unified po4a(1) program is more convenient and less error prone.
 
         *****************************************************
         *           GENERATED FILE, DO NOT EDIT             *
@@ -11,10 +10,9 @@ but store the PO file used as source file by po4a-translate.
 In fact, consider this as a binary, and the PO file as a regular .c file:
 If the PO get lost, keeping this translation up-to-date will be harder.
 
+=encoding UTF-8
 
 =pod
-
-=encoding UTF-8
 
 =head1 BEZEICHNUNG
 
@@ -27,11 +25,11 @@ dos2unix - Formatumwandlung für Textdateien von DOS/Mac nach Unix und umgekehrt
 
 =head1 BESCHREIBUNG
 
-Das Paket Dos2unix enthält die Werkzeuge C<dos2unix> und C<unix2dos> zum Umwandeln einfacher Textdateien aus dem DOS- oder Mac-Format in das Unix-Format und umgekehrt.
+Das Paket dos2unix enthält die Werkzeuge C<dos2unix> und C<unix2dos> zum Umwandeln einfacher Textdateien aus dem DOS- oder Mac-Format in das Unix-Format und umgekehrt.
 
 In Textdateien unter DOS/Windows sind Zeilenumbrüche, auch als neue Zeile (NL) bekannt, eine Kombination aus zwei Zeichen: einem Wagenrücklauf (Carriage Return, CR) gefolgt von einem Zeilenvorschub (Line Feed, LF). In Unix-Textdateien bestehen Zeilenumbrüche nur aus einem Zeichen, dem Zeilenvorschub (LF). In Mac-Textdateien aus der Zeit vor MacOS X bestand ein Zeilenumbruch aus einem einzelnen CR-Zeichen. Heute verwendet macOS Zeilenumbrüche im Unix-Stil (LF).
 
-Neben Zeilenumbrüchen kann Dos2unix auch die Zeichenkodierung von Dateien umwandeln. Einige DOS-Codepages können in Unix Latin-1 umgewandelt werden, und Windows-Unicode-Dateien (UTF-16) können in Unix-Unicode-Dateien (UTF-8) umgewandelt werden.
+Neben Zeilenumbrüchen kann dos2unix auch die Zeichenkodierung von Dateien umwandeln. Einige DOS-Codepages können in Unix Latin-1 umgewandelt werden, und Windows-Unicode-Dateien (UTF-16) können in Unix-Unicode-Dateien (UTF-8) umgewandelt werden.
 
 Binärdateien werden automatisch übersprungen, sofern die Umwandlung nicht erzwungen wird.
 
@@ -509,7 +507,7 @@ Dos2unix kann nur dann erkennen, ob eine Datei UTF-16-kodiert ist, wenn die Date
 
 Verwenden Sie die Optionen C<-ul> oder C<-ub>, um eine UTF-16-Datei ohne BOM umzuwandeln.
 
-Dos2unix schreibt in der Voreinstellung keine BOM in die Ausgabedatei. Mit der Option C<-b> schreibt Dos2unix eine BOM, wenn die Eingabedatei ebenfalls eine BOM hat.
+Dos2unix schreibt in der Voreinstellung keine BOM in die Ausgabedatei. Mit der Option C<-b> schreibt dos2unix eine BOM, wenn die Eingabedatei ebenfalls eine BOM hat.
 
 Unix2dos schreibt in der Voreinstellung eine BOM in die Ausgabedatei, wenn die Eingabedatei ebenfalls eine solche Markierung hat. Verwenden Sie die Option C<-r>, um die BOM zu entfernen.
 

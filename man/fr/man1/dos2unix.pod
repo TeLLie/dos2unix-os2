@@ -1,4 +1,3 @@
-po4a-translate is deprecated. The unified po4a(1) program is more convenient and less error prone.
 
         *****************************************************
         *           GENERATED FILE, DO NOT EDIT             *
@@ -11,10 +10,9 @@ but store the PO file used as source file by po4a-translate.
 In fact, consider this as a binary, and the PO file as a regular .c file:
 If the PO get lost, keeping this translation up-to-date will be harder.
 
+=encoding UTF-8
 
 =pod
-
-=encoding UTF-8
 
 =head1 NOM
 
@@ -27,11 +25,11 @@ dos2unix - Convertit les fichiers textes du format DOS/Mac vers Unix et inversem
 
 =head1 DESCRIPTION
 
-Le package Dos2unix inclut les utilitaires C<dos2unix> et C<unix2dos> pour convertir des fichiers textes au format DOS ou Mac vers le format Unix et inversement.
+Le package dos2unix inclut les utilitaires C<dos2unix> et C<unix2dos> pour convertir des fichiers textes au format DOS ou Mac vers le format Unix et inversement.
 
 Dans les fichiers textes DOS/Windows, un saut de ligne est une combinaison de deux caractères: un retour de chariot (CR) suivi d'un saut de ligne (LF). Dans les fichiers textes Unix, le saut de ligne est un seul caractère: le saut de ligne (LF). Les fichiers textes Mac, avant Mac OS X, utilisaient le retour chariot (CR) comme seul caractère. De nos jours, Mac OS utilise le même style de saut de ligne que Unix (LF).
 
-Outre les sauts de lignes, Dos2unix convertit aussi le codage des fichiers. Quelques codes page DOS peuvent être convertis en Latin-1 sous Unix. L'Unicode des fichiers Windows (UTF-16) peut être converti en Unicode Unix (UTF-8).
+Outre les sauts de lignes, dos2unix convertit aussi le codage des fichiers. Quelques codes page DOS peuvent être convertis en Latin-1 sous Unix. L'Unicode des fichiers Windows (UTF-16) peut être converti en Unicode Unix (UTF-8).
 
 Les fichiers binaires sont automatiquement ignorés à moins que la conversion soit forcée.
 
@@ -39,7 +37,7 @@ Les fichiers non réguliers tels que les répertoires et les FIFOs sont automati
 
 Les liens symboliques et leur cible sont, par défaut, inchangés. En option, les liens symboliques peuvent être remplacés ou, au choix, la sortie peut être écrite dans la cible du lien symbolique. Écrire dans la cible d'un lien symbolique n'est pas supporté sous Windows.
 
-Dos2unix a été conçu comme dos2unix sous SunOS/Solaris. Il y a une différence importante avec la version originale de SunOS/Solaris. Cette version effectue les conversions en place (ancien mode de fichier) tandis que la version originale de SunOS/Solaris ne supporte que la conversion par paire (nouveau mode de fichier). Voyez aussi les options C<-o> et C<-n>. Une autre différence est que SunOS/Solaris utilise par défaut le mode de conversion I<iso> tandis que cette version utilise par défaut le mode de conversion I<ascii>.
+dos2unix a été conçu comme dos2unix sous SunOS/Solaris. Il y a une différence importante avec la version originale de SunOS/Solaris. Cette version effectue les conversions en place (ancien mode de fichier) tandis que la version originale de SunOS/Solaris ne supporte que la conversion par paire (nouveau mode de fichier). Voyez aussi les options C<-o> et C<-n>. Une autre différence est que SunOS/Solaris utilise par défaut le mode de conversion I<iso> tandis que cette version utilise par défaut le mode de conversion I<ascii>.
 
 =head1 OPTIONS
 
@@ -47,7 +45,7 @@ Dos2unix a été conçu comme dos2unix sous SunOS/Solaris. Il y a une différenc
 
 =item B<-->
 
-Traites toutes les options à sa suite comme étant des noms de fichiers. Utilisez cette option si vous voulez convertir des fichiers dont le nom commence par un tiret. Par exemple, pour convertir un fichier nommé S<« -foo »,> vous pouvez utiliser cette commande:
+Traites toutes les options à sa suite comme étant des noms de fichiers. Utilisez cette option si vous voulez convertir des fichiers dont le nom commence par un tiret. Par exemple, pour convertir un fichier nommé « -foo », vous pouvez utiliser cette commande:
 
     dos2unix -- -foo
 
@@ -139,7 +137,7 @@ Quand la méthode C<unicodebom> est utilisée, le texte Unicode est précédé d
 
 L'avantage de utf8 est qu'il est compatible avec ASCII. Vous devez utiliser une police TrueType dans la console. Avec une police TrueType, le texte est affiché comme avec un encodage C<unicode>.
 
-Le désavantage est que, si vous utilisez la police raster par défaut, tous les caractères non ASCII sont mal affichés. Pas uniquement les noms de fichiers S<unicode !> Les messages traduits deviennent inintelligibles. Sous Windows configuré pour une région de l'est de l'Asie, vous pouvez observer énormément de scintillements dans la console quand des messages sont affichés.
+Le désavantage est que, si vous utilisez la police raster par défaut, tous les caractères non ASCII sont mal affichés. Pas uniquement les noms de fichiers unicode ! Les messages traduits deviennent inintelligibles. Sous Windows configuré pour une région de l'est de l'Asie, vous pouvez observer énormément de scintillements dans la console quand des messages sont affichés.
 
 Dans une console ConEmu, l'encodage utf8 fonctionne bien.
 
@@ -175,7 +173,7 @@ Affiche les informations du fichier. Aucune conversion n'est réalisée.
 
 Les informations suivantes sont affichées dans cet ordre: le nombre de sauts de ligne DOS, le nombre de sauts de ligne Unix, le nombre de sauts de ligne Mac, la marque d'ordre des octets, texte ou binaire, nom du fichier.
 
-Exemple de S<sortie :>
+Exemple de sortie :
 
      6       0       0  no_bom    text    dos.txt
      0       6       0  no_bom    text    unix.txt
@@ -190,7 +188,7 @@ Notez qu'un fichier binaire peut parfois être considéré à tord comme un fich
 
 Si l'option C<-e> ou C<--add-eol> est également utilisée, le type du saut de ligne de la dernière ligne est affiché ou C<noeol> est affiché s'il n'y en a pas.
 
-Exemple de S<sortie :>
+Exemple de sortie :
 
      6       0       0  no_bom    text   dos     dos.txt
      0       6       0  no_bom    text   unix    unix.txt
@@ -249,15 +247,15 @@ Montrer les noms des fichiers sans le chemin.
 
 Exemples:
 
-Afficher les informations pour tous les fichier S<*.txt :>
+Afficher les informations pour tous les fichier *.txt :
 
     dos2unix -i *.txt
 
-Afficher uniquement le nombre de sauts de ligne DOS et S<Unix :>
+Afficher uniquement le nombre de sauts de ligne DOS et Unix :
 
     dos2unix -idu *.txt
 
-Montrer uniquement la marque d'ordre des S<octets :>
+Montrer uniquement la marque d'ordre des octets :
 
     dos2unix --info=b *.txt
 
@@ -327,7 +325,7 @@ N'ajoute pas de saut de ligne à la dernière ligne s'il n'y en a pas.
 
 Écrit vers la sortie standard, comme un filtre Unix. Utilisez l'option C<-o> pour revenir au mode de l'ancien fichier (en place).
 
-Combiné avec l'option C<-e>, les fichiers peuvent être concaténés correctement. Les première et dernière lignes ne sont pas fusionnées et il n'y a pas de marque d'ordre des octets au milieu du fichier concaténé. S<Exemple :>
+Combiné avec l'option C<-e>, les fichiers peuvent être concaténés correctement. Les première et dernière lignes ne sont pas fusionnées et il n'y a pas de marque d'ordre des octets au milieu du fichier concaténé. Exemple :
 
     dos2unix -e -O fichier1.txt fichier2.txt > sortie.txt
 
@@ -485,7 +483,7 @@ Les fichiers textes Unicode peuvent avoir des sauts de lignes DOS, Unix ou Mac, 
 
 Toutes les versions de dos2unix et unix2dos peuvent convertir des fichiers codés en UTF-8 car UTF-8 a été conçu pour être rétro-compatible avec l'ASCII.
 
-Dos2unix et unix2dos, avec le support pour l'Unicode UTF-16, peuvent lire les fichiers textes codés sous forme petit boutien ou gros boutien. Pour savoir si dos2unix a été compilé avec le support UTF-16 tapez C<dos2unix -V>.
+dos2unix et unix2dos, avec le support pour l'Unicode UTF-16, peuvent lire les fichiers textes codés sous forme petit boutien ou gros boutien. Pour savoir si dos2unix a été compilé avec le support UTF-16 tapez C<dos2unix -V>.
 
 Sous Unix/Linux, les fichiers encodés en UTF-16 sont convertis vers l'encodage des caractères de la localisation. Utilisez locale(1) pour découvrir quel encodage de caractères est utilisé. Lorsque la conversion n'est pas possible, une erreur de conversion est produite et le fichier est abandonné.
 
@@ -495,7 +493,7 @@ Les codages UTF-16 et UTF-8 sont parfaitement compatibles. Il n'y a pas de perte
 
 Quand l'option C<-u> est utilisée, le fichier de sortie est écrit dans le même encodage UTF-16 que le fichier d'entrée. L'option C<-u> empêche la conversion en UTF-8.
 
-Dos2unix et unix2dos n'ont pas d'option pour convertir des fichiers UTF-8 en UTF-16.
+dos2unix et unix2dos n'ont pas d'option pour convertir des fichiers UTF-8 en UTF-16.
 
 Les modes de conversion ISO et 7 bits ne fonctionnent pas sur des fichiers UTF-16.
 
@@ -505,19 +503,19 @@ Les fichiers textes Unicode sous Windows on généralement un indicateur d'ordre
 
 Sous Unix, les fichiers Unicodes n'ont habituellement pas de BOM. Il est supposé que les fichiers textes sont codés selon le codage de l'environnement linguistique.
 
-Dos2unix ne peut détecter que le fichier est au format UTF-16 si le fichier n'a pas de BOM. Quand le fichier UTF-16 n'a pas cet indicateur, dos2unix voit le fichier comme un fichier binaire.
+dos2unix ne peut détecter que le fichier est au format UTF-16 si le fichier n'a pas de BOM. Quand le fichier UTF-16 n'a pas cet indicateur, dos2unix voit le fichier comme un fichier binaire.
 
 Utilisez l'option C<-ul> ou C<-ub> pour convertir un fichier UTF-16 sans BOM.
 
-Dos2unix, par défaut, n'écrit pas de BOM dans le fichier de sortie. Avec l'option C<-b>, Dos2unix écrit une BOM quand le fichier d'entrée a une BOM.
+dos2unix, par défaut, n'écrit pas de BOM dans le fichier de sortie. Avec l'option C<-b>, dos2unix écrit une BOM quand le fichier d'entrée a une BOM.
 
-Unix2dos écrit par défaut une BOM dans le fichier de sortie quand le fichier d'entrée a une BOM. Utilisez l'option C<-r> pour supprimer la BOM.
+unix2dos écrit par défaut une BOM dans le fichier de sortie quand le fichier d'entrée a une BOM. Utilisez l'option C<-r> pour supprimer la BOM.
 
-Dos2unix et unix2dos écrivent toujours une BOM quand l'option C<-m> est utilisée.
+dos2unix et unix2dos écrivent toujours une BOM quand l'option C<-m> est utilisée.
 
 =head2 Noms de fichiers unicode sous Windows
 
-Dos2unix supporte, en option, la lecture et l'écriture de noms de fichiers Unicode dans la ligne de commande de Windows. Cela signifie que dos2unix peut ouvrir des fichiers qui ont, dans leur nom, des caractères n'appartenant pas au code page système ANSI par défaut. Pour voir si dos2unix pour Windows a été compilé avec le support des noms de fichiers Unicode, tapez C<dos2unix -V>.
+dos2unix supporte, en option, la lecture et l'écriture de noms de fichiers Unicode dans la ligne de commande de Windows. Cela signifie que dos2unix peut ouvrir des fichiers qui ont, dans leur nom, des caractères n'appartenant pas au code page système ANSI par défaut. Pour voir si dos2unix pour Windows a été compilé avec le support des noms de fichiers Unicode, tapez C<dos2unix -V>.
 
 Il y a quelques soucis avec l'affichage de noms de fichiers Unicode dans une console Windows. Voyez l'option C<-D>, C<--display-enc>. Les noms de fichiers peuvent être mal affichés dans la console mais les fichiers seront écrits avec les bons noms.
 
@@ -553,7 +551,7 @@ Les fichiers encodés en GB18030 peuvent avoir une marque d'ordre des octets, co
 
 =head1 EXEMPLES
 
-Lire l'entrée depuis S<« stdin »> et écrire la sortie vers S<« stdout » :>
+Lire l'entrée depuis « stdin » et écrire la sortie vers « stdout » :
 
     dos2unix < a.txt
     cat a.txt | dos2unix
@@ -649,7 +647,7 @@ Sur les systèmes Unix, vous pouvez utiliser la commande locale(1) pour obtenir 
 
 =item B<LANGUE>
 
-Avec la variable d'environnement LANGUAGE, vous pouvez spécifier une liste de langues prioritaires séparées par des deux-points. Dos2unix fait passer LANGUAGE avant LANG. Par exemple, pour utiliser le français avant l'anglais: C<LANGUAGE=fr:en>. Vous devez d'abord activer l'environnement linguistique en assignant une valeur autre que S<« C »> à LANG (ou LC_ALL). Ensuite, vous pourrez utiliser la liste de priorité avec la variable LANGUAGE. Voyez également le manuel de gettext: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>
+Avec la variable d'environnement LANGUAGE, vous pouvez spécifier une liste de langues prioritaires séparées par des deux-points. dos2unix fait passer LANGUAGE avant LANG. Par exemple, pour utiliser le français avant l'anglais: C<LANGUAGE=fr:en>. Vous devez d'abord activer l'environnement linguistique en assignant une valeur autre que « C » à LANG (ou LC_ALL). Ensuite, vous pourrez utiliser la liste de priorité avec la variable LANGUAGE. Voyez également le manuel de gettext: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>
 
 Si vous sélectionnez une langue qui n'est pas disponible, vous obtiendrez des messages en anglais standard.
 

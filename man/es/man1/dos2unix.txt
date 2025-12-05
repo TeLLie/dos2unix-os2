@@ -7,9 +7,9 @@ SINOPSIS
         unix2dos [parámetros] [ARCHIVO ...] [-n ARCHIVO_DE_ENTRADA ARCHIVO_DE_SALIDA ...]
 
 DESCRIPCIÓN
-    El paquete Dos2unix incluye las herramientas "dos2unix" y "unix2dos"
-    para convertir archivos de texto plano en formato DOS o Mac a formato
-    Unix y viceversa.
+    The dos2unix package includes utilities "dos2unix" and "unix2dos" to
+    convert plain text files in DOS or Mac format to Unix format and vice
+    versa.
 
     En archivos de texto DOS/Windows, un salto de línea, también conocido
     como nueva línea, es una combinación de dos caracteres: un retorno de
@@ -19,10 +19,9 @@ DESCRIPCIÓN
     sólo un carácter retorno de carro (CR). Actualmente, Mac OS usa el
     estilo Unix de saltos de línea (LF).
 
-    Además de saltos de línea, Dos2unix puede también convertir la
-    codificación de archivos. Unas cuantas páginas de códigos DOS pueden ser
-    convertidas a Unix Latin-1. Y archivos Unicode de Windows (UTF-16)
-    pueden ser convertidos a archivos Unicode de Unix (UTF-8).
+    Besides line breaks dos2unix can also convert the encoding of files. A
+    few DOS code pages can be converted to Unix Latin-1. And Windows Unicode
+    (UTF-16) files can be converted to Unix Unicode (UTF-8) files.
 
     Los archivos binarios son ignorados automáticamente, a menos que se
     fuerce su conversión.
@@ -35,7 +34,7 @@ DESCRIPCIÓN
     salida puede ser escrita al destino simbólico del enlace. En Windows no
     está soportada la escritura a enlaces simbólicos.
 
-    Dos2unix was modelled after dos2unix under SunOS/Solaris. There is one
+    dos2unix was modelled after dos2unix under SunOS/Solaris. There is one
     important difference with the original SunOS/Solaris version. This
     version does by default in-place conversion (old file mode), while the
     original SunOS/Solaris version only supports paired conversion (new file
@@ -118,7 +117,7 @@ PARÁMETROS
         advantages and disadvantages.
 
         ansi
-            Dos2unix's default method is to use ANSI encoded text. The
+            dos2unix's default method is to use ANSI encoded text. The
             advantage is that it is backwards compatible. It works with
             raster and TrueType fonts. In some regions you may need to
             change the active DOS OEM code page to the Windows system ANSI
@@ -569,9 +568,9 @@ UNICODE
     codificados como UTF-8, debido a que UTF-8 fue diseñado para
     retro-compatibilidad con ASCII.
 
-    Dos2unix y unix2dos con soporte Unicode UTF-16, pueden leer archivos de
-    texto codificados como UTF-16 little y big endian. Para ver si dos2unix
-    fue compilado con soporte UTF-16 escriba "dos2unix -V".
+    dos2unix and unix2dos with Unicode UTF-16 support, can read little and
+    big endian UTF-16 encoded text files. To see if dos2unix was built with
+    UTF-16 support type "dos2unix -V".
 
     En Unix/Linux los archivos codificados con UTF-16 se convierten a la
     codificación de caracteres local. Use el comando locale(1) para
@@ -592,8 +591,7 @@ UNICODE
     misma codificación UTF-16 que el archivo de entrada. La opción "-u"
     previene la conversión a UTF-8.
 
-    Dos2unix y unix2dos no tienen la opción de convertir archivos UTF-8 a
-    UTF-16.
+    dos2unix and unix2dos have no option to convert UTF-8 files to UTF-16.
 
     La conversión en modos ISO y 7-bit no funciona en archivos UTF-16.
 
@@ -606,23 +604,22 @@ UNICODE
     archivos de texto son codificados en la codificación local de
     caracteres.
 
-    Dos2unix sólo puede detectar si un archivo está en formato UTF-16 si el
-    archivo tiene una BOM. Cuando un archivo UTF-16 no tiene una BOM,
-    dos2unix tratará el archivo como un archivo binario.
+    dos2unix can only detect if a file is in UTF-16 format if the file has a
+    BOM. When an UTF-16 file doesn't have a BOM, dos2unix will see the file
+    as a binary file.
 
     Use la opción "-ul" o "-ub" para convertir un archivo UTF-16 sin BOM.
 
-    Dos2Unix, por defecto, no escribe BOM en el archivo de salida. Con la
-    opción "-b" Dos2unix escribe el BOM cuando el archivo de entrada tiene
-    BOM.
+    dos2unix writes by default no BOM in the output file. With option "-b"
+    dos2unix writes a BOM when the input file has a BOM.
 
-    Unix2dos escribe BOM en el archivo de salida cuando el archivo de
-    entrada tiene BOM. Use la opción "-r" para eliminar la BOM.
+    unix2dos writes by default a BOM in the output file when the input file
+    has a BOM. Use option "-r" to remove the BOM.
 
-    Dos2unix y unix2dos escriben siempre BOM cuando se usa la opción "-m".
+    dos2unix and unix2dos write always a BOM when option "-m" is used.
 
   Unicode file names on Windows
-    Dos2unix has optional support for reading and writing Unicode file names
+    dos2unix has optional support for reading and writing Unicode file names
     in the Windows Command Prompt. That means that dos2unix can open files
     that have characters in the name that are not part of the default system
     ANSI code page. To see if dos2unix for Windows was built with Unicode
@@ -778,7 +775,7 @@ INTERNACIONALIZACIÓN
 
     LANGUAGE
         With the LANGUAGE environment variable you can specify a priority
-        list of languages, separated by colons. Dos2unix gives preference to
+        list of languages, separated by colons. dos2unix gives preference to
         LANGUAGE over LANG. For instance, first Dutch and then German:
         "LANGUAGE=nl:de". You have to first enable localization, by setting
         LANG (or LC_ALL) to a value other than "C", before you can use a

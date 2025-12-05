@@ -6,12 +6,12 @@
         unix2dos [选项] [文件 …] [-n 输入文件 输出文件 ...]
 
 说明
-    Dos2unix软件包包括工具"dos2unix" 和 "unix2dos"，用于将纯文本文件在DOS或Mac格式与Unix格式之间相互转换。
+    本dos2unix软件包包括"dos2unix"和"unix2dos"工具，可用于将纯文本文件在DOS或Mac格式与Unix格式之间相互转换。
 
     DOS/Windows的文本文件中，断行符是由两个字符共同表示的：回车符（CR）和换行符（LF）。Unix的文本文件中，换行符则由单个换行符（L
     F）表示。而Mac的文本文件则由单个回车符（CR，用于Mac OS X之前的系统）或单个换行符（LF，用于当下的新Mac OS）表示。
 
-    除了断行符，Dos2unix还可以转换文件编码。一些DOS编码页可以被转换为Unix Latin-1，Windows
+    除了断行符，dos2unix还可以转换文件编码。一些DOS编码页可以被转换为Unix Latin-1，Windows
     Unicode（UTF-16）文件也可以被转换为Unix Unicode（UTF-8）文件。
 
     二进制文件则会被自动跳过，除非指定了强制转换选项。
@@ -20,9 +20,9 @@
 
     符号链接和其所指向的目标默认不会被转换。可以用选项来指定替换符号链接，或者将输出写入到链接目标。Windows下不支持写入到符号链接的目标。
 
-    Dos2unix由SunOS/Solaris下的版本改写而成。这两个版本间有一个重大差异：本版本默认进行原位转换（旧文件模式），而原来SunOS
-    /Solaris下的版本只支持配对转换（新文件模式），参见选项 "-o" 和 "-n"。还有一个区别是SunOS/Solaris下的版本默认使用
-    *iso* 模式，而本版本默认使用 *ascii* 模式。
+    dos2unix参照SunOS/Solaris下的版本改写而成。这两个版本间有一个重大差异：本版本默认进行原位转换（旧文件模式），而原来SunO
+    S/Solaris下的版本只支持配对转换（新文件模式），参见选项 "-o" 和
+    "-n"。还有一个区别是SunOS/Solaris下的版本默认使用 *iso* 模式，而本版本默认使用 *ascii* 模式。
 
 选项
     --  将后面所有的选项当作文件名。如果你希望转换一个文件名以破折号开头的文件，可以使用这个选项。例如，要转换一个名为“-foo”的文件，你可以
@@ -62,7 +62,7 @@
         使用DOS 863 编码页（加拿大法语）。
 
     -865
-         使用DOS 865 编码页（北欧）。
+        使用DOS 865 编码页（北欧）。
 
     -7  将8位字符转换到7位空间。
 
@@ -95,7 +95,7 @@
 
             当你使用ConEmu终端时，所以的文本将会被正确显示，因为ConEmu会自动选择合适的字体。
 
-            Unicode的缺点在于它与ASCII不兼容。当你将输出重定向到其他程序或文件时，它可能不那么容易控制
+            Unicode的缺点在于它与ASCII不兼容。当你将输出重定向到其他程序或文件时，它可能不那么容易处理。
 
             当使用 "unicodebom"
             方法时，将会在Unicode文本前添加一个BOM（字节序标记）。在PowerShell中，需要根据BOM来进行正确的重定向或管道
@@ -574,9 +574,9 @@ GB18030
 
     LANGUAGE
         可以使用LANGUAGE变量指定一系列语言的优先级，各项之间由冒号分割。dos2unix首先使用LANGUAGE变量，其次才是LANG。
-        例如，首选中文、其次英文："LANGUAGE=<zh:en"。在使用语言优先级之前，必须先启用区域化功能，即将LANG（或LC_ALL）
-        变量设置为除了“C”以外的其他值。参见gettext手册：<https://www.gnu.org/software/gettext/m
-        anual/html_node/The-LANGUAGE-variable.html>
+        例如，首选中文、其次英文："LANGUAGE=zh:en"。在使用语言优先级之前，必须先启用区域化功能，即将LANG（或LC_ALL）变
+        量设置为除了“C”以外的其他值。参见gettext手册：<https://www.gnu.org/software/gettext/ma
+        nual/html_node/The-LANGUAGE-variable.html>
 
         如果你选择了一个不可用的语言，程序将会输出标准的英语信息。
 

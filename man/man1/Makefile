@@ -3,7 +3,7 @@
 #   Copyright information
 #
 #       Copyright (C) 2010 Jari Aalto
-#       Copyright (C) 2010-2017 Erwin Waterlander
+#       Copyright (C) 2010-2025 Erwin Waterlander
 #
 #   License
 #
@@ -60,13 +60,6 @@ PACKAGE         ?= dos2unix
 MANSECT         ?= 1
 PODCENTER       ?= $(DOS2UNIX_DATE)
 
-# Directories
-MANSRC          =
-MANDEST         = $(MANSRC)
-
-MANPOD          = $(MANSRC)$(PACKAGE).pod
-MANPAGE         = $(MANDEST)$(PACKAGE).$(MANSECT)
-
 POD2MAN         = pod2man
 POD2MAN_FLAGS   =
 
@@ -76,36 +69,12 @@ MAN_OBJECTS = dos2unix.1 $(patsubst %.pod,%.1,$(PODFILES))
 
 MKDIR = mkdir
 
-all: $(MAN_OBJECTS) ../../po-man/dos2unix-man.pot
+all: $(MAN_OBJECTS)
 
-# Issues:
-
-# The perl version of MinGW and DJGPP is 5.8.8. The pod2man command of perl
-# 5.8.8 does not yet have the options -u, --utf8, and does support the
-# =encoding command.  The =encoding command and the --utf8 option are supported
-# since perl 5.10.1.
-# Erwin W.
-
-# Dos2unix 6.0.5: Forget Latin-1, we do now only UTF-8.
-
-../../po-man/dos2unix-man.pot : dos2unix.pod
-	po4a-updatepo -f pod -m $< -p $@ --msgmerge-opt --no-wrap
-
-%.po : dos2unix.pod
-	po4a-updatepo -f pod -m $< -p $@ --msgmerge-opt "--backup=numbered --no-wrap"
-	# change timestamp in case .po file was not updated.
-	touch $@
-
-# Create pod files from po.
-# Fix problem that =encoding is before =pod command.
-../%/man1/dos2unix.pod : ../../po-man/%.po
-	$(MKDIR) -p $(dir $@)
-	po4a-translate -f pod -m dos2unix.pod -k 70 -p $< > $@
-	perl -ni.bak -e 'print unless /=encoding UTF-8/' $@
-	perl -pli.bak -e 's/=pod/=pod\n\n=encoding UTF-8/' $@
-
-# An empty recipe for dos2unix.pod to break circular dependency.
-dos2unix.pod : ;
+# Create translated pod files from dos2unix.pod.
+$(PODFILES) &: $(POFILES) dos2unix.pod
+	touch ../../po-man/dos2unix-man.pot
+	po4a --wrap-po no -k 65 --msgmerge-opt --no-wrap po4a.cfg
 
 %.1 : %.pod
 	# make target - create manual page from a *.pod page
@@ -121,10 +90,7 @@ dos2unix.pod : ;
 	rm -f pod*.tmp
 
 
-
 clean:
 	rm -f $(MAN_OBJECTS)
 	rm -f ../../po-man/dos2unix-man.pot
 	rm -f $(PODFILES)
-
-# End of of Makefile part

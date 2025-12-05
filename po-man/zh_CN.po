@@ -2,12 +2,12 @@
 # Copyright (C) 2014 Erwin Waterlander (msgids)
 # This file is distributed under the same license as the dos2unix package.
 # Tianze Wang <zwpwjwtz@126.com>, 2015, 2016.
-# Boyuan Yang <073plan@gmail.com>, 2023.
+# Boyuan Yang <073plan@gmail.com>, 2023-2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: dos2unix-man-7.5.2-beta3\n"
-"POT-Creation-Date: 2023-11-27 22:01+0100\n"
-"PO-Revision-Date: 2023-11-29 11:06-0500\n"
+"Project-Id-Version: dos2unix-man-7.5.3-beta8\n"
+"POT-Creation-Date: 2025-05-16 23:04+0200\n"
+"PO-Revision-Date: 2025-05-17 14:33-0400\n"
 "Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.6\n"
 
 #. type: =head1
 #: dos2unix.pod:52
@@ -52,8 +52,8 @@ msgstr "说明"
 
 #. type: textblock
 #: dos2unix.pod:63
-msgid "The Dos2unix package includes utilities C<dos2unix> and C<unix2dos> to convert plain text files in DOS or Mac format to Unix format and vice versa."
-msgstr "Dos2unix软件包包括工具C<dos2unix> 和 C<unix2dos>，用于将纯文本文件在DOS或Mac格式与Unix格式之间相互转换。"
+msgid "The dos2unix package includes utilities C<dos2unix> and C<unix2dos> to convert plain text files in DOS or Mac format to Unix format and vice versa."
+msgstr "本dos2unix软件包包括C<dos2unix>和C<unix2dos>工具，可用于将纯文本文件在DOS或Mac格式与Unix格式之间相互转换。"
 
 #. type: textblock
 #: dos2unix.pod:66
@@ -62,8 +62,8 @@ msgstr "DOS/Windows的文本文件中，断行符是由两个字符共同表示�
 
 #. type: textblock
 #: dos2unix.pod:72
-msgid "Besides line breaks Dos2unix can also convert the encoding of files. A few DOS code pages can be converted to Unix Latin-1. And Windows Unicode (UTF-16)  files can be converted to Unix Unicode (UTF-8) files."
-msgstr "除了断行符，Dos2unix还可以转换文件编码。一些DOS编码页可以被转换为Unix Latin-1，Windows Unicode（UTF-16）文件也可以被转换为Unix Unicode（UTF-8）文件。"
+msgid "Besides line breaks dos2unix can also convert the encoding of files. A few DOS code pages can be converted to Unix Latin-1. And Windows Unicode (UTF-16)  files can be converted to Unix Unicode (UTF-8) files."
+msgstr "除了断行符，dos2unix还可以转换文件编码。一些DOS编码页可以被转换为Unix Latin-1，Windows Unicode（UTF-16）文件也可以被转换为Unix Unicode（UTF-8）文件。"
 
 #. type: textblock
 #: dos2unix.pod:76
@@ -82,8 +82,8 @@ msgstr "符号链接和其所指向的目标默认不会被转换。可以用选
 
 #. type: textblock
 #: dos2unix.pod:84
-msgid "Dos2unix was modelled after dos2unix under SunOS/Solaris.  There is one important difference with the original SunOS/Solaris version. This version does by default in-place conversion (old file mode), while the original SunOS/Solaris version only supports paired conversion (new file mode). See also options C<-o> and C<-n>. Another difference is that the SunOS/Solaris version uses by default I<iso> mode conversion while this version uses by default I<ascii> mode conversion."
-msgstr "Dos2unix由SunOS/Solaris下的版本改写而成。这两个版本间有一个重大差异：本版本默认进行原位转换（旧文件模式），而原来SunOS/Solaris下的版本只支持配对转换（新文件模式），参见选项 C<-o> 和 C<-n>。还有一个区别是SunOS/Solaris下的版本默认使用 I<iso> 模式，而本版本默认使用 I<ascii> 模式。"
+msgid "dos2unix was modelled after dos2unix under SunOS/Solaris.  There is one important difference with the original SunOS/Solaris version. This version does by default in-place conversion (old file mode), while the original SunOS/Solaris version only supports paired conversion (new file mode). See also options C<-o> and C<-n>. Another difference is that the SunOS/Solaris version uses by default I<iso> mode conversion while this version uses by default I<ascii> mode conversion."
+msgstr "dos2unix参照SunOS/Solaris下的版本改写而成。这两个版本间有一个重大差异：本版本默认进行原位转换（旧文件模式），而原来SunOS/Solaris下的版本只支持配对转换（新文件模式），参见选项 C<-o> 和 C<-n>。还有一个区别是SunOS/Solaris下的版本默认使用 I<iso> 模式，而本版本默认使用 I<ascii> 模式。"
 
 #. type: =head1
 #: dos2unix.pod:92
@@ -218,7 +218,7 @@ msgstr "B<-865>"
 #. type: textblock
 #: dos2unix.pod:150
 msgid "Use DOS code page 865 (Nordic)."
-msgstr " 使用DOS 865 编码页（北欧）。"
+msgstr "使用DOS 865 编码页（北欧）。"
 
 #. type: =item
 #: dos2unix.pod:152
@@ -277,7 +277,7 @@ msgstr "B<ansi>"
 
 #. type: textblock
 #: dos2unix.pod:186
-msgid "Dos2unix's default method is to use ANSI encoded text. The advantage is that it is backwards compatible. It works with raster and TrueType fonts. In some regions you may need to change the active DOS OEM code page to the Windows system ANSI code page using the C<chcp> command, because dos2unix uses the Windows system code page."
+msgid "dos2unix's default method is to use ANSI encoded text. The advantage is that it is backwards compatible. It works with raster and TrueType fonts. In some regions you may need to change the active DOS OEM code page to the Windows system ANSI code page using the C<chcp> command, because dos2unix uses the Windows system code page."
 msgstr "dos2unix默认使用ANSI编码文本。优点是它能提供向后兼容性，并能用于raster和TrueType字体。在一些地方，你可能需要使用 C<chcp> 命令将活动DOS OEM编码页设置为Windows系统ANSI编码页，因为dos2unix使用Windows系统编码页。"
 
 #. type: textblock
@@ -303,7 +303,7 @@ msgstr "当你使用ConEmu终端时，所以的文本将会被正确显示，因
 #. type: textblock
 #: dos2unix.pod:208
 msgid "The disadvantage of unicode is that it is not compatible with ASCII. The output is not easy to handle when you redirect it to another program."
-msgstr "Unicode的缺点在于它与ASCII不兼容。当你将输出重定向到其他程序或文件时，它可能不那么容易控制"
+msgstr "Unicode的缺点在于它与ASCII不兼容。当你将输出重定向到其他程序或文件时，它可能不那么容易处理。"
 
 #. type: textblock
 #: dos2unix.pod:211
@@ -1244,7 +1244,7 @@ msgstr "所有版本的dos2unix和unix2dos都可以转换UTF-8文件，因为UTF
 
 #. type: textblock
 #: dos2unix.pod:667
-msgid "Dos2unix and unix2dos with Unicode UTF-16 support, can read little and big endian UTF-16 encoded text files. To see if dos2unix was built with UTF-16 support type C<dos2unix -V>."
+msgid "dos2unix and unix2dos with Unicode UTF-16 support, can read little and big endian UTF-16 encoded text files. To see if dos2unix was built with UTF-16 support type C<dos2unix -V>."
 msgstr "含有Unicode UTF-16支持的dos2unix和unix2dos可以读取小尾序或大尾序的UTF-16编码文本。输入 C<dos2unix -V> 来确定dos2unix在编译是是否启用了UTF-16支持。"
 
 #. type: textblock
@@ -1269,7 +1269,7 @@ msgstr "若使用了 C<-u> 选项，输出文件将会使用和输入文件相�
 
 #. type: textblock
 #: dos2unix.pod:686
-msgid "Dos2unix and unix2dos have no option to convert UTF-8 files to UTF-16."
+msgid "dos2unix and unix2dos have no option to convert UTF-8 files to UTF-16."
 msgstr "dos2unix和unix2dos没有用于转换UTF-8到UTF-16的选项。"
 
 #. type: textblock
@@ -1294,7 +1294,7 @@ msgstr "在Unix中，Unicode文件一般不含BOM。假定文本文件使用区�
 
 #. type: textblock
 #: dos2unix.pod:699
-msgid "Dos2unix can only detect if a file is in UTF-16 format if the file has a BOM.  When an UTF-16 file doesn't have a BOM, dos2unix will see the file as a binary file."
+msgid "dos2unix can only detect if a file is in UTF-16 format if the file has a BOM.  When an UTF-16 file doesn't have a BOM, dos2unix will see the file as a binary file."
 msgstr "dos2unix只能检测含有BOM文件的UTF-16格式。若UTF-16文件不含BOM，dos2unix会将其视作二进制文件。"
 
 #. type: textblock
@@ -1304,17 +1304,17 @@ msgstr "请使用选项 C<-ul> 或 C<-ub> 来转换不含BOM的UTF-16文件。"
 
 #. type: textblock
 #: dos2unix.pod:705
-msgid "Dos2unix writes by default no BOM in the output file. With option C<-b> Dos2unix writes a BOM when the input file has a BOM."
+msgid "dos2unix writes by default no BOM in the output file. With option C<-b> dos2unix writes a BOM when the input file has a BOM."
 msgstr "dos2unix默认不输出BOM。使用 C<-b> 选项可以让dos2unix将BOM添加到输出文件，如果输入文件也含有BOM的话。"
 
 #. type: textblock
 #: dos2unix.pod:708
-msgid "Unix2dos writes by default a BOM in the output file when the input file has a BOM. Use option C<-r> to remove the BOM."
+msgid "unix2dos writes by default a BOM in the output file when the input file has a BOM. Use option C<-r> to remove the BOM."
 msgstr "unix2dos默认输出BOM，如果输入文件也含有BOM的话。使用 C<-r> 可以移除BOM。"
 
 #. type: textblock
 #: dos2unix.pod:711
-msgid "Dos2unix and unix2dos write always a BOM when option C<-m> is used."
+msgid "dos2unix and unix2dos write always a BOM when option C<-m> is used."
 msgstr "若使用了 C<-m> 选项，dos2unix和unix2dos将总是输出BOM。"
 
 #. type: =head2
@@ -1324,7 +1324,7 @@ msgstr "Windows中Unicode文件的文件名"
 
 #. type: textblock
 #: dos2unix.pod:715
-msgid "Dos2unix has optional support for reading and writing Unicode file names in the Windows Command Prompt. That means that dos2unix can open files that have characters in the name that are not part of the default system ANSI code page.  To see if dos2unix for Windows was built with Unicode file name support type C<dos2unix -V>."
+msgid "dos2unix has optional support for reading and writing Unicode file names in the Windows Command Prompt. That means that dos2unix can open files that have characters in the name that are not part of the default system ANSI code page.  To see if dos2unix for Windows was built with Unicode file name support type C<dos2unix -V>."
 msgstr "dos2unix对于Windows命令提示符中读取和写入Unicode文件名有额外的支持。这意味着dos2unix可以打开那些包含非默认系统ANSI编码页字符的文件。若要查看Windows版dos2unix在编译时是否加入了Unicode文件名支持，请输入 C<dos2unix -V>。"
 
 #. type: textblock
@@ -1733,8 +1733,8 @@ msgstr "B<LANGUAGE>"
 
 #. type: textblock
 #: dos2unix.pod:869
-msgid "With the LANGUAGE environment variable you can specify a priority list of languages, separated by colons. Dos2unix gives preference to LANGUAGE over LANG.  For instance, first Dutch and then German: C<LANGUAGE=nl:de>. You have to first enable localization, by setting LANG (or LC_ALL) to a value other than \"C\", before you can use a language priority list through the LANGUAGE variable. See also the gettext manual: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>"
-msgstr "可以使用LANGUAGE变量指定一系列语言的优先级，各项之间由冒号分割。dos2unix首先使用LANGUAGE变量，其次才是LANG。例如，首选中文、其次英文：C<LANGUAGE=<zh:en>。在使用语言优先级之前，必须先启用区域化功能，即将LANG（或LC_ALL）变量设置为除了“C”以外的其他值。参见gettext手册：L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>"
+msgid "With the LANGUAGE environment variable you can specify a priority list of languages, separated by colons. dos2unix gives preference to LANGUAGE over LANG.  For instance, first Dutch and then German: C<LANGUAGE=nl:de>. You have to first enable localization, by setting LANG (or LC_ALL) to a value other than \"C\", before you can use a language priority list through the LANGUAGE variable. See also the gettext manual: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>"
+msgstr "可以使用LANGUAGE变量指定一系列语言的优先级，各项之间由冒号分割。dos2unix首先使用LANGUAGE变量，其次才是LANG。例如，首选中文、其次英文：C<LANGUAGE=zh:en>。在使用语言优先级之前，必须先启用区域化功能，即将LANG（或LC_ALL）变量设置为除了“C”以外的其他值。参见gettext手册：L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>"
 
 #. type: textblock
 #: dos2unix.pod:877

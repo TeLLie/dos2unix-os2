@@ -1,3 +1,12 @@
+2025-10-14: Version 7.5.3
+
+  * Fix: Exit with non-zero code if the conversion is aborted
+    due to a binary file.
+  * Fix: Exit with zero code when an unicode conversion error
+    occurs in quiet mode.
+  * Updated Brazilian Portuguese, Catalan, Chinese (traditional), Dutch,
+    Friulian, Georgian, and Serbian translations.
+
 2024-01-22: Version 7.5.2
 
   * Dos2unix can print info about the line break type of the last line,

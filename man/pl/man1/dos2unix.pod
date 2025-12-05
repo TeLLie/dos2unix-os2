@@ -1,4 +1,3 @@
-po4a-translate is deprecated. The unified po4a(1) program is more convenient and less error prone.
 
         *****************************************************
         *           GENERATED FILE, DO NOT EDIT             *
@@ -11,10 +10,9 @@ but store the PO file used as source file by po4a-translate.
 In fact, consider this as a binary, and the PO file as a regular .c file:
 If the PO get lost, keeping this translation up-to-date will be harder.
 
+=encoding UTF-8
 
 =pod
-
-=encoding UTF-8
 
 =head1 NAZWA
 
@@ -27,11 +25,11 @@ dos2unix - konwerter formatu plików tekstowych między systemami DOS/Mac a Unik
 
 =head1 OPIS
 
-Pakiet Dos2unix zawiera narzędzia C<dos2unix> oraz C<unix2dos> do konwersji zwykłych plików tekstowych między formatami używanymi w systemach DOS lub Mac a formatem uniksowym.
+Pakiet dos2unix zawiera narzędzia C<dos2unix> oraz C<unix2dos> do konwersji zwykłych plików tekstowych między formatami używanymi w systemach DOS lub Mac a formatem uniksowym.
 
 W plikach tekstowych systemu DOS/Windows oznaczenie końca linii to połączenie dwóch znaków: powrotu karetki (CR) i przesunięcia linii (LF). W uniksowych plikach tekstowych koniec linii to pojedynczy znak LF. W plikach tekstowych systemu Mac sprzed Mac OS X koniec linii był pojedynczym znakiem CR. Obecnie Mac OS wykorzystuje uniksowe końce linii (LF).
 
-Oprócz oznaczeń końców linii Dos2unix potrafi konwertować także kodowanie plików. Kilko stron kodowych DOS-a może być przekonwertowanych do uniksowego Latin-1, a windowsowy Unicode (UTF-16) do powszechniejszego pod Uniksem kodowania Unicode UTF-8.
+Oprócz oznaczeń końców linii dos2unix potrafi konwertować także kodowanie plików. Kilko stron kodowych DOS-a może być przekonwertowanych do uniksowego Latin-1, a windowsowy Unicode (UTF-16) do powszechniejszego pod Uniksem kodowania Unicode UTF-8.
 
 Pliki binarne są pomijane automatycznie, chyba że konwersja zostanie wymuszona.
 
@@ -39,7 +37,7 @@ Pliki inne niż zwykłe, np. katalogi lub FIFO, są pomijane automatycznie.
 
 Dowiązania symboliczne i ich cele są domyślnie pozostawiane bez zmian. Dowiązania symboliczne mogą być opcjonalnie zastępowane, albo wyjście może być zapisywane do celu dowiązania. Zapis do celu dowiązania symbolicznego nie jest obsługiwane pod Windows.
 
-Dos2unix powstał na podstawie narzędzia dos2unix z systemu SunOS/Solaris. Jest jedna istotna różnica w stosunku do oryginalnej wersji z SunOS-a/Solarisa: ta wersja domyślnie wykonuje konwersję w miejscu (tryb starego pliku), podczas gdy oryginalna obsługiwała tylko konwersję parami (tryb nowego pliku) - p. także opcje C<-o> i C<-n>. Ponadto wersja z SunOS-a/Solarisa domyślnie wykonuje konwersję w trybie I<iso>, podczas gdy ta wersja domyślnie wykonuje konwersję w trybie I<ascii>.
+dos2unix powstał na podstawie narzędzia dos2unix z systemu SunOS/Solaris. Jest jedna istotna różnica w stosunku do oryginalnej wersji z SunOS-a/Solarisa: ta wersja domyślnie wykonuje konwersję w miejscu (tryb starego pliku), podczas gdy oryginalna obsługiwała tylko konwersję parami (tryb nowego pliku) - p. także opcje C<-o> i C<-n>. Ponadto wersja z SunOS-a/Solarisa domyślnie wykonuje konwersję w trybie I<iso>, podczas gdy ta wersja domyślnie wykonuje konwersję w trybie I<ascii>.
 
 =head1 OPCJE
 
@@ -484,7 +482,7 @@ Pliki tekstowe Unicode mogą mieć znaki końca linii systemu DOS, Unix lub Mac,
 
 Wszystkie wersje dos2unix i unix2dos potrafią konwertować pliki kodowane UTF-8, ponieważ UTF-8 jest wstecznie zgodne z ASCII.
 
-Dos2unix i unix2dos z obsługą Unicode UTF-16 potrafią odczytywać pliki tekstowe kodowane UTF-16 little- oraz big-endian. Aby sprawdzić, czy dos2unix został zbudowany z obsługą UTF-16, należy napisać C<dos2unix -V>.
+dos2unix i unix2dos z obsługą Unicode UTF-16 potrafią odczytywać pliki tekstowe kodowane UTF-16 little- oraz big-endian. Aby sprawdzić, czy dos2unix został zbudowany z obsługą UTF-16, należy napisać C<dos2unix -V>.
 
 Pod Uniksem/Linuksem pliki w kodowaniu UTF-16 są konwertowane do kodowania znaków ustawionej lokalizacji. Kodowanie znaków dla lokalizacji można sprawdzić poleceniem locale(1). Jeśli konwersja nie jest możliwa, wystąpi błąd, a plik zostanie pominięty.
 
@@ -494,7 +492,7 @@ Kodowania UTF-16 i UTF-8 są w pełni zgodne, konwersja nie spowoduje utraty ża
 
 W przypadku użycia opcji C<-u>, plik wejściowy zostanie zapisany w tym samym kodowaniu UTF-16, co plik wejściowy. Opcja C<-u> zapobiega konwersji do UTF-8.
 
-Dos2unix oraz unix2dos nie mają opcji pozwalającej na konwersję plików UTF-8 do UTF-16.
+dos2unix oraz unix2dos nie mają opcji pozwalającej na konwersję plików UTF-8 do UTF-16.
 
 Tryby konwersji ISO i 7-bit nie działają na plikach UTF-16.
 
@@ -504,19 +502,19 @@ W systemie Windows pliki tekstowe zwykle zawierają znacznik BOM (Byte Order Mar
 
 Pod Uniksem pliki Unicode zwykle nie mają znacznika BOM. Pliki tekstowe są traktowane jako kodowane zgodnie z kodowaniem znaków ustawionej lokalizacji.
 
-Dos2unix potrafi wykryć tylko, czy plik jest w formacie UTF-16, jeśli zawiera znacznik BOM. Jeśli plik UTF-16 nie ma tego znacznika, dos2unix potraktuje plik jako binarny.
+dos2unix potrafi wykryć tylko, czy plik jest w formacie UTF-16, jeśli zawiera znacznik BOM. Jeśli plik UTF-16 nie ma tego znacznika, dos2unix potraktuje plik jako binarny.
 
 Do konwersji pliku UTF-16 bez znacznika BOM można użyć opcji C<-ul> lub C<-ub>.
 
-Dos2unix nie zapisuje domyślnie znaku BOM w pliku wyjściowym. Z opcją C<-b> Dos2unix zapisuje BOM, jeśli plik wejściowy zawiera BOM.
+dos2unix nie zapisuje domyślnie znaku BOM w pliku wyjściowym. Z opcją C<-b> dos2unix zapisuje BOM, jeśli plik wejściowy zawiera BOM.
 
-Unix2dos domyślnie zapisuje znaczniki BOM w pliku wyjściowym, jeśli plik wejściowy ma BOM. Aby usunąć BOM, można użyć opcji C<-r>.
+unix2dos domyślnie zapisuje znaczniki BOM w pliku wyjściowym, jeśli plik wejściowy ma BOM. Aby usunąć BOM, można użyć opcji C<-r>.
 
-Dos2unix oraz unix2dos zawsze zapisują znaczniki BOM, jeśli użyta zostanie opcja C<-m>.
+dos2unix oraz unix2dos zawsze zapisują znaczniki BOM, jeśli użyta zostanie opcja C<-m>.
 
 =head2 Unikodowe nazwy plików w Windows
 
-Dos2unix ma opcjonalną obsługę odczytu i zapisu nazw plików Unicode w linii poleceń Windows. Oznacza to, że dos2unix potrafi otwierać pliki zawierające w nazwie znaki spoza domyślnej systemowej strony kodowej ANSI. Aby sprawdzić, czy dos2unix dla Windows został zbudowany z obsługą nazw plików Unicode, można wpisać C<dos2unix -V>.
+dos2unix ma opcjonalną obsługę odczytu i zapisu nazw plików Unicode w linii poleceń Windows. Oznacza to, że dos2unix potrafi otwierać pliki zawierające w nazwie znaki spoza domyślnej systemowej strony kodowej ANSI. Aby sprawdzić, czy dos2unix dla Windows został zbudowany z obsługą nazw plików Unicode, można wpisać C<dos2unix -V>.
 
 Przy wyświetlaniu nazw plików Unicode w konsoli Windows występuje kilka problemów. Więcej informacji w opisie opcji C<-D>, C<--display-enc>. Nazwy plików mogą być wyświetlane błędnie na konsoli, ale pliki będą zapisywane z poprawną nazwą.
 
@@ -646,7 +644,7 @@ W systemach uniksowych do uzyskania informacji dotyczących lokalizacji można u
 
 =item B<LANGUAGE>
 
-Przy użyciu zmiennej środowiskowej LANGUAGE można określić listę języków wg priorytetu, oddzielonych dwukropkami. Dos2unix przyjmuje pierwszeństwo zmiennej LANGUAGE nad LANG. Na przykład, najpierw holenderski, następnie niemiecki: C<LANGUAGE=nl:de>. Aby skorzystać z listy wg priorytetów ze zmiennej LANGUAGE, trzeba najpierw włączyć lokalizację przez ustawienie zmiennej LANG (lub LC_ALL) na wartość inną niż "C". Więcej informacji znajduje się w podręczniku do gettexta: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>
+Przy użyciu zmiennej środowiskowej LANGUAGE można określić listę języków wg priorytetu, oddzielonych dwukropkami. dos2unix przyjmuje pierwszeństwo zmiennej LANGUAGE nad LANG. Na przykład, najpierw holenderski, następnie niemiecki: C<LANGUAGE=nl:de>. Aby skorzystać z listy wg priorytetów ze zmiennej LANGUAGE, trzeba najpierw włączyć lokalizację przez ustawienie zmiennej LANG (lub LC_ALL) na wartość inną niż "C". Więcej informacji znajduje się w podręczniku do gettexta: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>
 
 W przypadku wybrania niedostępnego języka, otrzymamy standardowe, angielskie komunikaty.
 

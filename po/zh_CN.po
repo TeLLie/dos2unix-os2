@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the dos2unix package.
 #
 # Tianze Wang <zwpwjwtz@126.com>, 2015.
-# Boyuan Yang <073plan@gmail.com>, 2023.
+# Boyuan Yang <073plan@gmail.com>, 2023-2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: dos2unix 7.5.2-beta2\n"
+"Project-Id-Version: dos2unix 7.5.3-beta8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 19:49+0100\n"
-"PO-Revision-Date: 2023-11-10 13:52-0500\n"
+"POT-Creation-Date: 2025-10-11 21:33+0200\n"
+"PO-Revision-Date: 2025-05-17 14:23-0400\n"
 "Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.6\n"
 
 #: dos2unix.c:79
 #, c-format
@@ -333,16 +333,16 @@ msgid " -V, --version         display version number\n"
 msgstr " -V, --version         显示版本号\n"
 
 #: common.c:727
-msgid "DOS 16 bit version (WATCOMC).\n"
-msgstr "16位DOS版本 (WATCOMC)。\n"
+msgid "DOS 16 bit version (Watcom C).\n"
+msgstr "16位DOS版本 (Watcom C)。\n"
 
 #: common.c:729
-msgid "DOS 16 bit version (TURBOC).\n"
-msgstr "16位DOS版本(TURBOC)。\n"
+msgid "DOS 16 bit version (Turbo C).\n"
+msgstr "16位DOS版本 (Turbo C)。\n"
 
 #: common.c:731
-msgid "DOS 32 bit version (WATCOMC).\n"
-msgstr "32位DOS版本(WATCOMC)。\n"
+msgid "DOS 32 bit version (Watcom C).\n"
+msgstr "32位DOS版本 (Watcom C)。\n"
 
 #: common.c:733
 msgid "DOS 32 bit version (DJGPP).\n"
@@ -361,8 +361,8 @@ msgid "Windows 64 bit version (MinGW-w64).\n"
 msgstr "64位Windows版本(MinGW-w64)。\n"
 
 #: common.c:741
-msgid "Windows 32 bit version (WATCOMC).\n"
-msgstr "32位Windows版本(WATCOMC)。\n"
+msgid "Windows 32 bit version (Watcom C).\n"
+msgstr "32位Windows版本(Watcom C)。\n"
 
 #: common.c:743
 msgid "Windows 32 bit version (MinGW-w64).\n"
@@ -383,8 +383,8 @@ msgid "Windows 32 bit version (MSVC %d).\n"
 msgstr "32位Windows版本(MSVC %d)。\n"
 
 #: common.c:751
-msgid "OS/2 version (WATCOMC).\n"
-msgstr "OS/2 版本(WATCOMC)。\n"
+msgid "OS/2 version (Watcom C).\n"
+msgstr "OS/2 版本(Watcom C)。\n"
 
 #: common.c:753
 msgid "OS/2 version (EMX).\n"
@@ -425,7 +425,7 @@ msgstr "不支持保护文件的属主和属组。\n"
 
 #: common.c:915
 msgid "Path for temporary output file is too long:"
-msgstr "临时输出"
+msgstr "临时输出文件的路径过长："
 
 #: common.c:1201 common.c:1208 common.c:1215 common.c:1222 common.c:1234
 #: common.c:1241
@@ -433,19 +433,19 @@ msgstr "临时输出"
 msgid "Writing %s BOM.\n"
 msgstr "写入 %s BOM。\n"
 
-#: common.c:1201 common.c:1254 common.c:1877 common.c:1898
+#: common.c:1201 common.c:1254 common.c:1879 common.c:1900
 msgid "UTF-16LE"
 msgstr "UTF-16LE"
 
-#: common.c:1208 common.c:1257 common.c:1879 common.c:1900
+#: common.c:1208 common.c:1257 common.c:1881 common.c:1902
 msgid "UTF-16BE"
 msgstr "UTF-16BE"
 
-#: common.c:1215 common.c:1234 common.c:1263 common.c:1890
+#: common.c:1215 common.c:1234 common.c:1263 common.c:1892
 msgid "GB18030"
 msgstr "GB18030"
 
-#: common.c:1222 common.c:1241 common.c:1260 common.c:1892
+#: common.c:1222 common.c:1241 common.c:1260 common.c:1894
 msgid "UTF-8"
 msgstr "UTF-8"
 
@@ -477,112 +477,112 @@ msgstr "打开临时输出文件 %s 失败\n"
 msgid "using %s as temporary file\n"
 msgstr "使用 %s 作为临时文件\n"
 
-#: common.c:1603 common.c:1631
+#: common.c:1605 common.c:1633
 #, c-format
 msgid "Failed to change the permissions of temporary output file %s:"
 msgstr "改变临时输出文件 %s 的权限失败："
 
-#: common.c:1619
+#: common.c:1621
 #, c-format
 msgid "The user and/or group ownership of file %s is not preserved.\n"
 msgstr "文件 %s 的属主和/或属组已改变。\n"
 
-#: common.c:1641
+#: common.c:1643
 #, c-format
 msgid "Failed to change the owner and group of temporary output file %s:"
 msgstr "改变临时输出文件 %s 的所有者和群组失败："
 
-#: common.c:1698
+#: common.c:1700
 #, c-format
 msgid "problems renaming '%s' to '%s':"
 msgstr "重新命名“%s”到“%s”错误："
 
-#: common.c:1702
+#: common.c:1704
 #, c-format
 msgid "          which is the target of symbolic link '%s'\n"
 msgstr "          後者为符号链接'%s' 的目标\n"
 
-#: common.c:1704
+#: common.c:1706
 #, c-format
 msgid "          output file remains in '%s'\n"
 msgstr "          输出文件“%s”未改变\n"
 
-#: common.c:1852 common.c:1947
+#: common.c:1854 common.c:1949
 #, c-format
 msgid "Skipping binary file %s\n"
 msgstr "跳过二进制文件%s\n"
 
-#: common.c:1855 common.c:1950
+#: common.c:1857 common.c:1952
 #, c-format
 msgid "code page %d is not supported.\n"
 msgstr "不支持编码页 %d。\n"
 
-#: common.c:1859 common.c:1954 common.c:2042
+#: common.c:1861 common.c:1956 common.c:2044
 #, c-format
 msgid "Skipping UTF-16 file %s, the size of wchar_t is %d bytes.\n"
 msgstr "跳过 UTF-16 文件 %s，wchar_t 的大小为 %d 位。\n"
 
-#: common.c:1862 common.c:1957
+#: common.c:1864 common.c:1959
 #, c-format
 msgid "Skipping UTF-16 file %s, an UTF-16 conversion error occurred on line %u.\n"
 msgstr "跳过 UTF-16 文件 %s，UTF-16 转换发生错误于第 %u 行。\n"
 
-#: common.c:1866 common.c:1961
+#: common.c:1868 common.c:1963
 #, c-format
 msgid "Skipping UTF-16 file %s, UTF-16 conversion is not supported in this version of %s.\n"
 msgstr "跳过 UTF-16 文件 %s，本版本 %s 不支持UTF-16。\n"
 
-#: common.c:1932 common.c:2031
+#: common.c:1934 common.c:2033
 #, c-format
 msgid "Skipping %s, not a regular file.\n"
 msgstr "跳过 %s，不是一个普通文件。\n"
 
-#: common.c:1936
+#: common.c:1938
 #, c-format
 msgid "Skipping %s, output file %s is a symbolic link.\n"
 msgstr "跳过 %s，输出文件 %s 是一个符号链接。.\n"
 
-#: common.c:1938
+#: common.c:1940
 #, c-format
 msgid "Skipping symbolic link %s.\n"
 msgstr "跳过符号链接 %s。\n"
 
-#: common.c:1941 common.c:2036
+#: common.c:1943 common.c:2038
 #, c-format
 msgid "Skipping symbolic link %s, target is not a regular file.\n"
 msgstr "跳过符号链接 %s，目标不是一个普通文件。\n"
 
-#: common.c:1944
+#: common.c:1946
 #, c-format
 msgid "Skipping %s, target of symbolic link %s is not a regular file.\n"
 msgstr "跳过 %s，符号链接 %s 目标不是一个普通文件。\n"
 
-#: common.c:1969
+#: common.c:1971
 #, c-format
 msgid "converting file %s to file %s in Unix format...\n"
 msgstr "正在转换文件 %s 为Unix格式到 %s...\n"
 
-#: common.c:1971
+#: common.c:1973
 #, c-format
 msgid "converting file %s to Unix format...\n"
 msgstr "正在转换文件 %s 为Unix格式...\n"
 
-#: common.c:1975
+#: common.c:1977
 #, c-format
 msgid "converting file %s to file %s in Mac format...\n"
 msgstr "正在转换文件 %s 为Mac格式到 %s...\n"
 
-#: common.c:1977
+#: common.c:1979
 #, c-format
 msgid "converting file %s to Mac format...\n"
 msgstr "正在转换文件 %s 为Mac格式...\n"
 
-#: common.c:1980
+#: common.c:1982
 #, c-format
 msgid "converting file %s to file %s in DOS format...\n"
 msgstr "正在转换文件 %s 为DOS格式到 %s...\n"
 
-#: common.c:1982
+#: common.c:1984
 #, c-format
 msgid "converting file %s to DOS format...\n"
 msgstr "正在转换文件 %s 为DOS格式...\n"
@@ -593,7 +593,7 @@ msgstr "正在转换文件 %s 为DOS格式...\n"
 #. 3rd %s is encoding of output file.
 #. 4th %s is name of output file.
 #. E.g.: converting UTF-16LE file in.txt to UTF-8 file out.txt in Unix format...
-#: common.c:1994
+#: common.c:1996
 #, c-format
 msgid "converting %s file %s to %s file %s in Unix format...\n"
 msgstr "正在转换 %1$s 文件 %2$s 为Unix格式的 %3$s 文件 %4$s...\n"
@@ -603,91 +603,91 @@ msgstr "正在转换 %1$s 文件 %2$s 为Unix格式的 %3$s 文件 %4$s...\n"
 #. 2nd %s is name of input file.
 #. 3rd %s is encoding of output (input file is overwritten).
 #. E.g.: converting UTF-16LE file foo.txt to UTF-8 Unix format...
-#: common.c:2001
+#: common.c:2003
 #, c-format
 msgid "converting %s file %s to %s Unix format...\n"
 msgstr "正在转换 %s 文件 %s 为Unix格式的 %s 文件...\n"
 
-#: common.c:2005
+#: common.c:2007
 #, c-format
 msgid "converting %s file %s to %s file %s in Mac format...\n"
 msgstr "正在转换 %1$s 文件 %2$s 为Mac格式的 %3$s 文件 %4$s...\n"
 
-#: common.c:2007
+#: common.c:2009
 #, c-format
 msgid "converting %s file %s to %s Mac format...\n"
 msgstr "正在转换 %s 文件 %s 为Mac格式的 %s 文件...\n"
 
-#: common.c:2010
+#: common.c:2012
 #, c-format
 msgid "converting %s file %s to %s file %s in DOS format...\n"
 msgstr "正在转换 %1$s 文件 %2$s 为DOS格式的 %3$s 文件 %4$s...\n"
 
-#: common.c:2012
+#: common.c:2014
 #, c-format
 msgid "converting %s file %s to %s DOS format...\n"
 msgstr "正在转换 %s 文件 %s 为DOS格式的 %s 文件...\n"
 
-#: common.c:2019
+#: common.c:2021
 #, c-format
 msgid "problems converting file %s to file %s\n"
 msgstr "转换文件 %s 到 %s 错误\n"
 
-#: common.c:2021
+#: common.c:2023
 #, c-format
 msgid "problems converting file %s\n"
 msgstr "转换文件 %s 出错\n"
 
-#: common.c:2184 common.c:2241
+#: common.c:2186 common.c:2243
 #, c-format
 msgid "can not read from input file %s:"
 msgstr "无法读取输入文件 %s："
 
-#: common.c:2401
+#: common.c:2403
 #, c-format
 msgid "wrong flag '%c' for option -i or --info\n"
 msgstr "-i/--info选项的标志“%c”错误\n"
 
-#: common.c:2537 common.c:2580
+#: common.c:2539 common.c:2582
 #, c-format
 msgid "active code page: %d\n"
 msgstr "作用中编码页：%d\n"
 
-#: common.c:2592
+#: common.c:2594
 #, c-format
 msgid "invalid %s conversion mode specified\n"
 msgstr "指定的转换模式 %s 不合法\n"
 
-#: common.c:2600 common.c:2630
+#: common.c:2602 common.c:2632
 #, c-format
 msgid "option '%s' requires an argument\n"
 msgstr "选项“%s”需要一个参数\n"
 
-#: common.c:2622
+#: common.c:2624
 #, c-format
 msgid "invalid %s display encoding specified\n"
 msgstr "指定了无效的显示编码 %s\n"
 
-#: common.c:2642 common.c:2656 common.c:2668
+#: common.c:2644 common.c:2658 common.c:2670
 #, c-format
 msgid "target of file %s not specified in new-file mode\n"
 msgstr "新文件模式中未指明文件 %s 的目的位置\n"
 
-#: common.c:2751
+#: common.c:2753
 #, c-format
 msgid "can not read from input file: %s\n"
 msgstr "无法读取输入文件：%s\n"
 
-#: common.c:2761 common.c:2773
+#: common.c:2763 common.c:2775
 #, c-format
 msgid "can not write to output file: %s\n"
 msgstr "无法写入输出文件：%s\n"
 
-#: common.c:2848
+#: common.c:2851
 msgid "error: Invalid surrogate pair. Missing low surrogate.\n"
 msgstr "错误：无效的代理对。缺少低位字符。\n"
 
-#: common.c:2864
+#: common.c:2869
 msgid "error: Invalid surrogate pair. Missing high surrogate.\n"
 msgstr "错误：无效的代理对。缺少高位字符。\n"
 

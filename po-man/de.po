@@ -1,13 +1,13 @@
 # German translation of the dos2unix man page.
 # Copyright (C) 2014 Erwin Waterlander (msgids)
 # This file is distributed under the same license as the dos2unix package.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2014-2017, 2022-2023.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2014-2017, 2022-2023, 2025.
 # Roland Illig <roland.illig@gmx.de>, 2020.
 msgid ""
 msgstr ""
-"Project-Id-Version: dos2unix-man-7.5.2-beta3\n"
-"POT-Creation-Date: 2023-11-27 22:01+0100\n"
-"PO-Revision-Date: 2023-11-29 17:22+0100\n"
+"Project-Id-Version: dos2unix-man-7.5.3-beta8\n"
+"POT-Creation-Date: 2025-05-16 23:04+0200\n"
+"PO-Revision-Date: 2025-05-18 15:19+0200\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: =head1
@@ -52,8 +52,8 @@ msgstr "BESCHREIBUNG"
 
 #. type: textblock
 #: dos2unix.pod:63
-msgid "The Dos2unix package includes utilities C<dos2unix> and C<unix2dos> to convert plain text files in DOS or Mac format to Unix format and vice versa."
-msgstr "Das Paket Dos2unix enthält die Werkzeuge C<dos2unix> und C<unix2dos> zum Umwandeln einfacher Textdateien aus dem DOS- oder Mac-Format in das Unix-Format und umgekehrt."
+msgid "The dos2unix package includes utilities C<dos2unix> and C<unix2dos> to convert plain text files in DOS or Mac format to Unix format and vice versa."
+msgstr "Das Paket dos2unix enthält die Werkzeuge C<dos2unix> und C<unix2dos> zum Umwandeln einfacher Textdateien aus dem DOS- oder Mac-Format in das Unix-Format und umgekehrt."
 
 #. type: textblock
 #: dos2unix.pod:66
@@ -62,8 +62,8 @@ msgstr "In Textdateien unter DOS/Windows sind Zeilenumbrüche, auch als neue Zei
 
 #. type: textblock
 #: dos2unix.pod:72
-msgid "Besides line breaks Dos2unix can also convert the encoding of files. A few DOS code pages can be converted to Unix Latin-1. And Windows Unicode (UTF-16)  files can be converted to Unix Unicode (UTF-8) files."
-msgstr "Neben Zeilenumbrüchen kann Dos2unix auch die Zeichenkodierung von Dateien umwandeln. Einige DOS-Codepages können in Unix Latin-1 umgewandelt werden, und Windows-Unicode-Dateien (UTF-16) können in Unix-Unicode-Dateien (UTF-8) umgewandelt werden."
+msgid "Besides line breaks dos2unix can also convert the encoding of files. A few DOS code pages can be converted to Unix Latin-1. And Windows Unicode (UTF-16)  files can be converted to Unix Unicode (UTF-8) files."
+msgstr "Neben Zeilenumbrüchen kann dos2unix auch die Zeichenkodierung von Dateien umwandeln. Einige DOS-Codepages können in Unix Latin-1 umgewandelt werden, und Windows-Unicode-Dateien (UTF-16) können in Unix-Unicode-Dateien (UTF-8) umgewandelt werden."
 
 #. type: textblock
 #: dos2unix.pod:76
@@ -82,7 +82,7 @@ msgstr "Symbolische Links und deren Ziele werden per Vorgabe unverändert belass
 
 #. type: textblock
 #: dos2unix.pod:84
-msgid "Dos2unix was modelled after dos2unix under SunOS/Solaris.  There is one important difference with the original SunOS/Solaris version. This version does by default in-place conversion (old file mode), while the original SunOS/Solaris version only supports paired conversion (new file mode). See also options C<-o> and C<-n>. Another difference is that the SunOS/Solaris version uses by default I<iso> mode conversion while this version uses by default I<ascii> mode conversion."
+msgid "dos2unix was modelled after dos2unix under SunOS/Solaris.  There is one important difference with the original SunOS/Solaris version. This version does by default in-place conversion (old file mode), while the original SunOS/Solaris version only supports paired conversion (new file mode). See also options C<-o> and C<-n>. Another difference is that the SunOS/Solaris version uses by default I<iso> mode conversion while this version uses by default I<ascii> mode conversion."
 msgstr "Dos2unix wurde nach dem Vorbild der dos2unix-Version unter SunOS/Solaris entwickelt, doch es gibt einen wesentlichen Unterschied zum Original: Diese Version ersetzt per Vorgabe Dateien bei der Umwandlung (Alte-Datei-Modus), während unter SunOS/Solaris nur die paarweise Umwandlung (Neue-Datei-Modus) unterstützt wird. Siehe dazu die Optionen C<-o> und C<-n>. Ein weiterer Unterschied ist, dass die SunOS/Solaris-Version in der Voreinstellung die Umwandlung im I<iso>-Modus vornimmt, während diese Version den I<ascii>-Modus verwendet."
 
 #. type: =head1
@@ -277,7 +277,7 @@ msgstr "B<ansi>"
 
 #. type: textblock
 #: dos2unix.pod:186
-msgid "Dos2unix's default method is to use ANSI encoded text. The advantage is that it is backwards compatible. It works with raster and TrueType fonts. In some regions you may need to change the active DOS OEM code page to the Windows system ANSI code page using the C<chcp> command, because dos2unix uses the Windows system code page."
+msgid "dos2unix's default method is to use ANSI encoded text. The advantage is that it is backwards compatible. It works with raster and TrueType fonts. In some regions you may need to change the active DOS OEM code page to the Windows system ANSI code page using the C<chcp> command, because dos2unix uses the Windows system code page."
 msgstr "Die Standardmethode von dos2unix ist die Verwendung von ANSI-kodiertem Text, der Vorteil ist deren Abwärtskompatibilität. Dies funktioniert mit Raster- und TrueType-Schriften. In manchen Gebieten müssen Sie mit dem Befehl C<chcp> die aktive DOS-OEM-Codepage in die -System-ANSI-Codepage des Systems ändern, da dos2unix Letztere verwendet."
 
 #. type: textblock
@@ -1242,7 +1242,7 @@ msgstr "Alle Versionen von dos2unix und unix2dos können UTF-8-kodierte Dateien 
 
 #. type: textblock
 #: dos2unix.pod:667
-msgid "Dos2unix and unix2dos with Unicode UTF-16 support, can read little and big endian UTF-16 encoded text files. To see if dos2unix was built with UTF-16 support type C<dos2unix -V>."
+msgid "dos2unix and unix2dos with Unicode UTF-16 support, can read little and big endian UTF-16 encoded text files. To see if dos2unix was built with UTF-16 support type C<dos2unix -V>."
 msgstr "Dos2unix und unix2dos mit Unterstützung für UTF-16 können in UTF-16 kodierte Dateien in Little-Endian- und Big-Endian-Bytereihenfolge lesen. Um festzustellen, ob dos2unix mit UTF-16-Unterstützung kompiliert wurde, geben Sie C<dos2unix -V> ein."
 
 #. type: textblock
@@ -1267,7 +1267,7 @@ msgstr "Wenn die Option C<-u> verwendet wird, wird die Ausgabedatei in der gleic
 
 #. type: textblock
 #: dos2unix.pod:686
-msgid "Dos2unix and unix2dos have no option to convert UTF-8 files to UTF-16."
+msgid "dos2unix and unix2dos have no option to convert UTF-8 files to UTF-16."
 msgstr "Dos2unix und unix2dos bieten keine Option zur Umwandlung von UTF-8-Dateien in UTF-16."
 
 #. type: textblock
@@ -1292,7 +1292,7 @@ msgstr "Unter Unix haben Textdateien üblicherweise keine BOM. Es wird stattdess
 
 #. type: textblock
 #: dos2unix.pod:699
-msgid "Dos2unix can only detect if a file is in UTF-16 format if the file has a BOM.  When an UTF-16 file doesn't have a BOM, dos2unix will see the file as a binary file."
+msgid "dos2unix can only detect if a file is in UTF-16 format if the file has a BOM.  When an UTF-16 file doesn't have a BOM, dos2unix will see the file as a binary file."
 msgstr "Dos2unix kann nur dann erkennen, ob eine Datei UTF-16-kodiert ist, wenn die Datei eine BOM enthält. Ist dies nicht der Fall, nimmt dos2unix an, dass es sich um eine Binärdatei handelt."
 
 #. type: textblock
@@ -1302,17 +1302,17 @@ msgstr "Verwenden Sie die Optionen C<-ul> oder C<-ub>, um eine UTF-16-Datei ohne
 
 #. type: textblock
 #: dos2unix.pod:705
-msgid "Dos2unix writes by default no BOM in the output file. With option C<-b> Dos2unix writes a BOM when the input file has a BOM."
-msgstr "Dos2unix schreibt in der Voreinstellung keine BOM in die Ausgabedatei. Mit der Option C<-b> schreibt Dos2unix eine BOM, wenn die Eingabedatei ebenfalls eine BOM hat."
+msgid "dos2unix writes by default no BOM in the output file. With option C<-b> dos2unix writes a BOM when the input file has a BOM."
+msgstr "Dos2unix schreibt in der Voreinstellung keine BOM in die Ausgabedatei. Mit der Option C<-b> schreibt dos2unix eine BOM, wenn die Eingabedatei ebenfalls eine BOM hat."
 
 #. type: textblock
 #: dos2unix.pod:708
-msgid "Unix2dos writes by default a BOM in the output file when the input file has a BOM. Use option C<-r> to remove the BOM."
+msgid "unix2dos writes by default a BOM in the output file when the input file has a BOM. Use option C<-r> to remove the BOM."
 msgstr "Unix2dos schreibt in der Voreinstellung eine BOM in die Ausgabedatei, wenn die Eingabedatei ebenfalls eine solche Markierung hat. Verwenden Sie die Option C<-r>, um die BOM zu entfernen."
 
 #. type: textblock
 #: dos2unix.pod:711
-msgid "Dos2unix and unix2dos write always a BOM when option C<-m> is used."
+msgid "dos2unix and unix2dos write always a BOM when option C<-m> is used."
 msgstr "Dos2unix und unix2dos schreiben immer eine BOM, wenn die Option C<-m> angegeben ist."
 
 #. type: =head2
@@ -1322,7 +1322,7 @@ msgstr "Unicode-Dateinamen unter Windows"
 
 #. type: textblock
 #: dos2unix.pod:715
-msgid "Dos2unix has optional support for reading and writing Unicode file names in the Windows Command Prompt. That means that dos2unix can open files that have characters in the name that are not part of the default system ANSI code page.  To see if dos2unix for Windows was built with Unicode file name support type C<dos2unix -V>."
+msgid "dos2unix has optional support for reading and writing Unicode file names in the Windows Command Prompt. That means that dos2unix can open files that have characters in the name that are not part of the default system ANSI code page.  To see if dos2unix for Windows was built with Unicode file name support type C<dos2unix -V>."
 msgstr "Dos2unix verfügt über optionale Unterstützung für das Lesen und Schreiben von Unicode-Dateinamen in der Windows-Eingabeaufforderung. Dadurch kann dos2unix Dateien öffnen, deren Namen Zeichen enthalten, die nicht zur Standard-ANSI-Codepage des Systems gehören. Geben Sie C<dos2unix -V> ein, um zu sehen, ob dos2unix für Windows mit Unterstützung für Unicode-Dateinamen erstellt wurde."
 
 #. type: textblock
@@ -1730,7 +1730,7 @@ msgstr "B<LANGUAGE>"
 
 #. type: textblock
 #: dos2unix.pod:869
-msgid "With the LANGUAGE environment variable you can specify a priority list of languages, separated by colons. Dos2unix gives preference to LANGUAGE over LANG.  For instance, first Dutch and then German: C<LANGUAGE=nl:de>. You have to first enable localization, by setting LANG (or LC_ALL) to a value other than \"C\", before you can use a language priority list through the LANGUAGE variable. See also the gettext manual: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>"
+msgid "With the LANGUAGE environment variable you can specify a priority list of languages, separated by colons. dos2unix gives preference to LANGUAGE over LANG.  For instance, first Dutch and then German: C<LANGUAGE=nl:de>. You have to first enable localization, by setting LANG (or LC_ALL) to a value other than \"C\", before you can use a language priority list through the LANGUAGE variable. See also the gettext manual: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>"
 msgstr "Mit der Umgebungsvariable LANGUAGE können Sie eine Prioritätenliste für Sprachen übergeben, die Sie durch Doppelpunkte voneinander trennen. Dos2unix gibt LANGUAGE vor LANG den Vorzug, zum Beispiel bei Deutsch vor Niederländisch: C<LANGUAGE=de:nl>. Sie müssen zunächst die Lokalisierung aktivieren, indem Sie die Variable LANG (oder LC_ALL) auf einen anderen Wert als »C« setzen, bevor Sie die Liste der Sprachprioritäten mit der Variable LANGUAGE nutzen können. Weitere Informationen finden Sie im Gettext-Handbuch: L<https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html>"
 
 #. type: textblock

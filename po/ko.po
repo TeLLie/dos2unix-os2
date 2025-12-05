@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dos2unix 7.5.2-beta2\n"
+"Project-Id-Version: dos2unix 7.5.3-beta8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 19:49+0100\n"
-"PO-Revision-Date: 2023-11-13 03:50+0900\n"
+"POT-Creation-Date: 2025-10-11 21:33+0200\n"
+"PO-Revision-Date: 2025-05-18 14:24+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <translation-team-ko@googlegroups.com>\n"
 "Language: ko\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.6\n"
 
 #: dos2unix.c:79
 #, c-format
@@ -335,16 +335,16 @@ msgid " -V, --version         display version number\n"
 msgstr " -V, --version         버전 번호를 나타냅니다\n"
 
 #: common.c:727
-msgid "DOS 16 bit version (WATCOMC).\n"
-msgstr "DOS 16 비트 버전 (WATCOMC).\n"
+msgid "DOS 16 bit version (Watcom C).\n"
+msgstr "DOS 16 비트 버전 (Watcom C).\n"
 
 #: common.c:729
-msgid "DOS 16 bit version (TURBOC).\n"
-msgstr "DOS 16 비트 버전 (TURBOC).\n"
+msgid "DOS 16 bit version (Turbo C).\n"
+msgstr "DOS 16 비트 버전 (Turbo C).\n"
 
 #: common.c:731
-msgid "DOS 32 bit version (WATCOMC).\n"
-msgstr "DOS 32 비트 버전 (WATCOMC).\n"
+msgid "DOS 32 bit version (Watcom C).\n"
+msgstr "DOS 32 비트 버전 (Watcom C).\n"
 
 #: common.c:733
 msgid "DOS 32 bit version (DJGPP).\n"
@@ -363,8 +363,8 @@ msgid "Windows 64 bit version (MinGW-w64).\n"
 msgstr "윈도우 64비트 버전 (MinGW-w64).\n"
 
 #: common.c:741
-msgid "Windows 32 bit version (WATCOMC).\n"
-msgstr "윈도우 32비트 버전 (WATCOMC).\n"
+msgid "Windows 32 bit version (Watcom C).\n"
+msgstr "윈도우 32비트 버전 (Watcom C).\n"
 
 #: common.c:743
 msgid "Windows 32 bit version (MinGW-w64).\n"
@@ -385,8 +385,8 @@ msgid "Windows 32 bit version (MSVC %d).\n"
 msgstr "윈도우 32비트 버전 (MSVC %d).\n"
 
 #: common.c:751
-msgid "OS/2 version (WATCOMC).\n"
-msgstr "OS/2 버전 (WATCOMC).\n"
+msgid "OS/2 version (Watcom C).\n"
+msgstr "OS/2 버전 (Watcom C).\n"
 
 #: common.c:753
 msgid "OS/2 version (EMX).\n"
@@ -435,19 +435,19 @@ msgstr "임시 출력 경로가 너무 깁니다:"
 msgid "Writing %s BOM.\n"
 msgstr "%s BOM 기록 중.\n"
 
-#: common.c:1201 common.c:1254 common.c:1877 common.c:1898
+#: common.c:1201 common.c:1254 common.c:1879 common.c:1900
 msgid "UTF-16LE"
 msgstr "UTF-16LE"
 
-#: common.c:1208 common.c:1257 common.c:1879 common.c:1900
+#: common.c:1208 common.c:1257 common.c:1881 common.c:1902
 msgid "UTF-16BE"
 msgstr "UTF-16BE"
 
-#: common.c:1215 common.c:1234 common.c:1263 common.c:1890
+#: common.c:1215 common.c:1234 common.c:1263 common.c:1892
 msgid "GB18030"
 msgstr "GB18030"
 
-#: common.c:1222 common.c:1241 common.c:1260 common.c:1892
+#: common.c:1222 common.c:1241 common.c:1260 common.c:1894
 msgid "UTF-8"
 msgstr "UTF-8"
 
@@ -479,112 +479,112 @@ msgstr "임시 출력 파일 열기 실패: %s\n"
 msgid "using %s as temporary file\n"
 msgstr "%s을(를) 임시 파일로 활용\n"
 
-#: common.c:1603 common.c:1631
+#: common.c:1605 common.c:1633
 #, c-format
 msgid "Failed to change the permissions of temporary output file %s:"
 msgstr "%s 임시 출력 파일의 권한 변경 실패:"
 
-#: common.c:1619
+#: common.c:1621
 #, c-format
 msgid "The user and/or group ownership of file %s is not preserved.\n"
 msgstr "%s 파일의 사용자 및/또는 그룹 소유권을 유지하지 않습니다.\n"
 
-#: common.c:1641
+#: common.c:1643
 #, c-format
 msgid "Failed to change the owner and group of temporary output file %s:"
 msgstr "%s 임시 출력 파일의 소유자 및 그룹 변경 실패:"
 
-#: common.c:1698
+#: common.c:1700
 #, c-format
 msgid "problems renaming '%s' to '%s':"
 msgstr "'%s' 이름을 '%s'(으)로 바꾸는 문제:"
 
-#: common.c:1702
+#: common.c:1704
 #, c-format
 msgid "          which is the target of symbolic link '%s'\n"
 msgstr "          '%s' 심볼릭 링크 대상\n"
 
-#: common.c:1704
+#: common.c:1706
 #, c-format
 msgid "          output file remains in '%s'\n"
 msgstr "          출력 파일이 '%s'에 남았습니다\n"
 
-#: common.c:1852 common.c:1947
+#: common.c:1854 common.c:1949
 #, c-format
 msgid "Skipping binary file %s\n"
 msgstr "%s 이진 파일 건너뜀\n"
 
-#: common.c:1855 common.c:1950
+#: common.c:1857 common.c:1952
 #, c-format
 msgid "code page %d is not supported.\n"
 msgstr "코드 페이지 %d번은 지원하지 않습니다.\n"
 
-#: common.c:1859 common.c:1954 common.c:2042
+#: common.c:1861 common.c:1956 common.c:2044
 #, c-format
 msgid "Skipping UTF-16 file %s, the size of wchar_t is %d bytes.\n"
 msgstr "%s UTF-16 파일 건너뜀. wchar_t 크기는 %d 바이트입니다.\n"
 
-#: common.c:1862 common.c:1957
+#: common.c:1864 common.c:1959
 #, c-format
 msgid "Skipping UTF-16 file %s, an UTF-16 conversion error occurred on line %u.\n"
 msgstr "%s UTF-16 파일 건너뜀. %u번째 행에서 UTF-16 변환 오류.\n"
 
-#: common.c:1866 common.c:1961
+#: common.c:1868 common.c:1963
 #, c-format
 msgid "Skipping UTF-16 file %s, UTF-16 conversion is not supported in this version of %s.\n"
 msgstr "%s UTF-16 파일 건너뜀. %s 현재 버전에서 UTF-16 변환을 지원하지 않습니다.\n"
 
-#: common.c:1932 common.c:2031
+#: common.c:1934 common.c:2033
 #, c-format
 msgid "Skipping %s, not a regular file.\n"
 msgstr "%s 건너뜀. 일반 파일이 아닙니다.\n"
 
-#: common.c:1936
+#: common.c:1938
 #, c-format
 msgid "Skipping %s, output file %s is a symbolic link.\n"
 msgstr "%s 건너뜀. %s 출력 파일이 심볼릭 링크입니다.\n"
 
-#: common.c:1938
+#: common.c:1940
 #, c-format
 msgid "Skipping symbolic link %s.\n"
 msgstr "심볼릭 링크 %s 건너뜀.\n"
 
-#: common.c:1941 common.c:2036
+#: common.c:1943 common.c:2038
 #, c-format
 msgid "Skipping symbolic link %s, target is not a regular file.\n"
 msgstr "심볼릭 링크 %s 건너뜀. 대상이 일반 파일이 아닙니다.\n"
 
-#: common.c:1944
+#: common.c:1946
 #, c-format
 msgid "Skipping %s, target of symbolic link %s is not a regular file.\n"
 msgstr "%s 건너뜀. %s 심볼릭 링크 대상이 일반 파일이 아닙니다.\n"
 
-#: common.c:1969
+#: common.c:1971
 #, c-format
 msgid "converting file %s to file %s in Unix format...\n"
 msgstr "%s 파일을 유닉스 형식의 %s 파일로 변환중...\n"
 
-#: common.c:1971
+#: common.c:1973
 #, c-format
 msgid "converting file %s to Unix format...\n"
 msgstr "%s 파일을 유닉스 형식으로 변환중...\n"
 
-#: common.c:1975
+#: common.c:1977
 #, c-format
 msgid "converting file %s to file %s in Mac format...\n"
 msgstr "%s 파일을 Mac 형식의 %s 파일로 변환중...\n"
 
-#: common.c:1977
+#: common.c:1979
 #, c-format
 msgid "converting file %s to Mac format...\n"
 msgstr "%s 파일을 Mac 형식으로 변환중...\n"
 
-#: common.c:1980
+#: common.c:1982
 #, c-format
 msgid "converting file %s to file %s in DOS format...\n"
 msgstr "%s 파일을 DOS 형식의 %s 파일로 변환중...\n"
 
-#: common.c:1982
+#: common.c:1984
 #, c-format
 msgid "converting file %s to DOS format...\n"
 msgstr "%s 파일을 DOS 형식으로 변환중...\n"
@@ -595,7 +595,7 @@ msgstr "%s 파일을 DOS 형식으로 변환중...\n"
 #. 3rd %s is encoding of output file.
 #. 4th %s is name of output file.
 #. E.g.: converting UTF-16LE file in.txt to UTF-8 file out.txt in Unix format...
-#: common.c:1994
+#: common.c:1996
 #, c-format
 msgid "converting %s file %s to %s file %s in Unix format...\n"
 msgstr "%s 파일 %s을(를) 유닉스 형식의 %s 파일 %s(으)로 변환중...\n"
@@ -605,90 +605,90 @@ msgstr "%s 파일 %s을(를) 유닉스 형식의 %s 파일 %s(으)로 변환중.
 #. 2nd %s is name of input file.
 #. 3rd %s is encoding of output (input file is overwritten).
 #. E.g.: converting UTF-16LE file foo.txt to UTF-8 Unix format...
-#: common.c:2001
+#: common.c:2003
 #, c-format
 msgid "converting %s file %s to %s Unix format...\n"
 msgstr "%s 파일 %s을(를) %s 유닉스 형식으로 변환중...\n"
 
-#: common.c:2005
+#: common.c:2007
 #, c-format
 msgid "converting %s file %s to %s file %s in Mac format...\n"
 msgstr "%s 파일 %s을(를) Mac 형식의 %s 파일 %s(으)로 변환중...\n"
 
-#: common.c:2007
+#: common.c:2009
 #, c-format
 msgid "converting %s file %s to %s Mac format...\n"
 msgstr "%s 파일 %s을(를) %s Mac 형식으로 변환중...\n"
 
-#: common.c:2010
+#: common.c:2012
 #, c-format
 msgid "converting %s file %s to %s file %s in DOS format...\n"
 msgstr "%s 파일 %s을(를) DOS 형식의 %s 파일 %s(으)로 변환중...\n"
 
-#: common.c:2012
+#: common.c:2014
 #, c-format
 msgid "converting %s file %s to %s DOS format...\n"
 msgstr "%s 파일 %s을(를) %s DOS 형식으로 변환중...\n"
 
-#: common.c:2019
+#: common.c:2021
 #, c-format
 msgid "problems converting file %s to file %s\n"
 msgstr "%s 파일을 %s 파일로 변환하는 문제\n"
 
-#: common.c:2021
+#: common.c:2023
 #, c-format
 msgid "problems converting file %s\n"
 msgstr "%s 파일 변환 문제\n"
 
-#: common.c:2184 common.c:2241
+#: common.c:2186 common.c:2243
 #, c-format
 msgid "can not read from input file %s:"
 msgstr "입력 파일을 읽을 수 없습니다 %s:"
 
-#: common.c:2401
+#: common.c:2403
 #, c-format
 msgid "wrong flag '%c' for option -i or --info\n"
 msgstr "옵션 -i 또는 --info에 대한 잘못된 플래그 '%c'\n"
 
-#: common.c:2537 common.c:2580
+#: common.c:2539 common.c:2582
 #, c-format
 msgid "active code page: %d\n"
 msgstr "활성 코드 페이지: %d\n"
 
-#: common.c:2592
+#: common.c:2594
 #, c-format
 msgid "invalid %s conversion mode specified\n"
 msgstr "부적절한 %s 변환 모드를 지정했습니다\n"
 
-#: common.c:2600 common.c:2630
+#: common.c:2602 common.c:2632
 #, c-format
 msgid "option '%s' requires an argument\n"
 msgstr "'%s' 옵션에 인자 값이 필요합니다\n"
 
-#: common.c:2622
+#: common.c:2624
 #, c-format
 msgid "invalid %s display encoding specified\n"
 msgstr "부적절한 %s 출력 인코딩을 지정했습니다\n"
 
-#: common.c:2642 common.c:2656 common.c:2668
+#: common.c:2644 common.c:2658 common.c:2670
 #, c-format
 msgid "target of file %s not specified in new-file mode\n"
 msgstr "새 파일 모드의 %s 파일 대상을 지정하지 않았습니다\n"
 
-#: common.c:2751
+#: common.c:2753
 #, c-format
 msgid "can not read from input file: %s\n"
 msgstr "입력 파일을 읽을 수 없습니다: %s\n"
 
-#: common.c:2761 common.c:2773
+#: common.c:2763 common.c:2775
 #, c-format
 msgid "can not write to output file: %s\n"
 msgstr "출력 파일에 기록할 수 없습니다: %s\n"
 
-#: common.c:2848
+#: common.c:2851
 msgid "error: Invalid surrogate pair. Missing low surrogate.\n"
 msgstr "오류: 부적절한 대리 쌍. 하위 대리자가 빠졌습니다.\n"
 
-#: common.c:2864
+#: common.c:2869
 msgid "error: Invalid surrogate pair. Missing high surrogate.\n"
 msgstr "오류: 부적절한 대리 쌍. 상위 대리자가 빠졌습니다.\n"

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 # Requires perl-Test-Simple installation.
-use Test::Simple tests => 34;
+use Test::Simple tests => 36;
 
 $suffix = "";
 if (-e "../dos2unix.exe") {
@@ -80,6 +80,13 @@ ok( $result == 1, 'Dos2unix, invalid surrogate pair, missing low surrogate' );
 system("$DOS2UNIX -v -n invallow.txt out_unix.txt");
 $result = ($? >> 8);
 ok( $result == 1, 'Dos2unix, invalid surrogate pair, missing high surrogate' );
+
+system("$DOS2UNIX -q -n invalhig.txt out_unix.txt");
+$result = ($? >> 8);
+ok( $result == 0, 'Dos2unix, invalid surrogate pair, missing low surrogate, quiet' );
+system("$DOS2UNIX -q -n invallow.txt out_unix.txt");
+$result = ($? >> 8);
+ok( $result == 0, 'Dos2unix, invalid surrogate pair, missing high surrogate, quiet' );
 
 system("cat utf16le.txt | $DOS2UNIX -v > out_unix.txt; cmp out_unix.txt utf8unix.txt");
 ok( $? == 0, 'UTF-16LE with BOM to UTF-8, stdin/out' );
